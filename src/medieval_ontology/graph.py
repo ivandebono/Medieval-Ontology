@@ -230,7 +230,7 @@ def render_pyvis_html(graph: Graph) -> str:
     body = body.replace(
         "<body>",
         "<body><header style=\"font: 14px system-ui; padding: 16px 22px; background: #f6f1e8; color: #1f2933;\">"
-        f"<h1 style=\"margin: 0; font-size: 24px;\">Petrus de Ebulo Relationship Network</h1>"
+        f"<h1 style=\"margin: 0; font-size: 24px;\">Liber ad Honorem Augusti Relationship Network</h1>"
         f"<p style=\"margin: 4px 0 0; color: #52606d;\">{len(graph.nodes)} entities, "
         f"{len(graph.edges)} weighted relationships. Click a node to inspect text snippets.</p></header>"
         f"{_inspector_markup()}",
