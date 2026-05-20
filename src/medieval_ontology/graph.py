@@ -275,7 +275,7 @@ svg {{ display: block; width: 100vw; height: calc(100vh - 76px); background: #fb
 text {{ paint-order: stroke; stroke: #fbfaf6; stroke-width: 4px; fill: #1f2933; font-size: 12px; }}
 </style>
 <header>
-  <h1>Petrus de Ebulo Relationship Network</h1>
+  <h1>Liber ad Honorem Augusti Relationship Network</h1>
   <p>{len(graph.nodes)} entities, {len(graph.edges)} weighted relationships. Hover nodes and edges for details.</p>
 </header>
 <svg viewBox="0 0 {width} {height}" role="img" aria-label="Relationship network graph">
