@@ -39,5 +39,7 @@ def test_graph_extracts_weighted_relations():
     assert "Constance of Sicily" in labels
     assert "Henry VI" in labels
     assert "Tancred of Sicily" in labels
+    tancred = next(node for node in graph.nodes.values() if node.label == "Tancred of Sicily")
+    assert any("Tancrede" in snippet or "Tancred" in snippet for snippet in tancred.evidence)
     assert any(edge.relation == "marriage" for edge in graph.edges.values())
     assert any(edge.relation in {"communication", "succession"} for edge in graph.edges.values())

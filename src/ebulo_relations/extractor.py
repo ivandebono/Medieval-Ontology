@@ -36,10 +36,14 @@ def extract_graph(sections: list[Section], gazetteer: Gazetteer | None = None) -
 
         for sentence in split_sentences(section.text):
             mentions = sorted(set(_mentions(sentence, gazetteer)))
+            if not mentions:
+                continue
+            evidence = compact_evidence(sentence)
+            for entity_id in mentions:
+                graph.add_node_evidence(entity_id, evidence, section.title)
             if len(mentions) < 2:
                 continue
             relation, weight = classify_relation(sentence)
-            evidence = compact_evidence(sentence)
             for source, target in combinations(mentions, 2):
                 graph.add_edge(source, target, relation, weight, evidence, section.title)
 
