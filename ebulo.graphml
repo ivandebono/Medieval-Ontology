@@ -1,0 +1,2202 @@
+<graphml xmlns="http://graphml.graphdrawing.org/xmlns" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://graphml.graphdrawing.org/xmlns http://graphml.graphdrawing.org/xmlns/1.0/graphml.xsd">
+  <key id="d7" for="edge" attr.name="sections" attr.type="string" />
+  <key id="d6" for="edge" attr.name="evidence" attr.type="string" />
+  <key id="d5" for="edge" attr.name="weight" attr.type="double" />
+  <key id="d4" for="edge" attr.name="relation" attr.type="string" />
+  <key id="d3" for="node" attr.name="sections" attr.type="string" />
+  <key id="d2" for="node" attr.name="count" attr.type="long" />
+  <key id="d1" for="node" attr.name="kind" attr.type="string" />
+  <key id="d0" for="node" attr.name="label" attr.type="string" />
+  <graph edgedefault="undirected">
+    <node id="matthew_ajello">
+      <data key="d0">Matthew of Ajello</data>
+      <data key="d1">person</data>
+      <data key="d2">19</data>
+      <data key="d3">Particula IV.: Adversa et diversa petentium voluntas | Particula V.: Suasio vicecancellarii dissuadentis ad presulem Panormi | Particula VI.: Epistola ad Tancredum | Particula VII.: Spuriosa unctio regni | Particula XXII.: Augustalis oratio pro vindicta</data>
+    </node>
+    <node id="andronicus">
+      <data key="d0">Andronicus</data>
+      <data key="d1">person</data>
+      <data key="d2">7</data>
+      <data key="d3">Incipit liber tercius ad honorem et gloriam magni imperatoris | Particula VI.: Epistola ad Tancredum</data>
+    </node>
+    <node id="alexius">
+      <data key="d0">Alexius</data>
+      <data key="d1">person</data>
+      <data key="d2">2</data>
+      <data key="d3">Particula VI.: Epistola ad Tancredum</data>
+    </node>
+    <node id="philippus">
+      <data key="d0">Philippus</data>
+      <data key="d1">person</data>
+      <data key="d2">6</data>
+      <data key="d3">Particula XI.: Regni legatio | Particula XXII.: Augustalis oratio pro vindicta</data>
+    </node>
+    <node id="walter_palermo">
+      <data key="d0">Walter of Palermo</data>
+      <data key="d1">person</data>
+      <data key="d2">4</data>
+      <data key="d3">Particula IV.: Adversa et diversa petentium voluntas | Particula XI.: Regni legatio | Particula XXII.: Augustalis oratio pro vindicta</data>
+    </node>
+    <node id="charlemagne">
+      <data key="d0">Charlemagne</data>
+      <data key="d1">person</data>
+      <data key="d2">5</data>
+      <data key="d3">Particula XII.:Primus imperatoris ingressus in regna Sicilie | Particula XXII.: Augustalis oratio pro vindicta</data>
+    </node>
+    <node id="consanus">
+      <data key="d0">Count Consanus</data>
+      <data key="d1">person</data>
+      <data key="d2">2</data>
+      <data key="d3">Particula XI.: Regni legatio</data>
+    </node>
+    <node id="sicily">
+      <data key="d0">Sicily</data>
+      <data key="d1">place</data>
+      <data key="d2">11</data>
+      <data key="d3">Front Matter | Particula II.: Obitus Wilelmi secundi formosi regis Sicilie | Particula VII.: Spuriosa unctio regni | Particula XII.:Primus imperatoris ingressus in regna Sicilie | Particula XXII.: Augustalis oratio pro vindicta</data>
+    </node>
+    <node id="molisius">
+      <data key="d0">Count Molisius</data>
+      <data key="d1">person</data>
+      <data key="d2">2</data>
+      <data key="d3">Particula XI.: Regni legatio</data>
+    </node>
+    <node id="roger_ii">
+      <data key="d0">Roger II of Sicily</data>
+      <data key="d1">person</data>
+      <data key="d2">4</data>
+      <data key="d3">Incipit prima primi regis Siciliae particula | Particula XI.: Regni legatio</data>
+    </node>
+    <node id="bartholomew">
+      <data key="d0">Bartholomew</data>
+      <data key="d1">person</data>
+      <data key="d2">2</data>
+      <data key="d3">Particula XI.: Regni legatio</data>
+    </node>
+    <node id="sibilia">
+      <data key="d0">Sibilia</data>
+      <data key="d1">person</data>
+      <data key="d2">4</data>
+      <data key="d3">Incipit prima primi regis Siciliae particula | Particula XXII.: Augustalis oratio pro vindicta</data>
+    </node>
+    <node id="lupini">
+      <data key="d0">Lupini brothers</data>
+      <data key="d1">group</data>
+      <data key="d2">2</data>
+      <data key="d3">Particula XI.: Regni legatio</data>
+    </node>
+    <node id="apulia">
+      <data key="d0">Apulia</data>
+      <data key="d1">place</data>
+      <data key="d2">4</data>
+      <data key="d3">Particula IX.: Abortivi fallax iniquitas proscribit ascriptos | Particula XXII.: Augustalis oratio pro vindicta</data>
+    </node>
+    <node id="palermo">
+      <data key="d0">Palermo</data>
+      <data key="d1">place</data>
+      <data key="d2">13</data>
+      <data key="d3">Particula VII.: Spuriosa unctio regni | Particula XI.: Regni legatio | Particula XXII.: Augustalis oratio pro vindicta</data>
+    </node>
+    <node id="roger_andria">
+      <data key="d0">Roger of Andria</data>
+      <data key="d1">person</data>
+      <data key="d2">7</data>
+      <data key="d3">Particula IV.: Adversa et diversa petentium voluntas | Particula IX.: Abortivi fallax iniquitas proscribit ascriptos | Particula V.: Suasio vicecancellarii dissuadentis ad presulem Panormi | Particula XXII.: Augustalis oratio pro vindicta</data>
+    </node>
+    <node id="capua">
+      <data key="d0">Capua</data>
+      <data key="d1">place</data>
+      <data key="d2">7</data>
+      <data key="d3">Particula XI.: Regni legatio | Particula XV.: Comitis percussio et Salerni exaudita petitio | Particula XVIII.:Exeundi prohibitio | Quando Capuanus antistes gaudens Augustum recepit</data>
+    </node>
+    <node id="rome">
+      <data key="d0">Rome</data>
+      <data key="d1">place</data>
+      <data key="d2">16</data>
+      <data key="d3">Incipit liber tercius ad honorem et gloriam magni imperatoris | Incipit prima primi regis Siciliae particula | Particula IX.: Abortivi fallax iniquitas proscribit ascriptos | Particula XXII.: Augustalis oratio pro vindicta</data>
+    </node>
+    <node id="frederick_i">
+      <data key="d0">Frederick I Barbarossa</data>
+      <data key="d1">person</data>
+      <data key="d2">16</data>
+      <data key="d3">Incipit liber tercius ad honorem et gloriam magni imperatoris | Particula XII.:Primus imperatoris ingressus in regna Sicilie | Particula XXII.: Augustalis oratio pro vindicta</data>
+    </node>
+    <node id="henry_vi">
+      <data key="d0">Henry VI</data>
+      <data key="d1">person</data>
+      <data key="d2">169</data>
+      <data key="d3">Front Matter | Incipit liber tercius ad honorem et gloriam magni imperatoris | Incipit prima primi regis Siciliae particula | Particula IX.: Abortivi fallax iniquitas proscribit ascriptos | Particula V.: Suasio vicecancellarii dissuadentis ad presulem Panormi | Particula VII.: Spuriosa unctio regni | Particula XII.:Primus imperatoris ingressus in regna Sicilie | Particula XIII.: Castrorum inclinatur proceritas | Particula XIV.: Urbs Neapolis obsessa resistit | Particula XV.: Comitis percussio et Salerni exaudita petitio | Particula XVI.: Augustalis ingressus in urbem | Particula XVIII.:Exeundi prohibitio | Particula XXII.: Augustalis oratio pro vindicta</data>
+    </node>
+    <node id="burellus">
+      <data key="d0">Burellus</data>
+      <data key="d1">person</data>
+      <data key="d2">2</data>
+      <data key="d3">Quando capta est per vim Rocca de Archis</data>
+    </node>
+    <node id="peter_apostle">
+      <data key="d0">Saint Peter</data>
+      <data key="d1">person</data>
+      <data key="d2">15</data>
+      <data key="d3">Front Matter | Incipit liber tercius ad honorem et gloriam magni imperatoris | Particula IX.: Abortivi fallax iniquitas proscribit ascriptos | Particula XXII.: Augustalis oratio pro vindicta</data>
+    </node>
+    <node id="rocca_de_archis">
+      <data key="d0">Rocca de Archis</data>
+      <data key="d1">place</data>
+      <data key="d2">4</data>
+      <data key="d3">Particula XVIII.:Exeundi prohibitio | Particula XXII.: Augustalis oratio pro vindicta | Quando capta est per vim Rocca de Archis</data>
+    </node>
+    <node id="urso">
+      <data key="d0">Urso</data>
+      <data key="d1">person</data>
+      <data key="d2">2</data>
+      <data key="d3">Particula VIII.: Casus anathematizati et derisio nascentis</data>
+    </node>
+    <node id="octavian">
+      <data key="d0">Octavian</data>
+      <data key="d1">person</data>
+      <data key="d2">3</data>
+      <data key="d3">Particula IX.: Abortivi fallax iniquitas proscribit ascriptos | Particula XXII.: Augustalis oratio pro vindicta</data>
+    </node>
+    <node id="beatrix">
+      <data key="d0">Beatrix</data>
+      <data key="d1">person</data>
+      <data key="d2">2</data>
+      <data key="d3">Incipit prima primi regis Siciliae particula</data>
+    </node>
+    <node id="monte_cassino">
+      <data key="d0">Monte Cassino</data>
+      <data key="d1">place</data>
+      <data key="d2">4</data>
+      <data key="d3">Particula XIII.: Castrorum inclinatur proceritas | Particula XXII.: Augustalis oratio pro vindicta</data>
+    </node>
+    <node id="tancred">
+      <data key="d0">Tancred of Sicily</data>
+      <data key="d1">person</data>
+      <data key="d2">70</data>
+      <data key="d3">Incipit liber tercius ad honorem et gloriam magni imperatoris | Particula IV.: Adversa et diversa petentium voluntas | Particula V.: Suasio vicecancellarii dissuadentis ad presulem Panormi | Particula VI.: Epistola ad Tancredum | Particula VIII.: Casus anathematizati et derisio nascentis | Particula XV.: Comitis percussio et Salerni exaudita petitio | Particula XVIII.:Exeundi prohibitio | Particula XXII.: Augustalis oratio pro vindicta</data>
+    </node>
+    <node id="albidia">
+      <data key="d0">Albidia</data>
+      <data key="d1">person</data>
+      <data key="d2">2</data>
+      <data key="d3">Incipit prima primi regis Siciliae particula</data>
+    </node>
+    <node id="lucius_iii">
+      <data key="d0">Lucius III</data>
+      <data key="d1">person</data>
+      <data key="d2">4</data>
+      <data key="d3">Incipit prima primi regis Siciliae particula</data>
+    </node>
+    <node id="celestine_iii">
+      <data key="d0">Celestine III</data>
+      <data key="d1">person</data>
+      <data key="d2">4</data>
+      <data key="d3">Incipit prima primi regis Siciliae particula | Particula XXII.: Augustalis oratio pro vindicta</data>
+    </node>
+    <node id="manuel">
+      <data key="d0">Manuel I Komnenos</data>
+      <data key="d1">person</data>
+      <data key="d2">2</data>
+      <data key="d3">Particula VI.: Epistola ad Tancredum</data>
+    </node>
+    <node id="rofridus">
+      <data key="d0">Rofridus</data>
+      <data key="d1">person</data>
+      <data key="d2">2</data>
+      <data key="d3">Particula XIII.: Castrorum inclinatur proceritas</data>
+    </node>
+    <node id="callistus_ii">
+      <data key="d0">Callistus II</data>
+      <data key="d1">person</data>
+      <data key="d2">2</data>
+      <data key="d3">Incipit prima primi regis Siciliae particula</data>
+    </node>
+    <node id="constance">
+      <data key="d0">Constance of Sicily</data>
+      <data key="d1">person</data>
+      <data key="d2">13</data>
+      <data key="d3">Incipit prima primi regis Siciliae particula | Particula V.: Suasio vicecancellarii dissuadentis ad presulem Panormi | Particula XVI.: Augustalis ingressus in urbem | Particula XVIII.:Exeundi prohibitio | Particula XXII.: Augustalis oratio pro vindicta</data>
+    </node>
+    <node id="naples">
+      <data key="d0">Naples</data>
+      <data key="d1">place</data>
+      <data key="d2">8</data>
+      <data key="d3">Particula XIV.: Urbs Neapolis obsessa resistit | Particula XVIII.:Exeundi prohibitio | Particula XXII.: Augustalis oratio pro vindicta</data>
+    </node>
+    <node id="robert_guiscard">
+      <data key="d0">Robert Guiscard</data>
+      <data key="d1">person</data>
+      <data key="d2">2</data>
+      <data key="d3">Incipit prima primi regis Siciliae particula</data>
+    </node>
+    <node id="salerno">
+      <data key="d0">Salerno</data>
+      <data key="d1">place</data>
+      <data key="d2">16</data>
+      <data key="d3">Particula XI.: Regni legatio | Particula XV.: Comitis percussio et Salerni exaudita petitio | Particula XVI.: Augustalis ingressus in urbem | Particula XVIII.:Exeundi prohibitio | Particula XXII.: Augustalis oratio pro vindicta</data>
+    </node>
+    <edge source="matthew_ajello" target="roger_andria" id="0">
+      <data key="d4">co-mentioned</data>
+      <data key="d5">1.75</data>
+      <data key="d6">Particula IV.: Adversa et diversa petentium voluntas | Particula V.: Suasio vicecancellarii dissuadentis ad presulem Panormi | Particula XXII.: Augustalis oratio pro vindicta</data>
+      <data key="d7">Particula IV.: Adversa et diversa petentium voluntas | Particula V.: Suasio vicecancellarii dissuadentis ad presulem Panormi | Particula XXII.: Augustalis oratio pro vindicta</data>
+    </edge>
+    <edge source="matthew_ajello" target="tancred" id="0">
+      <data key="d4">co-mentioned</data>
+      <data key="d5">2.0</data>
+      <data key="d6">Particula IV.: Adversa et diversa petentium voluntas | Particula V.: Suasio vicecancellarii dissuadentis ad presulem Panormi | Particula VI.: Epistola ad Tancredum | Particula XXII.: Augustalis oratio pro vindicta</data>
+      <data key="d7">Particula IV.: Adversa et diversa petentium voluntas | Particula V.: Suasio vicecancellarii dissuadentis ad presulem Panormi | Particula VI.: Epistola ad Tancredum | Particula XXII.: Augustalis oratio pro vindicta</data>
+    </edge>
+    <edge source="matthew_ajello" target="tancred" id="1">
+      <data key="d4">communication</data>
+      <data key="d5">3.0</data>
+      <data key="d6">"Hanc tibi Matheus mitto Tancrede salutem,</data>
+      <data key="d7">Particula VI.: Epistola ad Tancredum</data>
+    </edge>
+    <edge source="matthew_ajello" target="walter_palermo" id="0">
+      <data key="d4">co-mentioned</data>
+      <data key="d5">1.5</data>
+      <data key="d6">Particula IV.: Adversa et diversa petentium voluntas | Particula XXII.: Augustalis oratio pro vindicta</data>
+      <data key="d7">Particula IV.: Adversa et diversa petentium voluntas | Particula XXII.: Augustalis oratio pro vindicta</data>
+    </edge>
+    <edge source="matthew_ajello" target="constance" id="0">
+      <data key="d4">co-mentioned</data>
+      <data key="d5">1.5</data>
+      <data key="d6">Particula V.: Suasio vicecancellarii dissuadentis ad presulem Panormi | Particula XXII.: Augustalis oratio pro vindicta</data>
+      <data key="d7">Particula V.: Suasio vicecancellarii dissuadentis ad presulem Panormi | Particula XXII.: Augustalis oratio pro vindicta</data>
+    </edge>
+    <edge source="matthew_ajello" target="henry_vi" id="0">
+      <data key="d4">co-mentioned</data>
+      <data key="d5">1.75</data>
+      <data key="d6">Particula V.: Suasio vicecancellarii dissuadentis ad presulem Panormi | Particula VII.: Spuriosa unctio regni | Particula XXII.: Augustalis oratio pro vindicta</data>
+      <data key="d7">Particula V.: Suasio vicecancellarii dissuadentis ad presulem Panormi | Particula VII.: Spuriosa unctio regni | Particula XXII.: Augustalis oratio pro vindicta</data>
+    </edge>
+    <edge source="matthew_ajello" target="alexius" id="0">
+      <data key="d4">co-mentioned</data>
+      <data key="d5">1.25</data>
+      <data key="d6">Particula VI.: Epistola ad Tancredum</data>
+      <data key="d7">Particula VI.: Epistola ad Tancredum</data>
+    </edge>
+    <edge source="matthew_ajello" target="andronicus" id="0">
+      <data key="d4">co-mentioned</data>
+      <data key="d5">1.25</data>
+      <data key="d6">Particula VI.: Epistola ad Tancredum</data>
+      <data key="d7">Particula VI.: Epistola ad Tancredum</data>
+    </edge>
+    <edge source="matthew_ajello" target="manuel" id="0">
+      <data key="d4">co-mentioned</data>
+      <data key="d5">1.25</data>
+      <data key="d6">Particula VI.: Epistola ad Tancredum</data>
+      <data key="d7">Particula VI.: Epistola ad Tancredum</data>
+    </edge>
+    <edge source="matthew_ajello" target="palermo" id="0">
+      <data key="d4">co-mentioned</data>
+      <data key="d5">1.5</data>
+      <data key="d6">Particula VII.: Spuriosa unctio regni | Particula XXII.: Augustalis oratio pro vindicta</data>
+      <data key="d7">Particula VII.: Spuriosa unctio regni | Particula XXII.: Augustalis oratio pro vindicta</data>
+    </edge>
+    <edge source="matthew_ajello" target="sicily" id="0">
+      <data key="d4">co-mentioned</data>
+      <data key="d5">1.5</data>
+      <data key="d6">Particula VII.: Spuriosa unctio regni | Particula XXII.: Augustalis oratio pro vindicta</data>
+      <data key="d7">Particula VII.: Spuriosa unctio regni | Particula XXII.: Augustalis oratio pro vindicta</data>
+    </edge>
+    <edge source="matthew_ajello" target="apulia" id="0">
+      <data key="d4">co-mentioned</data>
+      <data key="d5">1.25</data>
+      <data key="d6">Particula XXII.: Augustalis oratio pro vindicta</data>
+      <data key="d7">Particula XXII.: Augustalis oratio pro vindicta</data>
+    </edge>
+    <edge source="matthew_ajello" target="celestine_iii" id="0">
+      <data key="d4">co-mentioned</data>
+      <data key="d5">1.25</data>
+      <data key="d6">Particula XXII.: Augustalis oratio pro vindicta</data>
+      <data key="d7">Particula XXII.: Augustalis oratio pro vindicta</data>
+    </edge>
+    <edge source="matthew_ajello" target="charlemagne" id="0">
+      <data key="d4">co-mentioned</data>
+      <data key="d5">1.25</data>
+      <data key="d6">Particula XXII.: Augustalis oratio pro vindicta</data>
+      <data key="d7">Particula XXII.: Augustalis oratio pro vindicta</data>
+    </edge>
+    <edge source="matthew_ajello" target="frederick_i" id="0">
+      <data key="d4">co-mentioned</data>
+      <data key="d5">1.25</data>
+      <data key="d6">Particula XXII.: Augustalis oratio pro vindicta</data>
+      <data key="d7">Particula XXII.: Augustalis oratio pro vindicta</data>
+    </edge>
+    <edge source="matthew_ajello" target="monte_cassino" id="0">
+      <data key="d4">co-mentioned</data>
+      <data key="d5">1.25</data>
+      <data key="d6">Particula XXII.: Augustalis oratio pro vindicta</data>
+      <data key="d7">Particula XXII.: Augustalis oratio pro vindicta</data>
+    </edge>
+    <edge source="matthew_ajello" target="naples" id="0">
+      <data key="d4">co-mentioned</data>
+      <data key="d5">1.25</data>
+      <data key="d6">Particula XXII.: Augustalis oratio pro vindicta</data>
+      <data key="d7">Particula XXII.: Augustalis oratio pro vindicta</data>
+    </edge>
+    <edge source="matthew_ajello" target="octavian" id="0">
+      <data key="d4">co-mentioned</data>
+      <data key="d5">1.25</data>
+      <data key="d6">Particula XXII.: Augustalis oratio pro vindicta</data>
+      <data key="d7">Particula XXII.: Augustalis oratio pro vindicta</data>
+    </edge>
+    <edge source="matthew_ajello" target="peter_apostle" id="0">
+      <data key="d4">co-mentioned</data>
+      <data key="d5">1.25</data>
+      <data key="d6">Particula XXII.: Augustalis oratio pro vindicta</data>
+      <data key="d7">Particula XXII.: Augustalis oratio pro vindicta</data>
+    </edge>
+    <edge source="matthew_ajello" target="philippus" id="0">
+      <data key="d4">co-mentioned</data>
+      <data key="d5">1.25</data>
+      <data key="d6">Particula XXII.: Augustalis oratio pro vindicta</data>
+      <data key="d7">Particula XXII.: Augustalis oratio pro vindicta</data>
+    </edge>
+    <edge source="matthew_ajello" target="rocca_de_archis" id="0">
+      <data key="d4">co-mentioned</data>
+      <data key="d5">1.25</data>
+      <data key="d6">Particula XXII.: Augustalis oratio pro vindicta</data>
+      <data key="d7">Particula XXII.: Augustalis oratio pro vindicta</data>
+    </edge>
+    <edge source="matthew_ajello" target="rome" id="0">
+      <data key="d4">co-mentioned</data>
+      <data key="d5">1.25</data>
+      <data key="d6">Particula XXII.: Augustalis oratio pro vindicta</data>
+      <data key="d7">Particula XXII.: Augustalis oratio pro vindicta</data>
+    </edge>
+    <edge source="matthew_ajello" target="salerno" id="0">
+      <data key="d4">co-mentioned</data>
+      <data key="d5">1.25</data>
+      <data key="d6">Particula XXII.: Augustalis oratio pro vindicta</data>
+      <data key="d7">Particula XXII.: Augustalis oratio pro vindicta</data>
+    </edge>
+    <edge source="matthew_ajello" target="sibilia" id="0">
+      <data key="d4">co-mentioned</data>
+      <data key="d5">1.25</data>
+      <data key="d6">Particula XXII.: Augustalis oratio pro vindicta</data>
+      <data key="d7">Particula XXII.: Augustalis oratio pro vindicta</data>
+    </edge>
+    <edge source="andronicus" target="alexius" id="0">
+      <data key="d4">co-mentioned</data>
+      <data key="d5">2.25</data>
+      <data key="d6">Andronicus si forte suo iuravit Alexi, | Particula VI.: Epistola ad Tancredum</data>
+      <data key="d7">Particula VI.: Epistola ad Tancredum</data>
+    </edge>
+    <edge source="andronicus" target="manuel" id="0">
+      <data key="d4">co-mentioned</data>
+      <data key="d5">1.25</data>
+      <data key="d6">Particula VI.: Epistola ad Tancredum</data>
+      <data key="d7">Particula VI.: Epistola ad Tancredum</data>
+    </edge>
+    <edge source="andronicus" target="tancred" id="0">
+      <data key="d4">co-mentioned</data>
+      <data key="d5">1.5</data>
+      <data key="d6">Particula VI.: Epistola ad Tancredum | Incipit liber tercius ad honorem et gloriam magni imperatoris</data>
+      <data key="d7">Incipit liber tercius ad honorem et gloriam magni imperatoris | Particula VI.: Epistola ad Tancredum</data>
+    </edge>
+    <edge source="andronicus" target="frederick_i" id="0">
+      <data key="d4">co-mentioned</data>
+      <data key="d5">1.25</data>
+      <data key="d6">Incipit liber tercius ad honorem et gloriam magni imperatoris</data>
+      <data key="d7">Incipit liber tercius ad honorem et gloriam magni imperatoris</data>
+    </edge>
+    <edge source="andronicus" target="henry_vi" id="0">
+      <data key="d4">co-mentioned</data>
+      <data key="d5">1.25</data>
+      <data key="d6">Incipit liber tercius ad honorem et gloriam magni imperatoris</data>
+      <data key="d7">Incipit liber tercius ad honorem et gloriam magni imperatoris</data>
+    </edge>
+    <edge source="andronicus" target="peter_apostle" id="0">
+      <data key="d4">co-mentioned</data>
+      <data key="d5">1.25</data>
+      <data key="d6">Incipit liber tercius ad honorem et gloriam magni imperatoris</data>
+      <data key="d7">Incipit liber tercius ad honorem et gloriam magni imperatoris</data>
+    </edge>
+    <edge source="andronicus" target="rome" id="0">
+      <data key="d4">co-mentioned</data>
+      <data key="d5">1.25</data>
+      <data key="d6">Incipit liber tercius ad honorem et gloriam magni imperatoris</data>
+      <data key="d7">Incipit liber tercius ad honorem et gloriam magni imperatoris</data>
+    </edge>
+    <edge source="alexius" target="manuel" id="0">
+      <data key="d4">co-mentioned</data>
+      <data key="d5">1.25</data>
+      <data key="d6">Particula VI.: Epistola ad Tancredum</data>
+      <data key="d7">Particula VI.: Epistola ad Tancredum</data>
+    </edge>
+    <edge source="alexius" target="tancred" id="0">
+      <data key="d4">co-mentioned</data>
+      <data key="d5">1.25</data>
+      <data key="d6">Particula VI.: Epistola ad Tancredum</data>
+      <data key="d7">Particula VI.: Epistola ad Tancredum</data>
+    </edge>
+    <edge source="philippus" target="bartholomew" id="0">
+      <data key="d4">co-mentioned</data>
+      <data key="d5">1.25</data>
+      <data key="d6">Particula XI.: Regni legatio</data>
+      <data key="d7">Particula XI.: Regni legatio</data>
+    </edge>
+    <edge source="philippus" target="capua" id="0">
+      <data key="d4">co-mentioned</data>
+      <data key="d5">1.25</data>
+      <data key="d6">Particula XI.: Regni legatio</data>
+      <data key="d7">Particula XI.: Regni legatio</data>
+    </edge>
+    <edge source="philippus" target="consanus" id="0">
+      <data key="d4">co-mentioned</data>
+      <data key="d5">1.25</data>
+      <data key="d6">Particula XI.: Regni legatio</data>
+      <data key="d7">Particula XI.: Regni legatio</data>
+    </edge>
+    <edge source="philippus" target="lupini" id="0">
+      <data key="d4">co-mentioned</data>
+      <data key="d5">1.25</data>
+      <data key="d6">Particula XI.: Regni legatio</data>
+      <data key="d7">Particula XI.: Regni legatio</data>
+    </edge>
+    <edge source="philippus" target="molisius" id="0">
+      <data key="d4">co-mentioned</data>
+      <data key="d5">1.25</data>
+      <data key="d6">Particula XI.: Regni legatio</data>
+      <data key="d7">Particula XI.: Regni legatio</data>
+    </edge>
+    <edge source="philippus" target="palermo" id="0">
+      <data key="d4">co-mentioned</data>
+      <data key="d5">1.5</data>
+      <data key="d6">Particula XI.: Regni legatio | Particula XXII.: Augustalis oratio pro vindicta</data>
+      <data key="d7">Particula XI.: Regni legatio | Particula XXII.: Augustalis oratio pro vindicta</data>
+    </edge>
+    <edge source="philippus" target="roger_ii" id="0">
+      <data key="d4">co-mentioned</data>
+      <data key="d5">1.25</data>
+      <data key="d6">Particula XI.: Regni legatio</data>
+      <data key="d7">Particula XI.: Regni legatio</data>
+    </edge>
+    <edge source="philippus" target="salerno" id="0">
+      <data key="d4">co-mentioned</data>
+      <data key="d5">1.5</data>
+      <data key="d6">Particula XI.: Regni legatio | Particula XXII.: Augustalis oratio pro vindicta</data>
+      <data key="d7">Particula XI.: Regni legatio | Particula XXII.: Augustalis oratio pro vindicta</data>
+    </edge>
+    <edge source="philippus" target="walter_palermo" id="0">
+      <data key="d4">co-mentioned</data>
+      <data key="d5">1.5</data>
+      <data key="d6">Particula XI.: Regni legatio | Particula XXII.: Augustalis oratio pro vindicta</data>
+      <data key="d7">Particula XI.: Regni legatio | Particula XXII.: Augustalis oratio pro vindicta</data>
+    </edge>
+    <edge source="philippus" target="apulia" id="0">
+      <data key="d4">co-mentioned</data>
+      <data key="d5">1.25</data>
+      <data key="d6">Particula XXII.: Augustalis oratio pro vindicta</data>
+      <data key="d7">Particula XXII.: Augustalis oratio pro vindicta</data>
+    </edge>
+    <edge source="philippus" target="celestine_iii" id="0">
+      <data key="d4">co-mentioned</data>
+      <data key="d5">1.25</data>
+      <data key="d6">Particula XXII.: Augustalis oratio pro vindicta</data>
+      <data key="d7">Particula XXII.: Augustalis oratio pro vindicta</data>
+    </edge>
+    <edge source="philippus" target="charlemagne" id="0">
+      <data key="d4">co-mentioned</data>
+      <data key="d5">1.25</data>
+      <data key="d6">Particula XXII.: Augustalis oratio pro vindicta</data>
+      <data key="d7">Particula XXII.: Augustalis oratio pro vindicta</data>
+    </edge>
+    <edge source="philippus" target="constance" id="0">
+      <data key="d4">co-mentioned</data>
+      <data key="d5">1.25</data>
+      <data key="d6">Particula XXII.: Augustalis oratio pro vindicta</data>
+      <data key="d7">Particula XXII.: Augustalis oratio pro vindicta</data>
+    </edge>
+    <edge source="philippus" target="frederick_i" id="0">
+      <data key="d4">co-mentioned</data>
+      <data key="d5">1.25</data>
+      <data key="d6">Particula XXII.: Augustalis oratio pro vindicta</data>
+      <data key="d7">Particula XXII.: Augustalis oratio pro vindicta</data>
+    </edge>
+    <edge source="philippus" target="henry_vi" id="0">
+      <data key="d4">co-mentioned</data>
+      <data key="d5">1.25</data>
+      <data key="d6">Particula XXII.: Augustalis oratio pro vindicta</data>
+      <data key="d7">Particula XXII.: Augustalis oratio pro vindicta</data>
+    </edge>
+    <edge source="philippus" target="monte_cassino" id="0">
+      <data key="d4">co-mentioned</data>
+      <data key="d5">1.25</data>
+      <data key="d6">Particula XXII.: Augustalis oratio pro vindicta</data>
+      <data key="d7">Particula XXII.: Augustalis oratio pro vindicta</data>
+    </edge>
+    <edge source="philippus" target="naples" id="0">
+      <data key="d4">co-mentioned</data>
+      <data key="d5">1.25</data>
+      <data key="d6">Particula XXII.: Augustalis oratio pro vindicta</data>
+      <data key="d7">Particula XXII.: Augustalis oratio pro vindicta</data>
+    </edge>
+    <edge source="philippus" target="octavian" id="0">
+      <data key="d4">co-mentioned</data>
+      <data key="d5">1.25</data>
+      <data key="d6">Particula XXII.: Augustalis oratio pro vindicta</data>
+      <data key="d7">Particula XXII.: Augustalis oratio pro vindicta</data>
+    </edge>
+    <edge source="philippus" target="peter_apostle" id="0">
+      <data key="d4">co-mentioned</data>
+      <data key="d5">1.25</data>
+      <data key="d6">Particula XXII.: Augustalis oratio pro vindicta</data>
+      <data key="d7">Particula XXII.: Augustalis oratio pro vindicta</data>
+    </edge>
+    <edge source="philippus" target="rocca_de_archis" id="0">
+      <data key="d4">co-mentioned</data>
+      <data key="d5">1.25</data>
+      <data key="d6">Particula XXII.: Augustalis oratio pro vindicta</data>
+      <data key="d7">Particula XXII.: Augustalis oratio pro vindicta</data>
+    </edge>
+    <edge source="philippus" target="roger_andria" id="0">
+      <data key="d4">co-mentioned</data>
+      <data key="d5">1.25</data>
+      <data key="d6">Particula XXII.: Augustalis oratio pro vindicta</data>
+      <data key="d7">Particula XXII.: Augustalis oratio pro vindicta</data>
+    </edge>
+    <edge source="philippus" target="rome" id="0">
+      <data key="d4">co-mentioned</data>
+      <data key="d5">1.25</data>
+      <data key="d6">Particula XXII.: Augustalis oratio pro vindicta</data>
+      <data key="d7">Particula XXII.: Augustalis oratio pro vindicta</data>
+    </edge>
+    <edge source="philippus" target="sibilia" id="0">
+      <data key="d4">co-mentioned</data>
+      <data key="d5">1.25</data>
+      <data key="d6">Particula XXII.: Augustalis oratio pro vindicta</data>
+      <data key="d7">Particula XXII.: Augustalis oratio pro vindicta</data>
+    </edge>
+    <edge source="philippus" target="sicily" id="0">
+      <data key="d4">co-mentioned</data>
+      <data key="d5">1.25</data>
+      <data key="d6">Particula XXII.: Augustalis oratio pro vindicta</data>
+      <data key="d7">Particula XXII.: Augustalis oratio pro vindicta</data>
+    </edge>
+    <edge source="philippus" target="tancred" id="0">
+      <data key="d4">co-mentioned</data>
+      <data key="d5">1.25</data>
+      <data key="d6">Particula XXII.: Augustalis oratio pro vindicta</data>
+      <data key="d7">Particula XXII.: Augustalis oratio pro vindicta</data>
+    </edge>
+    <edge source="walter_palermo" target="roger_andria" id="0">
+      <data key="d4">co-mentioned</data>
+      <data key="d5">1.5</data>
+      <data key="d6">Particula IV.: Adversa et diversa petentium voluntas | Particula XXII.: Augustalis oratio pro vindicta</data>
+      <data key="d7">Particula IV.: Adversa et diversa petentium voluntas | Particula XXII.: Augustalis oratio pro vindicta</data>
+    </edge>
+    <edge source="walter_palermo" target="tancred" id="0">
+      <data key="d4">co-mentioned</data>
+      <data key="d5">1.5</data>
+      <data key="d6">Particula IV.: Adversa et diversa petentium voluntas | Particula XXII.: Augustalis oratio pro vindicta</data>
+      <data key="d7">Particula IV.: Adversa et diversa petentium voluntas | Particula XXII.: Augustalis oratio pro vindicta</data>
+    </edge>
+    <edge source="walter_palermo" target="palermo" id="0">
+      <data key="d4">support</data>
+      <data key="d5">3.4</data>
+      <data key="d6">Scripsit et antistes, dominorum gemma Panormi,</data>
+      <data key="d7">Particula XI.: Regni legatio</data>
+    </edge>
+    <edge source="walter_palermo" target="palermo" id="1">
+      <data key="d4">co-mentioned</data>
+      <data key="d5">3.5</data>
+      <data key="d6">Particula XI.: Regni legatio | Legatio Panormi&gt; | Legati quem preveniunt ex urbe Panormi, | Particula XXII.: Augustalis oratio pro vindicta</data>
+      <data key="d7">Particula XI.: Regni legatio | Particula XXII.: Augustalis oratio pro vindicta</data>
+    </edge>
+    <edge source="walter_palermo" target="bartholomew" id="0">
+      <data key="d4">co-mentioned</data>
+      <data key="d5">1.25</data>
+      <data key="d6">Particula XI.: Regni legatio</data>
+      <data key="d7">Particula XI.: Regni legatio</data>
+    </edge>
+    <edge source="walter_palermo" target="capua" id="0">
+      <data key="d4">co-mentioned</data>
+      <data key="d5">1.25</data>
+      <data key="d6">Particula XI.: Regni legatio</data>
+      <data key="d7">Particula XI.: Regni legatio</data>
+    </edge>
+    <edge source="walter_palermo" target="consanus" id="0">
+      <data key="d4">co-mentioned</data>
+      <data key="d5">1.25</data>
+      <data key="d6">Particula XI.: Regni legatio</data>
+      <data key="d7">Particula XI.: Regni legatio</data>
+    </edge>
+    <edge source="walter_palermo" target="lupini" id="0">
+      <data key="d4">co-mentioned</data>
+      <data key="d5">1.25</data>
+      <data key="d6">Particula XI.: Regni legatio</data>
+      <data key="d7">Particula XI.: Regni legatio</data>
+    </edge>
+    <edge source="walter_palermo" target="molisius" id="0">
+      <data key="d4">co-mentioned</data>
+      <data key="d5">1.25</data>
+      <data key="d6">Particula XI.: Regni legatio</data>
+      <data key="d7">Particula XI.: Regni legatio</data>
+    </edge>
+    <edge source="walter_palermo" target="roger_ii" id="0">
+      <data key="d4">co-mentioned</data>
+      <data key="d5">1.25</data>
+      <data key="d6">Particula XI.: Regni legatio</data>
+      <data key="d7">Particula XI.: Regni legatio</data>
+    </edge>
+    <edge source="walter_palermo" target="salerno" id="0">
+      <data key="d4">co-mentioned</data>
+      <data key="d5">1.5</data>
+      <data key="d6">Particula XI.: Regni legatio | Particula XXII.: Augustalis oratio pro vindicta</data>
+      <data key="d7">Particula XI.: Regni legatio | Particula XXII.: Augustalis oratio pro vindicta</data>
+    </edge>
+    <edge source="walter_palermo" target="apulia" id="0">
+      <data key="d4">co-mentioned</data>
+      <data key="d5">1.25</data>
+      <data key="d6">Particula XXII.: Augustalis oratio pro vindicta</data>
+      <data key="d7">Particula XXII.: Augustalis oratio pro vindicta</data>
+    </edge>
+    <edge source="walter_palermo" target="celestine_iii" id="0">
+      <data key="d4">co-mentioned</data>
+      <data key="d5">1.25</data>
+      <data key="d6">Particula XXII.: Augustalis oratio pro vindicta</data>
+      <data key="d7">Particula XXII.: Augustalis oratio pro vindicta</data>
+    </edge>
+    <edge source="walter_palermo" target="charlemagne" id="0">
+      <data key="d4">co-mentioned</data>
+      <data key="d5">1.25</data>
+      <data key="d6">Particula XXII.: Augustalis oratio pro vindicta</data>
+      <data key="d7">Particula XXII.: Augustalis oratio pro vindicta</data>
+    </edge>
+    <edge source="walter_palermo" target="constance" id="0">
+      <data key="d4">co-mentioned</data>
+      <data key="d5">1.25</data>
+      <data key="d6">Particula XXII.: Augustalis oratio pro vindicta</data>
+      <data key="d7">Particula XXII.: Augustalis oratio pro vindicta</data>
+    </edge>
+    <edge source="walter_palermo" target="frederick_i" id="0">
+      <data key="d4">co-mentioned</data>
+      <data key="d5">1.25</data>
+      <data key="d6">Particula XXII.: Augustalis oratio pro vindicta</data>
+      <data key="d7">Particula XXII.: Augustalis oratio pro vindicta</data>
+    </edge>
+    <edge source="walter_palermo" target="henry_vi" id="0">
+      <data key="d4">co-mentioned</data>
+      <data key="d5">1.25</data>
+      <data key="d6">Particula XXII.: Augustalis oratio pro vindicta</data>
+      <data key="d7">Particula XXII.: Augustalis oratio pro vindicta</data>
+    </edge>
+    <edge source="walter_palermo" target="monte_cassino" id="0">
+      <data key="d4">co-mentioned</data>
+      <data key="d5">1.25</data>
+      <data key="d6">Particula XXII.: Augustalis oratio pro vindicta</data>
+      <data key="d7">Particula XXII.: Augustalis oratio pro vindicta</data>
+    </edge>
+    <edge source="walter_palermo" target="naples" id="0">
+      <data key="d4">co-mentioned</data>
+      <data key="d5">1.25</data>
+      <data key="d6">Particula XXII.: Augustalis oratio pro vindicta</data>
+      <data key="d7">Particula XXII.: Augustalis oratio pro vindicta</data>
+    </edge>
+    <edge source="walter_palermo" target="octavian" id="0">
+      <data key="d4">co-mentioned</data>
+      <data key="d5">1.25</data>
+      <data key="d6">Particula XXII.: Augustalis oratio pro vindicta</data>
+      <data key="d7">Particula XXII.: Augustalis oratio pro vindicta</data>
+    </edge>
+    <edge source="walter_palermo" target="peter_apostle" id="0">
+      <data key="d4">co-mentioned</data>
+      <data key="d5">1.25</data>
+      <data key="d6">Particula XXII.: Augustalis oratio pro vindicta</data>
+      <data key="d7">Particula XXII.: Augustalis oratio pro vindicta</data>
+    </edge>
+    <edge source="walter_palermo" target="rocca_de_archis" id="0">
+      <data key="d4">co-mentioned</data>
+      <data key="d5">1.25</data>
+      <data key="d6">Particula XXII.: Augustalis oratio pro vindicta</data>
+      <data key="d7">Particula XXII.: Augustalis oratio pro vindicta</data>
+    </edge>
+    <edge source="walter_palermo" target="rome" id="0">
+      <data key="d4">co-mentioned</data>
+      <data key="d5">1.25</data>
+      <data key="d6">Particula XXII.: Augustalis oratio pro vindicta</data>
+      <data key="d7">Particula XXII.: Augustalis oratio pro vindicta</data>
+    </edge>
+    <edge source="walter_palermo" target="sibilia" id="0">
+      <data key="d4">co-mentioned</data>
+      <data key="d5">1.25</data>
+      <data key="d6">Particula XXII.: Augustalis oratio pro vindicta</data>
+      <data key="d7">Particula XXII.: Augustalis oratio pro vindicta</data>
+    </edge>
+    <edge source="walter_palermo" target="sicily" id="0">
+      <data key="d4">co-mentioned</data>
+      <data key="d5">1.25</data>
+      <data key="d6">Particula XXII.: Augustalis oratio pro vindicta</data>
+      <data key="d7">Particula XXII.: Augustalis oratio pro vindicta</data>
+    </edge>
+    <edge source="charlemagne" target="frederick_i" id="0">
+      <data key="d4">co-mentioned</data>
+      <data key="d5">1.5</data>
+      <data key="d6">Particula XII.:Primus imperatoris ingressus in regna Sicilie | Particula XXII.: Augustalis oratio pro vindicta</data>
+      <data key="d7">Particula XII.:Primus imperatoris ingressus in regna Sicilie | Particula XXII.: Augustalis oratio pro vindicta</data>
+    </edge>
+    <edge source="charlemagne" target="henry_vi" id="0">
+      <data key="d4">co-mentioned</data>
+      <data key="d5">1.5</data>
+      <data key="d6">Particula XII.:Primus imperatoris ingressus in regna Sicilie | Particula XXII.: Augustalis oratio pro vindicta</data>
+      <data key="d7">Particula XII.:Primus imperatoris ingressus in regna Sicilie | Particula XXII.: Augustalis oratio pro vindicta</data>
+    </edge>
+    <edge source="charlemagne" target="sicily" id="0">
+      <data key="d4">co-mentioned</data>
+      <data key="d5">1.5</data>
+      <data key="d6">Particula XII.:Primus imperatoris ingressus in regna Sicilie | Particula XXII.: Augustalis oratio pro vindicta</data>
+      <data key="d7">Particula XII.:Primus imperatoris ingressus in regna Sicilie | Particula XXII.: Augustalis oratio pro vindicta</data>
+    </edge>
+    <edge source="charlemagne" target="apulia" id="0">
+      <data key="d4">co-mentioned</data>
+      <data key="d5">1.25</data>
+      <data key="d6">Particula XXII.: Augustalis oratio pro vindicta</data>
+      <data key="d7">Particula XXII.: Augustalis oratio pro vindicta</data>
+    </edge>
+    <edge source="charlemagne" target="celestine_iii" id="0">
+      <data key="d4">co-mentioned</data>
+      <data key="d5">1.25</data>
+      <data key="d6">Particula XXII.: Augustalis oratio pro vindicta</data>
+      <data key="d7">Particula XXII.: Augustalis oratio pro vindicta</data>
+    </edge>
+    <edge source="charlemagne" target="constance" id="0">
+      <data key="d4">co-mentioned</data>
+      <data key="d5">1.25</data>
+      <data key="d6">Particula XXII.: Augustalis oratio pro vindicta</data>
+      <data key="d7">Particula XXII.: Augustalis oratio pro vindicta</data>
+    </edge>
+    <edge source="charlemagne" target="monte_cassino" id="0">
+      <data key="d4">co-mentioned</data>
+      <data key="d5">1.25</data>
+      <data key="d6">Particula XXII.: Augustalis oratio pro vindicta</data>
+      <data key="d7">Particula XXII.: Augustalis oratio pro vindicta</data>
+    </edge>
+    <edge source="charlemagne" target="naples" id="0">
+      <data key="d4">co-mentioned</data>
+      <data key="d5">1.25</data>
+      <data key="d6">Particula XXII.: Augustalis oratio pro vindicta</data>
+      <data key="d7">Particula XXII.: Augustalis oratio pro vindicta</data>
+    </edge>
+    <edge source="charlemagne" target="octavian" id="0">
+      <data key="d4">co-mentioned</data>
+      <data key="d5">1.25</data>
+      <data key="d6">Particula XXII.: Augustalis oratio pro vindicta</data>
+      <data key="d7">Particula XXII.: Augustalis oratio pro vindicta</data>
+    </edge>
+    <edge source="charlemagne" target="palermo" id="0">
+      <data key="d4">co-mentioned</data>
+      <data key="d5">1.25</data>
+      <data key="d6">Particula XXII.: Augustalis oratio pro vindicta</data>
+      <data key="d7">Particula XXII.: Augustalis oratio pro vindicta</data>
+    </edge>
+    <edge source="charlemagne" target="peter_apostle" id="0">
+      <data key="d4">co-mentioned</data>
+      <data key="d5">1.25</data>
+      <data key="d6">Particula XXII.: Augustalis oratio pro vindicta</data>
+      <data key="d7">Particula XXII.: Augustalis oratio pro vindicta</data>
+    </edge>
+    <edge source="charlemagne" target="rocca_de_archis" id="0">
+      <data key="d4">co-mentioned</data>
+      <data key="d5">1.25</data>
+      <data key="d6">Particula XXII.: Augustalis oratio pro vindicta</data>
+      <data key="d7">Particula XXII.: Augustalis oratio pro vindicta</data>
+    </edge>
+    <edge source="charlemagne" target="roger_andria" id="0">
+      <data key="d4">co-mentioned</data>
+      <data key="d5">1.25</data>
+      <data key="d6">Particula XXII.: Augustalis oratio pro vindicta</data>
+      <data key="d7">Particula XXII.: Augustalis oratio pro vindicta</data>
+    </edge>
+    <edge source="charlemagne" target="rome" id="0">
+      <data key="d4">co-mentioned</data>
+      <data key="d5">1.25</data>
+      <data key="d6">Particula XXII.: Augustalis oratio pro vindicta</data>
+      <data key="d7">Particula XXII.: Augustalis oratio pro vindicta</data>
+    </edge>
+    <edge source="charlemagne" target="salerno" id="0">
+      <data key="d4">co-mentioned</data>
+      <data key="d5">1.25</data>
+      <data key="d6">Particula XXII.: Augustalis oratio pro vindicta</data>
+      <data key="d7">Particula XXII.: Augustalis oratio pro vindicta</data>
+    </edge>
+    <edge source="charlemagne" target="sibilia" id="0">
+      <data key="d4">co-mentioned</data>
+      <data key="d5">1.25</data>
+      <data key="d6">Particula XXII.: Augustalis oratio pro vindicta</data>
+      <data key="d7">Particula XXII.: Augustalis oratio pro vindicta</data>
+    </edge>
+    <edge source="charlemagne" target="tancred" id="0">
+      <data key="d4">co-mentioned</data>
+      <data key="d5">1.25</data>
+      <data key="d6">Particula XXII.: Augustalis oratio pro vindicta</data>
+      <data key="d7">Particula XXII.: Augustalis oratio pro vindicta</data>
+    </edge>
+    <edge source="consanus" target="bartholomew" id="0">
+      <data key="d4">co-mentioned</data>
+      <data key="d5">1.25</data>
+      <data key="d6">Particula XI.: Regni legatio</data>
+      <data key="d7">Particula XI.: Regni legatio</data>
+    </edge>
+    <edge source="consanus" target="capua" id="0">
+      <data key="d4">co-mentioned</data>
+      <data key="d5">1.25</data>
+      <data key="d6">Particula XI.: Regni legatio</data>
+      <data key="d7">Particula XI.: Regni legatio</data>
+    </edge>
+    <edge source="consanus" target="lupini" id="0">
+      <data key="d4">co-mentioned</data>
+      <data key="d5">1.25</data>
+      <data key="d6">Particula XI.: Regni legatio</data>
+      <data key="d7">Particula XI.: Regni legatio</data>
+    </edge>
+    <edge source="consanus" target="molisius" id="0">
+      <data key="d4">co-mentioned</data>
+      <data key="d5">1.25</data>
+      <data key="d6">Particula XI.: Regni legatio</data>
+      <data key="d7">Particula XI.: Regni legatio</data>
+    </edge>
+    <edge source="consanus" target="palermo" id="0">
+      <data key="d4">co-mentioned</data>
+      <data key="d5">1.25</data>
+      <data key="d6">Particula XI.: Regni legatio</data>
+      <data key="d7">Particula XI.: Regni legatio</data>
+    </edge>
+    <edge source="consanus" target="roger_ii" id="0">
+      <data key="d4">co-mentioned</data>
+      <data key="d5">1.25</data>
+      <data key="d6">Particula XI.: Regni legatio</data>
+      <data key="d7">Particula XI.: Regni legatio</data>
+    </edge>
+    <edge source="consanus" target="salerno" id="0">
+      <data key="d4">co-mentioned</data>
+      <data key="d5">1.25</data>
+      <data key="d6">Particula XI.: Regni legatio</data>
+      <data key="d7">Particula XI.: Regni legatio</data>
+    </edge>
+    <edge source="sicily" target="henry_vi" id="0">
+      <data key="d4">co-mentioned</data>
+      <data key="d5">3.0</data>
+      <data key="d6">Liber ad honorem Augusti sive de rebus Siculis | Front Matter | Particula VII.: Spuriosa unctio regni | Particula XII.:Primus imperatoris ingressus in regna Sicilie</data>
+      <data key="d7">Front Matter | Particula VII.: Spuriosa unctio regni | Particula XII.:Primus imperatoris ingressus in regna Sicilie | Particula XXII.: Augustalis oratio pro vindicta</data>
+    </edge>
+    <edge source="sicily" target="peter_apostle" id="0">
+      <data key="d4">co-mentioned</data>
+      <data key="d5">1.5</data>
+      <data key="d6">Front Matter | Particula XXII.: Augustalis oratio pro vindicta</data>
+      <data key="d7">Front Matter | Particula XXII.: Augustalis oratio pro vindicta</data>
+    </edge>
+    <edge source="sicily" target="palermo" id="0">
+      <data key="d4">co-mentioned</data>
+      <data key="d5">1.5</data>
+      <data key="d6">Particula VII.: Spuriosa unctio regni | Particula XXII.: Augustalis oratio pro vindicta</data>
+      <data key="d7">Particula VII.: Spuriosa unctio regni | Particula XXII.: Augustalis oratio pro vindicta</data>
+    </edge>
+    <edge source="sicily" target="frederick_i" id="0">
+      <data key="d4">co-mentioned</data>
+      <data key="d5">1.5</data>
+      <data key="d6">Particula XII.:Primus imperatoris ingressus in regna Sicilie | Particula XXII.: Augustalis oratio pro vindicta</data>
+      <data key="d7">Particula XII.:Primus imperatoris ingressus in regna Sicilie | Particula XXII.: Augustalis oratio pro vindicta</data>
+    </edge>
+    <edge source="sicily" target="rome" id="0">
+      <data key="d4">succession</data>
+      <data key="d5">4.2</data>
+      <data key="d6">SICILIAM repetens, Rome reget aurea sceptra.</data>
+      <data key="d7">Particula XXII.: Augustalis oratio pro vindicta</data>
+    </edge>
+    <edge source="sicily" target="rome" id="1">
+      <data key="d4">co-mentioned</data>
+      <data key="d5">1.25</data>
+      <data key="d6">Particula XXII.: Augustalis oratio pro vindicta</data>
+      <data key="d7">Particula XXII.: Augustalis oratio pro vindicta</data>
+    </edge>
+    <edge source="sicily" target="apulia" id="0">
+      <data key="d4">co-mentioned</data>
+      <data key="d5">1.25</data>
+      <data key="d6">Particula XXII.: Augustalis oratio pro vindicta</data>
+      <data key="d7">Particula XXII.: Augustalis oratio pro vindicta</data>
+    </edge>
+    <edge source="sicily" target="celestine_iii" id="0">
+      <data key="d4">co-mentioned</data>
+      <data key="d5">1.25</data>
+      <data key="d6">Particula XXII.: Augustalis oratio pro vindicta</data>
+      <data key="d7">Particula XXII.: Augustalis oratio pro vindicta</data>
+    </edge>
+    <edge source="sicily" target="constance" id="0">
+      <data key="d4">co-mentioned</data>
+      <data key="d5">1.25</data>
+      <data key="d6">Particula XXII.: Augustalis oratio pro vindicta</data>
+      <data key="d7">Particula XXII.: Augustalis oratio pro vindicta</data>
+    </edge>
+    <edge source="sicily" target="monte_cassino" id="0">
+      <data key="d4">co-mentioned</data>
+      <data key="d5">1.25</data>
+      <data key="d6">Particula XXII.: Augustalis oratio pro vindicta</data>
+      <data key="d7">Particula XXII.: Augustalis oratio pro vindicta</data>
+    </edge>
+    <edge source="sicily" target="naples" id="0">
+      <data key="d4">co-mentioned</data>
+      <data key="d5">1.25</data>
+      <data key="d6">Particula XXII.: Augustalis oratio pro vindicta</data>
+      <data key="d7">Particula XXII.: Augustalis oratio pro vindicta</data>
+    </edge>
+    <edge source="sicily" target="octavian" id="0">
+      <data key="d4">co-mentioned</data>
+      <data key="d5">1.25</data>
+      <data key="d6">Particula XXII.: Augustalis oratio pro vindicta</data>
+      <data key="d7">Particula XXII.: Augustalis oratio pro vindicta</data>
+    </edge>
+    <edge source="sicily" target="rocca_de_archis" id="0">
+      <data key="d4">co-mentioned</data>
+      <data key="d5">1.25</data>
+      <data key="d6">Particula XXII.: Augustalis oratio pro vindicta</data>
+      <data key="d7">Particula XXII.: Augustalis oratio pro vindicta</data>
+    </edge>
+    <edge source="sicily" target="roger_andria" id="0">
+      <data key="d4">co-mentioned</data>
+      <data key="d5">1.25</data>
+      <data key="d6">Particula XXII.: Augustalis oratio pro vindicta</data>
+      <data key="d7">Particula XXII.: Augustalis oratio pro vindicta</data>
+    </edge>
+    <edge source="sicily" target="salerno" id="0">
+      <data key="d4">co-mentioned</data>
+      <data key="d5">1.25</data>
+      <data key="d6">Particula XXII.: Augustalis oratio pro vindicta</data>
+      <data key="d7">Particula XXII.: Augustalis oratio pro vindicta</data>
+    </edge>
+    <edge source="sicily" target="sibilia" id="0">
+      <data key="d4">co-mentioned</data>
+      <data key="d5">1.25</data>
+      <data key="d6">Particula XXII.: Augustalis oratio pro vindicta</data>
+      <data key="d7">Particula XXII.: Augustalis oratio pro vindicta</data>
+    </edge>
+    <edge source="sicily" target="tancred" id="0">
+      <data key="d4">co-mentioned</data>
+      <data key="d5">1.25</data>
+      <data key="d6">Particula XXII.: Augustalis oratio pro vindicta</data>
+      <data key="d7">Particula XXII.: Augustalis oratio pro vindicta</data>
+    </edge>
+    <edge source="molisius" target="bartholomew" id="0">
+      <data key="d4">co-mentioned</data>
+      <data key="d5">1.25</data>
+      <data key="d6">Particula XI.: Regni legatio</data>
+      <data key="d7">Particula XI.: Regni legatio</data>
+    </edge>
+    <edge source="molisius" target="capua" id="0">
+      <data key="d4">co-mentioned</data>
+      <data key="d5">1.25</data>
+      <data key="d6">Particula XI.: Regni legatio</data>
+      <data key="d7">Particula XI.: Regni legatio</data>
+    </edge>
+    <edge source="molisius" target="lupini" id="0">
+      <data key="d4">co-mentioned</data>
+      <data key="d5">1.25</data>
+      <data key="d6">Particula XI.: Regni legatio</data>
+      <data key="d7">Particula XI.: Regni legatio</data>
+    </edge>
+    <edge source="molisius" target="palermo" id="0">
+      <data key="d4">co-mentioned</data>
+      <data key="d5">1.25</data>
+      <data key="d6">Particula XI.: Regni legatio</data>
+      <data key="d7">Particula XI.: Regni legatio</data>
+    </edge>
+    <edge source="molisius" target="roger_ii" id="0">
+      <data key="d4">co-mentioned</data>
+      <data key="d5">1.25</data>
+      <data key="d6">Particula XI.: Regni legatio</data>
+      <data key="d7">Particula XI.: Regni legatio</data>
+    </edge>
+    <edge source="molisius" target="salerno" id="0">
+      <data key="d4">co-mentioned</data>
+      <data key="d5">1.25</data>
+      <data key="d6">Particula XI.: Regni legatio</data>
+      <data key="d7">Particula XI.: Regni legatio</data>
+    </edge>
+    <edge source="roger_ii" target="robert_guiscard" id="0">
+      <data key="d4">co-mentioned</data>
+      <data key="d5">2.25</data>
+      <data key="d6">Dux ubi Roggerius, Guiscardi clara propago, | Incipit prima primi regis Siciliae particula</data>
+      <data key="d7">Incipit prima primi regis Siciliae particula</data>
+    </edge>
+    <edge source="roger_ii" target="albidia" id="0">
+      <data key="d4">co-mentioned</data>
+      <data key="d5">1.25</data>
+      <data key="d6">Incipit prima primi regis Siciliae particula</data>
+      <data key="d7">Incipit prima primi regis Siciliae particula</data>
+    </edge>
+    <edge source="roger_ii" target="beatrix" id="0">
+      <data key="d4">co-mentioned</data>
+      <data key="d5">1.25</data>
+      <data key="d6">Incipit prima primi regis Siciliae particula</data>
+      <data key="d7">Incipit prima primi regis Siciliae particula</data>
+    </edge>
+    <edge source="roger_ii" target="callistus_ii" id="0">
+      <data key="d4">co-mentioned</data>
+      <data key="d5">1.25</data>
+      <data key="d6">Incipit prima primi regis Siciliae particula</data>
+      <data key="d7">Incipit prima primi regis Siciliae particula</data>
+    </edge>
+    <edge source="roger_ii" target="celestine_iii" id="0">
+      <data key="d4">co-mentioned</data>
+      <data key="d5">1.25</data>
+      <data key="d6">Incipit prima primi regis Siciliae particula</data>
+      <data key="d7">Incipit prima primi regis Siciliae particula</data>
+    </edge>
+    <edge source="roger_ii" target="constance" id="0">
+      <data key="d4">co-mentioned</data>
+      <data key="d5">1.25</data>
+      <data key="d6">Incipit prima primi regis Siciliae particula</data>
+      <data key="d7">Incipit prima primi regis Siciliae particula</data>
+    </edge>
+    <edge source="roger_ii" target="henry_vi" id="0">
+      <data key="d4">co-mentioned</data>
+      <data key="d5">1.25</data>
+      <data key="d6">Incipit prima primi regis Siciliae particula</data>
+      <data key="d7">Incipit prima primi regis Siciliae particula</data>
+    </edge>
+    <edge source="roger_ii" target="lucius_iii" id="0">
+      <data key="d4">co-mentioned</data>
+      <data key="d5">1.25</data>
+      <data key="d6">Incipit prima primi regis Siciliae particula</data>
+      <data key="d7">Incipit prima primi regis Siciliae particula</data>
+    </edge>
+    <edge source="roger_ii" target="rome" id="0">
+      <data key="d4">co-mentioned</data>
+      <data key="d5">1.25</data>
+      <data key="d6">Incipit prima primi regis Siciliae particula</data>
+      <data key="d7">Incipit prima primi regis Siciliae particula</data>
+    </edge>
+    <edge source="roger_ii" target="sibilia" id="0">
+      <data key="d4">co-mentioned</data>
+      <data key="d5">1.25</data>
+      <data key="d6">Incipit prima primi regis Siciliae particula</data>
+      <data key="d7">Incipit prima primi regis Siciliae particula</data>
+    </edge>
+    <edge source="roger_ii" target="bartholomew" id="0">
+      <data key="d4">co-mentioned</data>
+      <data key="d5">1.25</data>
+      <data key="d6">Particula XI.: Regni legatio</data>
+      <data key="d7">Particula XI.: Regni legatio</data>
+    </edge>
+    <edge source="roger_ii" target="capua" id="0">
+      <data key="d4">co-mentioned</data>
+      <data key="d5">1.25</data>
+      <data key="d6">Particula XI.: Regni legatio</data>
+      <data key="d7">Particula XI.: Regni legatio</data>
+    </edge>
+    <edge source="roger_ii" target="lupini" id="0">
+      <data key="d4">co-mentioned</data>
+      <data key="d5">1.25</data>
+      <data key="d6">Particula XI.: Regni legatio</data>
+      <data key="d7">Particula XI.: Regni legatio</data>
+    </edge>
+    <edge source="roger_ii" target="palermo" id="0">
+      <data key="d4">co-mentioned</data>
+      <data key="d5">1.25</data>
+      <data key="d6">Particula XI.: Regni legatio</data>
+      <data key="d7">Particula XI.: Regni legatio</data>
+    </edge>
+    <edge source="roger_ii" target="salerno" id="0">
+      <data key="d4">co-mentioned</data>
+      <data key="d5">1.25</data>
+      <data key="d6">Particula XI.: Regni legatio</data>
+      <data key="d7">Particula XI.: Regni legatio</data>
+    </edge>
+    <edge source="bartholomew" target="capua" id="0">
+      <data key="d4">co-mentioned</data>
+      <data key="d5">1.25</data>
+      <data key="d6">Particula XI.: Regni legatio</data>
+      <data key="d7">Particula XI.: Regni legatio</data>
+    </edge>
+    <edge source="bartholomew" target="lupini" id="0">
+      <data key="d4">co-mentioned</data>
+      <data key="d5">1.25</data>
+      <data key="d6">Particula XI.: Regni legatio</data>
+      <data key="d7">Particula XI.: Regni legatio</data>
+    </edge>
+    <edge source="bartholomew" target="palermo" id="0">
+      <data key="d4">co-mentioned</data>
+      <data key="d5">1.25</data>
+      <data key="d6">Particula XI.: Regni legatio</data>
+      <data key="d7">Particula XI.: Regni legatio</data>
+    </edge>
+    <edge source="bartholomew" target="salerno" id="0">
+      <data key="d4">co-mentioned</data>
+      <data key="d5">1.25</data>
+      <data key="d6">Particula XI.: Regni legatio</data>
+      <data key="d7">Particula XI.: Regni legatio</data>
+    </edge>
+    <edge source="sibilia" target="albidia" id="0">
+      <data key="d4">co-mentioned</data>
+      <data key="d5">1.25</data>
+      <data key="d6">Incipit prima primi regis Siciliae particula</data>
+      <data key="d7">Incipit prima primi regis Siciliae particula</data>
+    </edge>
+    <edge source="sibilia" target="beatrix" id="0">
+      <data key="d4">co-mentioned</data>
+      <data key="d5">1.25</data>
+      <data key="d6">Incipit prima primi regis Siciliae particula</data>
+      <data key="d7">Incipit prima primi regis Siciliae particula</data>
+    </edge>
+    <edge source="sibilia" target="callistus_ii" id="0">
+      <data key="d4">co-mentioned</data>
+      <data key="d5">1.25</data>
+      <data key="d6">Incipit prima primi regis Siciliae particula</data>
+      <data key="d7">Incipit prima primi regis Siciliae particula</data>
+    </edge>
+    <edge source="sibilia" target="celestine_iii" id="0">
+      <data key="d4">co-mentioned</data>
+      <data key="d5">1.5</data>
+      <data key="d6">Incipit prima primi regis Siciliae particula | Particula XXII.: Augustalis oratio pro vindicta</data>
+      <data key="d7">Incipit prima primi regis Siciliae particula | Particula XXII.: Augustalis oratio pro vindicta</data>
+    </edge>
+    <edge source="sibilia" target="constance" id="0">
+      <data key="d4">co-mentioned</data>
+      <data key="d5">1.5</data>
+      <data key="d6">Incipit prima primi regis Siciliae particula | Particula XXII.: Augustalis oratio pro vindicta</data>
+      <data key="d7">Incipit prima primi regis Siciliae particula | Particula XXII.: Augustalis oratio pro vindicta</data>
+    </edge>
+    <edge source="sibilia" target="henry_vi" id="0">
+      <data key="d4">co-mentioned</data>
+      <data key="d5">1.5</data>
+      <data key="d6">Incipit prima primi regis Siciliae particula | Particula XXII.: Augustalis oratio pro vindicta</data>
+      <data key="d7">Incipit prima primi regis Siciliae particula | Particula XXII.: Augustalis oratio pro vindicta</data>
+    </edge>
+    <edge source="sibilia" target="lucius_iii" id="0">
+      <data key="d4">co-mentioned</data>
+      <data key="d5">1.25</data>
+      <data key="d6">Incipit prima primi regis Siciliae particula</data>
+      <data key="d7">Incipit prima primi regis Siciliae particula</data>
+    </edge>
+    <edge source="sibilia" target="robert_guiscard" id="0">
+      <data key="d4">co-mentioned</data>
+      <data key="d5">1.25</data>
+      <data key="d6">Incipit prima primi regis Siciliae particula</data>
+      <data key="d7">Incipit prima primi regis Siciliae particula</data>
+    </edge>
+    <edge source="sibilia" target="rome" id="0">
+      <data key="d4">co-mentioned</data>
+      <data key="d5">1.5</data>
+      <data key="d6">Incipit prima primi regis Siciliae particula | Particula XXII.: Augustalis oratio pro vindicta</data>
+      <data key="d7">Incipit prima primi regis Siciliae particula | Particula XXII.: Augustalis oratio pro vindicta</data>
+    </edge>
+    <edge source="sibilia" target="tancred" id="0">
+      <data key="d4">communication</data>
+      <data key="d5">3.0</data>
+      <data key="d6">"Hoc ego Tancredus tibi mitto, Sibilia, scriptum,</data>
+      <data key="d7">Particula XXII.: Augustalis oratio pro vindicta</data>
+    </edge>
+    <edge source="sibilia" target="tancred" id="1">
+      <data key="d4">co-mentioned</data>
+      <data key="d5">1.25</data>
+      <data key="d6">Particula XXII.: Augustalis oratio pro vindicta</data>
+      <data key="d7">Particula XXII.: Augustalis oratio pro vindicta</data>
+    </edge>
+    <edge source="sibilia" target="apulia" id="0">
+      <data key="d4">co-mentioned</data>
+      <data key="d5">1.25</data>
+      <data key="d6">Particula XXII.: Augustalis oratio pro vindicta</data>
+      <data key="d7">Particula XXII.: Augustalis oratio pro vindicta</data>
+    </edge>
+    <edge source="sibilia" target="frederick_i" id="0">
+      <data key="d4">co-mentioned</data>
+      <data key="d5">1.25</data>
+      <data key="d6">Particula XXII.: Augustalis oratio pro vindicta</data>
+      <data key="d7">Particula XXII.: Augustalis oratio pro vindicta</data>
+    </edge>
+    <edge source="sibilia" target="monte_cassino" id="0">
+      <data key="d4">co-mentioned</data>
+      <data key="d5">1.25</data>
+      <data key="d6">Particula XXII.: Augustalis oratio pro vindicta</data>
+      <data key="d7">Particula XXII.: Augustalis oratio pro vindicta</data>
+    </edge>
+    <edge source="sibilia" target="naples" id="0">
+      <data key="d4">co-mentioned</data>
+      <data key="d5">1.25</data>
+      <data key="d6">Particula XXII.: Augustalis oratio pro vindicta</data>
+      <data key="d7">Particula XXII.: Augustalis oratio pro vindicta</data>
+    </edge>
+    <edge source="sibilia" target="octavian" id="0">
+      <data key="d4">co-mentioned</data>
+      <data key="d5">1.25</data>
+      <data key="d6">Particula XXII.: Augustalis oratio pro vindicta</data>
+      <data key="d7">Particula XXII.: Augustalis oratio pro vindicta</data>
+    </edge>
+    <edge source="sibilia" target="palermo" id="0">
+      <data key="d4">co-mentioned</data>
+      <data key="d5">1.25</data>
+      <data key="d6">Particula XXII.: Augustalis oratio pro vindicta</data>
+      <data key="d7">Particula XXII.: Augustalis oratio pro vindicta</data>
+    </edge>
+    <edge source="sibilia" target="peter_apostle" id="0">
+      <data key="d4">co-mentioned</data>
+      <data key="d5">1.25</data>
+      <data key="d6">Particula XXII.: Augustalis oratio pro vindicta</data>
+      <data key="d7">Particula XXII.: Augustalis oratio pro vindicta</data>
+    </edge>
+    <edge source="sibilia" target="rocca_de_archis" id="0">
+      <data key="d4">co-mentioned</data>
+      <data key="d5">1.25</data>
+      <data key="d6">Particula XXII.: Augustalis oratio pro vindicta</data>
+      <data key="d7">Particula XXII.: Augustalis oratio pro vindicta</data>
+    </edge>
+    <edge source="sibilia" target="roger_andria" id="0">
+      <data key="d4">co-mentioned</data>
+      <data key="d5">1.25</data>
+      <data key="d6">Particula XXII.: Augustalis oratio pro vindicta</data>
+      <data key="d7">Particula XXII.: Augustalis oratio pro vindicta</data>
+    </edge>
+    <edge source="sibilia" target="salerno" id="0">
+      <data key="d4">co-mentioned</data>
+      <data key="d5">1.25</data>
+      <data key="d6">Particula XXII.: Augustalis oratio pro vindicta</data>
+      <data key="d7">Particula XXII.: Augustalis oratio pro vindicta</data>
+    </edge>
+    <edge source="lupini" target="capua" id="0">
+      <data key="d4">co-mentioned</data>
+      <data key="d5">1.25</data>
+      <data key="d6">Particula XI.: Regni legatio</data>
+      <data key="d7">Particula XI.: Regni legatio</data>
+    </edge>
+    <edge source="lupini" target="palermo" id="0">
+      <data key="d4">co-mentioned</data>
+      <data key="d5">1.25</data>
+      <data key="d6">Particula XI.: Regni legatio</data>
+      <data key="d7">Particula XI.: Regni legatio</data>
+    </edge>
+    <edge source="lupini" target="salerno" id="0">
+      <data key="d4">co-mentioned</data>
+      <data key="d5">1.25</data>
+      <data key="d6">Particula XI.: Regni legatio</data>
+      <data key="d7">Particula XI.: Regni legatio</data>
+    </edge>
+    <edge source="apulia" target="henry_vi" id="0">
+      <data key="d4">co-mentioned</data>
+      <data key="d5">1.5</data>
+      <data key="d6">Particula IX.: Abortivi fallax iniquitas proscribit ascriptos | Particula XXII.: Augustalis oratio pro vindicta</data>
+      <data key="d7">Particula IX.: Abortivi fallax iniquitas proscribit ascriptos | Particula XXII.: Augustalis oratio pro vindicta</data>
+    </edge>
+    <edge source="apulia" target="octavian" id="0">
+      <data key="d4">co-mentioned</data>
+      <data key="d5">1.5</data>
+      <data key="d6">Particula IX.: Abortivi fallax iniquitas proscribit ascriptos | Particula XXII.: Augustalis oratio pro vindicta</data>
+      <data key="d7">Particula IX.: Abortivi fallax iniquitas proscribit ascriptos | Particula XXII.: Augustalis oratio pro vindicta</data>
+    </edge>
+    <edge source="apulia" target="peter_apostle" id="0">
+      <data key="d4">co-mentioned</data>
+      <data key="d5">1.5</data>
+      <data key="d6">Particula IX.: Abortivi fallax iniquitas proscribit ascriptos | Particula XXII.: Augustalis oratio pro vindicta</data>
+      <data key="d7">Particula IX.: Abortivi fallax iniquitas proscribit ascriptos | Particula XXII.: Augustalis oratio pro vindicta</data>
+    </edge>
+    <edge source="apulia" target="roger_andria" id="0">
+      <data key="d4">co-mentioned</data>
+      <data key="d5">1.5</data>
+      <data key="d6">Particula IX.: Abortivi fallax iniquitas proscribit ascriptos | Particula XXII.: Augustalis oratio pro vindicta</data>
+      <data key="d7">Particula IX.: Abortivi fallax iniquitas proscribit ascriptos | Particula XXII.: Augustalis oratio pro vindicta</data>
+    </edge>
+    <edge source="apulia" target="rome" id="0">
+      <data key="d4">co-mentioned</data>
+      <data key="d5">1.5</data>
+      <data key="d6">Particula IX.: Abortivi fallax iniquitas proscribit ascriptos | Particula XXII.: Augustalis oratio pro vindicta</data>
+      <data key="d7">Particula IX.: Abortivi fallax iniquitas proscribit ascriptos | Particula XXII.: Augustalis oratio pro vindicta</data>
+    </edge>
+    <edge source="apulia" target="salerno" id="0">
+      <data key="d4">co-mentioned</data>
+      <data key="d5">2.25</data>
+      <data key="d6">Letus in Apuliam properat primoque Salernum | Particula XXII.: Augustalis oratio pro vindicta</data>
+      <data key="d7">Particula XXII.: Augustalis oratio pro vindicta</data>
+    </edge>
+    <edge source="apulia" target="celestine_iii" id="0">
+      <data key="d4">co-mentioned</data>
+      <data key="d5">1.25</data>
+      <data key="d6">Particula XXII.: Augustalis oratio pro vindicta</data>
+      <data key="d7">Particula XXII.: Augustalis oratio pro vindicta</data>
+    </edge>
+    <edge source="apulia" target="constance" id="0">
+      <data key="d4">co-mentioned</data>
+      <data key="d5">1.25</data>
+      <data key="d6">Particula XXII.: Augustalis oratio pro vindicta</data>
+      <data key="d7">Particula XXII.: Augustalis oratio pro vindicta</data>
+    </edge>
+    <edge source="apulia" target="frederick_i" id="0">
+      <data key="d4">co-mentioned</data>
+      <data key="d5">1.25</data>
+      <data key="d6">Particula XXII.: Augustalis oratio pro vindicta</data>
+      <data key="d7">Particula XXII.: Augustalis oratio pro vindicta</data>
+    </edge>
+    <edge source="apulia" target="monte_cassino" id="0">
+      <data key="d4">co-mentioned</data>
+      <data key="d5">1.25</data>
+      <data key="d6">Particula XXII.: Augustalis oratio pro vindicta</data>
+      <data key="d7">Particula XXII.: Augustalis oratio pro vindicta</data>
+    </edge>
+    <edge source="apulia" target="naples" id="0">
+      <data key="d4">co-mentioned</data>
+      <data key="d5">1.25</data>
+      <data key="d6">Particula XXII.: Augustalis oratio pro vindicta</data>
+      <data key="d7">Particula XXII.: Augustalis oratio pro vindicta</data>
+    </edge>
+    <edge source="apulia" target="palermo" id="0">
+      <data key="d4">co-mentioned</data>
+      <data key="d5">1.25</data>
+      <data key="d6">Particula XXII.: Augustalis oratio pro vindicta</data>
+      <data key="d7">Particula XXII.: Augustalis oratio pro vindicta</data>
+    </edge>
+    <edge source="apulia" target="rocca_de_archis" id="0">
+      <data key="d4">co-mentioned</data>
+      <data key="d5">1.25</data>
+      <data key="d6">Particula XXII.: Augustalis oratio pro vindicta</data>
+      <data key="d7">Particula XXII.: Augustalis oratio pro vindicta</data>
+    </edge>
+    <edge source="apulia" target="tancred" id="0">
+      <data key="d4">co-mentioned</data>
+      <data key="d5">1.25</data>
+      <data key="d6">Particula XXII.: Augustalis oratio pro vindicta</data>
+      <data key="d7">Particula XXII.: Augustalis oratio pro vindicta</data>
+    </edge>
+    <edge source="palermo" target="henry_vi" id="0">
+      <data key="d4">co-mentioned</data>
+      <data key="d5">2.5</data>
+      <data key="d6">Particula VII.: Spuriosa unctio regni | Post hec, assissis sociis, Augusta Panormum | Particula XXII.: Augustalis oratio pro vindicta</data>
+      <data key="d7">Particula VII.: Spuriosa unctio regni | Particula XXII.: Augustalis oratio pro vindicta</data>
+    </edge>
+    <edge source="palermo" target="capua" id="0">
+      <data key="d4">co-mentioned</data>
+      <data key="d5">1.25</data>
+      <data key="d6">Particula XI.: Regni legatio</data>
+      <data key="d7">Particula XI.: Regni legatio</data>
+    </edge>
+    <edge source="palermo" target="salerno" id="0">
+      <data key="d4">co-mentioned</data>
+      <data key="d5">1.5</data>
+      <data key="d6">Particula XI.: Regni legatio | Particula XXII.: Augustalis oratio pro vindicta</data>
+      <data key="d7">Particula XI.: Regni legatio | Particula XXII.: Augustalis oratio pro vindicta</data>
+    </edge>
+    <edge source="palermo" target="tancred" id="0">
+      <data key="d4">co-mentioned</data>
+      <data key="d5">2.25</data>
+      <data key="d6">"Veniam, Tancrede, Panormum | Particula XXII.: Augustalis oratio pro vindicta</data>
+      <data key="d7">Particula XXII.: Augustalis oratio pro vindicta</data>
+    </edge>
+    <edge source="palermo" target="celestine_iii" id="0">
+      <data key="d4">co-mentioned</data>
+      <data key="d5">1.25</data>
+      <data key="d6">Particula XXII.: Augustalis oratio pro vindicta</data>
+      <data key="d7">Particula XXII.: Augustalis oratio pro vindicta</data>
+    </edge>
+    <edge source="palermo" target="constance" id="0">
+      <data key="d4">co-mentioned</data>
+      <data key="d5">1.25</data>
+      <data key="d6">Particula XXII.: Augustalis oratio pro vindicta</data>
+      <data key="d7">Particula XXII.: Augustalis oratio pro vindicta</data>
+    </edge>
+    <edge source="palermo" target="frederick_i" id="0">
+      <data key="d4">co-mentioned</data>
+      <data key="d5">1.25</data>
+      <data key="d6">Particula XXII.: Augustalis oratio pro vindicta</data>
+      <data key="d7">Particula XXII.: Augustalis oratio pro vindicta</data>
+    </edge>
+    <edge source="palermo" target="monte_cassino" id="0">
+      <data key="d4">co-mentioned</data>
+      <data key="d5">1.25</data>
+      <data key="d6">Particula XXII.: Augustalis oratio pro vindicta</data>
+      <data key="d7">Particula XXII.: Augustalis oratio pro vindicta</data>
+    </edge>
+    <edge source="palermo" target="naples" id="0">
+      <data key="d4">co-mentioned</data>
+      <data key="d5">1.25</data>
+      <data key="d6">Particula XXII.: Augustalis oratio pro vindicta</data>
+      <data key="d7">Particula XXII.: Augustalis oratio pro vindicta</data>
+    </edge>
+    <edge source="palermo" target="octavian" id="0">
+      <data key="d4">co-mentioned</data>
+      <data key="d5">1.25</data>
+      <data key="d6">Particula XXII.: Augustalis oratio pro vindicta</data>
+      <data key="d7">Particula XXII.: Augustalis oratio pro vindicta</data>
+    </edge>
+    <edge source="palermo" target="peter_apostle" id="0">
+      <data key="d4">co-mentioned</data>
+      <data key="d5">1.25</data>
+      <data key="d6">Particula XXII.: Augustalis oratio pro vindicta</data>
+      <data key="d7">Particula XXII.: Augustalis oratio pro vindicta</data>
+    </edge>
+    <edge source="palermo" target="rocca_de_archis" id="0">
+      <data key="d4">co-mentioned</data>
+      <data key="d5">1.25</data>
+      <data key="d6">Particula XXII.: Augustalis oratio pro vindicta</data>
+      <data key="d7">Particula XXII.: Augustalis oratio pro vindicta</data>
+    </edge>
+    <edge source="palermo" target="roger_andria" id="0">
+      <data key="d4">co-mentioned</data>
+      <data key="d5">1.25</data>
+      <data key="d6">Particula XXII.: Augustalis oratio pro vindicta</data>
+      <data key="d7">Particula XXII.: Augustalis oratio pro vindicta</data>
+    </edge>
+    <edge source="palermo" target="rome" id="0">
+      <data key="d4">co-mentioned</data>
+      <data key="d5">1.25</data>
+      <data key="d6">Particula XXII.: Augustalis oratio pro vindicta</data>
+      <data key="d7">Particula XXII.: Augustalis oratio pro vindicta</data>
+    </edge>
+    <edge source="roger_andria" target="tancred" id="0">
+      <data key="d4">support</data>
+      <data key="d5">3.4</data>
+      <data key="d6">Tancredum petit hic, comitem petit ille Rogerum:</data>
+      <data key="d7">Particula IV.: Adversa et diversa petentium voluntas</data>
+    </edge>
+    <edge source="roger_andria" target="tancred" id="1">
+      <data key="d4">co-mentioned</data>
+      <data key="d5">1.75</data>
+      <data key="d6">Particula IV.: Adversa et diversa petentium voluntas | Particula V.: Suasio vicecancellarii dissuadentis ad presulem Panormi | Particula XXII.: Augustalis oratio pro vindicta</data>
+      <data key="d7">Particula IV.: Adversa et diversa petentium voluntas | Particula V.: Suasio vicecancellarii dissuadentis ad presulem Panormi | Particula XXII.: Augustalis oratio pro vindicta</data>
+    </edge>
+    <edge source="roger_andria" target="constance" id="0">
+      <data key="d4">co-mentioned</data>
+      <data key="d5">1.5</data>
+      <data key="d6">Particula V.: Suasio vicecancellarii dissuadentis ad presulem Panormi | Particula XXII.: Augustalis oratio pro vindicta</data>
+      <data key="d7">Particula V.: Suasio vicecancellarii dissuadentis ad presulem Panormi | Particula XXII.: Augustalis oratio pro vindicta</data>
+    </edge>
+    <edge source="roger_andria" target="henry_vi" id="0">
+      <data key="d4">co-mentioned</data>
+      <data key="d5">1.75</data>
+      <data key="d6">Particula V.: Suasio vicecancellarii dissuadentis ad presulem Panormi | Particula IX.: Abortivi fallax iniquitas proscribit ascriptos | Particula XXII.: Augustalis oratio pro vindicta</data>
+      <data key="d7">Particula IX.: Abortivi fallax iniquitas proscribit ascriptos | Particula V.: Suasio vicecancellarii dissuadentis ad presulem Panormi | Particula XXII.: Augustalis oratio pro vindicta</data>
+    </edge>
+    <edge source="roger_andria" target="octavian" id="0">
+      <data key="d4">co-mentioned</data>
+      <data key="d5">1.5</data>
+      <data key="d6">Particula IX.: Abortivi fallax iniquitas proscribit ascriptos | Particula XXII.: Augustalis oratio pro vindicta</data>
+      <data key="d7">Particula IX.: Abortivi fallax iniquitas proscribit ascriptos | Particula XXII.: Augustalis oratio pro vindicta</data>
+    </edge>
+    <edge source="roger_andria" target="peter_apostle" id="0">
+      <data key="d4">co-mentioned</data>
+      <data key="d5">1.5</data>
+      <data key="d6">Particula IX.: Abortivi fallax iniquitas proscribit ascriptos | Particula XXII.: Augustalis oratio pro vindicta</data>
+      <data key="d7">Particula IX.: Abortivi fallax iniquitas proscribit ascriptos | Particula XXII.: Augustalis oratio pro vindicta</data>
+    </edge>
+    <edge source="roger_andria" target="rome" id="0">
+      <data key="d4">co-mentioned</data>
+      <data key="d5">1.5</data>
+      <data key="d6">Particula IX.: Abortivi fallax iniquitas proscribit ascriptos | Particula XXII.: Augustalis oratio pro vindicta</data>
+      <data key="d7">Particula IX.: Abortivi fallax iniquitas proscribit ascriptos | Particula XXII.: Augustalis oratio pro vindicta</data>
+    </edge>
+    <edge source="roger_andria" target="frederick_i" id="0">
+      <data key="d4">co-mentioned</data>
+      <data key="d5">2.25</data>
+      <data key="d6">Exhinc Rogerius, hinc Fredericus eris, | Particula XXII.: Augustalis oratio pro vindicta</data>
+      <data key="d7">Particula XXII.: Augustalis oratio pro vindicta</data>
+    </edge>
+    <edge source="roger_andria" target="celestine_iii" id="0">
+      <data key="d4">co-mentioned</data>
+      <data key="d5">1.25</data>
+      <data key="d6">Particula XXII.: Augustalis oratio pro vindicta</data>
+      <data key="d7">Particula XXII.: Augustalis oratio pro vindicta</data>
+    </edge>
+    <edge source="roger_andria" target="monte_cassino" id="0">
+      <data key="d4">co-mentioned</data>
+      <data key="d5">1.25</data>
+      <data key="d6">Particula XXII.: Augustalis oratio pro vindicta</data>
+      <data key="d7">Particula XXII.: Augustalis oratio pro vindicta</data>
+    </edge>
+    <edge source="roger_andria" target="naples" id="0">
+      <data key="d4">co-mentioned</data>
+      <data key="d5">1.25</data>
+      <data key="d6">Particula XXII.: Augustalis oratio pro vindicta</data>
+      <data key="d7">Particula XXII.: Augustalis oratio pro vindicta</data>
+    </edge>
+    <edge source="roger_andria" target="rocca_de_archis" id="0">
+      <data key="d4">co-mentioned</data>
+      <data key="d5">1.25</data>
+      <data key="d6">Particula XXII.: Augustalis oratio pro vindicta</data>
+      <data key="d7">Particula XXII.: Augustalis oratio pro vindicta</data>
+    </edge>
+    <edge source="roger_andria" target="salerno" id="0">
+      <data key="d4">co-mentioned</data>
+      <data key="d5">1.25</data>
+      <data key="d6">Particula XXII.: Augustalis oratio pro vindicta</data>
+      <data key="d7">Particula XXII.: Augustalis oratio pro vindicta</data>
+    </edge>
+    <edge source="capua" target="salerno" id="0">
+      <data key="d4">co-mentioned</data>
+      <data key="d5">1.75</data>
+      <data key="d6">Particula XI.: Regni legatio | Particula XV.: Comitis percussio et Salerni exaudita petitio | Particula XVIII.:Exeundi prohibitio</data>
+      <data key="d7">Particula XI.: Regni legatio | Particula XV.: Comitis percussio et Salerni exaudita petitio | Particula XVIII.:Exeundi prohibitio</data>
+    </edge>
+    <edge source="capua" target="henry_vi" id="0">
+      <data key="d4">co-mentioned</data>
+      <data key="d5">1.5</data>
+      <data key="d6">Particula XV.: Comitis percussio et Salerni exaudita petitio | Particula XVIII.:Exeundi prohibitio</data>
+      <data key="d7">Particula XV.: Comitis percussio et Salerni exaudita petitio | Particula XVIII.:Exeundi prohibitio</data>
+    </edge>
+    <edge source="capua" target="tancred" id="0">
+      <data key="d4">co-mentioned</data>
+      <data key="d5">1.5</data>
+      <data key="d6">Particula XV.: Comitis percussio et Salerni exaudita petitio | Particula XVIII.:Exeundi prohibitio</data>
+      <data key="d7">Particula XV.: Comitis percussio et Salerni exaudita petitio | Particula XVIII.:Exeundi prohibitio</data>
+    </edge>
+    <edge source="capua" target="rocca_de_archis" id="0">
+      <data key="d4">co-mentioned</data>
+      <data key="d5">2.25</data>
+      <data key="d6">Est michi Corradus Capue, Dipoldus in Archi: | Particula XVIII.:Exeundi prohibitio</data>
+      <data key="d7">Particula XVIII.:Exeundi prohibitio</data>
+    </edge>
+    <edge source="capua" target="constance" id="0">
+      <data key="d4">co-mentioned</data>
+      <data key="d5">1.25</data>
+      <data key="d6">Particula XVIII.:Exeundi prohibitio</data>
+      <data key="d7">Particula XVIII.:Exeundi prohibitio</data>
+    </edge>
+    <edge source="capua" target="naples" id="0">
+      <data key="d4">co-mentioned</data>
+      <data key="d5">1.25</data>
+      <data key="d6">Particula XVIII.:Exeundi prohibitio</data>
+      <data key="d7">Particula XVIII.:Exeundi prohibitio</data>
+    </edge>
+    <edge source="rome" target="albidia" id="0">
+      <data key="d4">co-mentioned</data>
+      <data key="d5">1.25</data>
+      <data key="d6">Incipit prima primi regis Siciliae particula</data>
+      <data key="d7">Incipit prima primi regis Siciliae particula</data>
+    </edge>
+    <edge source="rome" target="beatrix" id="0">
+      <data key="d4">co-mentioned</data>
+      <data key="d5">1.25</data>
+      <data key="d6">Incipit prima primi regis Siciliae particula</data>
+      <data key="d7">Incipit prima primi regis Siciliae particula</data>
+    </edge>
+    <edge source="rome" target="callistus_ii" id="0">
+      <data key="d4">co-mentioned</data>
+      <data key="d5">1.25</data>
+      <data key="d6">Incipit prima primi regis Siciliae particula</data>
+      <data key="d7">Incipit prima primi regis Siciliae particula</data>
+    </edge>
+    <edge source="rome" target="celestine_iii" id="0">
+      <data key="d4">co-mentioned</data>
+      <data key="d5">1.5</data>
+      <data key="d6">Incipit prima primi regis Siciliae particula | Particula XXII.: Augustalis oratio pro vindicta</data>
+      <data key="d7">Incipit prima primi regis Siciliae particula | Particula XXII.: Augustalis oratio pro vindicta</data>
+    </edge>
+    <edge source="rome" target="constance" id="0">
+      <data key="d4">co-mentioned</data>
+      <data key="d5">1.5</data>
+      <data key="d6">Incipit prima primi regis Siciliae particula | Particula XXII.: Augustalis oratio pro vindicta</data>
+      <data key="d7">Incipit prima primi regis Siciliae particula | Particula XXII.: Augustalis oratio pro vindicta</data>
+    </edge>
+    <edge source="rome" target="henry_vi" id="0">
+      <data key="d4">co-mentioned</data>
+      <data key="d5">2.0</data>
+      <data key="d6">Incipit prima primi regis Siciliae particula | Particula IX.: Abortivi fallax iniquitas proscribit ascriptos | Particula XXII.: Augustalis oratio pro vindicta | Incipit liber tercius ad honorem et gloriam magni imperatoris</data>
+      <data key="d7">Incipit liber tercius ad honorem et gloriam magni imperatoris | Incipit prima primi regis Siciliae particula | Particula IX.: Abortivi fallax iniquitas proscribit ascriptos | Particula XXII.: Augustalis oratio pro vindicta</data>
+    </edge>
+    <edge source="rome" target="lucius_iii" id="0">
+      <data key="d4">co-mentioned</data>
+      <data key="d5">1.25</data>
+      <data key="d6">Incipit prima primi regis Siciliae particula</data>
+      <data key="d7">Incipit prima primi regis Siciliae particula</data>
+    </edge>
+    <edge source="rome" target="robert_guiscard" id="0">
+      <data key="d4">co-mentioned</data>
+      <data key="d5">1.25</data>
+      <data key="d6">Incipit prima primi regis Siciliae particula</data>
+      <data key="d7">Incipit prima primi regis Siciliae particula</data>
+    </edge>
+    <edge source="rome" target="octavian" id="0">
+      <data key="d4">co-mentioned</data>
+      <data key="d5">1.5</data>
+      <data key="d6">Particula IX.: Abortivi fallax iniquitas proscribit ascriptos | Particula XXII.: Augustalis oratio pro vindicta</data>
+      <data key="d7">Particula IX.: Abortivi fallax iniquitas proscribit ascriptos | Particula XXII.: Augustalis oratio pro vindicta</data>
+    </edge>
+    <edge source="rome" target="peter_apostle" id="0">
+      <data key="d4">co-mentioned</data>
+      <data key="d5">1.75</data>
+      <data key="d6">Particula IX.: Abortivi fallax iniquitas proscribit ascriptos | Particula XXII.: Augustalis oratio pro vindicta | Incipit liber tercius ad honorem et gloriam magni imperatoris</data>
+      <data key="d7">Incipit liber tercius ad honorem et gloriam magni imperatoris | Particula IX.: Abortivi fallax iniquitas proscribit ascriptos | Particula XXII.: Augustalis oratio pro vindicta</data>
+    </edge>
+    <edge source="rome" target="frederick_i" id="0">
+      <data key="d4">co-mentioned</data>
+      <data key="d5">1.5</data>
+      <data key="d6">Particula XXII.: Augustalis oratio pro vindicta | Incipit liber tercius ad honorem et gloriam magni imperatoris</data>
+      <data key="d7">Incipit liber tercius ad honorem et gloriam magni imperatoris | Particula XXII.: Augustalis oratio pro vindicta</data>
+    </edge>
+    <edge source="rome" target="monte_cassino" id="0">
+      <data key="d4">co-mentioned</data>
+      <data key="d5">1.25</data>
+      <data key="d6">Particula XXII.: Augustalis oratio pro vindicta</data>
+      <data key="d7">Particula XXII.: Augustalis oratio pro vindicta</data>
+    </edge>
+    <edge source="rome" target="naples" id="0">
+      <data key="d4">co-mentioned</data>
+      <data key="d5">1.25</data>
+      <data key="d6">Particula XXII.: Augustalis oratio pro vindicta</data>
+      <data key="d7">Particula XXII.: Augustalis oratio pro vindicta</data>
+    </edge>
+    <edge source="rome" target="rocca_de_archis" id="0">
+      <data key="d4">co-mentioned</data>
+      <data key="d5">1.25</data>
+      <data key="d6">Particula XXII.: Augustalis oratio pro vindicta</data>
+      <data key="d7">Particula XXII.: Augustalis oratio pro vindicta</data>
+    </edge>
+    <edge source="rome" target="salerno" id="0">
+      <data key="d4">co-mentioned</data>
+      <data key="d5">1.25</data>
+      <data key="d6">Particula XXII.: Augustalis oratio pro vindicta</data>
+      <data key="d7">Particula XXII.: Augustalis oratio pro vindicta</data>
+    </edge>
+    <edge source="rome" target="tancred" id="0">
+      <data key="d4">co-mentioned</data>
+      <data key="d5">1.5</data>
+      <data key="d6">Particula XXII.: Augustalis oratio pro vindicta | Incipit liber tercius ad honorem et gloriam magni imperatoris</data>
+      <data key="d7">Incipit liber tercius ad honorem et gloriam magni imperatoris | Particula XXII.: Augustalis oratio pro vindicta</data>
+    </edge>
+    <edge source="frederick_i" target="henry_vi" id="0">
+      <data key="d4">co-mentioned</data>
+      <data key="d5">1.75</data>
+      <data key="d6">Particula XII.:Primus imperatoris ingressus in regna Sicilie | Particula XXII.: Augustalis oratio pro vindicta | Incipit liber tercius ad honorem et gloriam magni imperatoris</data>
+      <data key="d7">Incipit liber tercius ad honorem et gloriam magni imperatoris | Particula XII.:Primus imperatoris ingressus in regna Sicilie | Particula XXII.: Augustalis oratio pro vindicta</data>
+    </edge>
+    <edge source="frederick_i" target="celestine_iii" id="0">
+      <data key="d4">co-mentioned</data>
+      <data key="d5">1.25</data>
+      <data key="d6">Particula XXII.: Augustalis oratio pro vindicta</data>
+      <data key="d7">Particula XXII.: Augustalis oratio pro vindicta</data>
+    </edge>
+    <edge source="frederick_i" target="constance" id="0">
+      <data key="d4">co-mentioned</data>
+      <data key="d5">1.25</data>
+      <data key="d6">Particula XXII.: Augustalis oratio pro vindicta</data>
+      <data key="d7">Particula XXII.: Augustalis oratio pro vindicta</data>
+    </edge>
+    <edge source="frederick_i" target="monte_cassino" id="0">
+      <data key="d4">co-mentioned</data>
+      <data key="d5">1.25</data>
+      <data key="d6">Particula XXII.: Augustalis oratio pro vindicta</data>
+      <data key="d7">Particula XXII.: Augustalis oratio pro vindicta</data>
+    </edge>
+    <edge source="frederick_i" target="naples" id="0">
+      <data key="d4">co-mentioned</data>
+      <data key="d5">1.25</data>
+      <data key="d6">Particula XXII.: Augustalis oratio pro vindicta</data>
+      <data key="d7">Particula XXII.: Augustalis oratio pro vindicta</data>
+    </edge>
+    <edge source="frederick_i" target="octavian" id="0">
+      <data key="d4">co-mentioned</data>
+      <data key="d5">1.25</data>
+      <data key="d6">Particula XXII.: Augustalis oratio pro vindicta</data>
+      <data key="d7">Particula XXII.: Augustalis oratio pro vindicta</data>
+    </edge>
+    <edge source="frederick_i" target="peter_apostle" id="0">
+      <data key="d4">co-mentioned</data>
+      <data key="d5">1.5</data>
+      <data key="d6">Particula XXII.: Augustalis oratio pro vindicta | Incipit liber tercius ad honorem et gloriam magni imperatoris</data>
+      <data key="d7">Incipit liber tercius ad honorem et gloriam magni imperatoris | Particula XXII.: Augustalis oratio pro vindicta</data>
+    </edge>
+    <edge source="frederick_i" target="rocca_de_archis" id="0">
+      <data key="d4">co-mentioned</data>
+      <data key="d5">1.25</data>
+      <data key="d6">Particula XXII.: Augustalis oratio pro vindicta</data>
+      <data key="d7">Particula XXII.: Augustalis oratio pro vindicta</data>
+    </edge>
+    <edge source="frederick_i" target="salerno" id="0">
+      <data key="d4">co-mentioned</data>
+      <data key="d5">1.25</data>
+      <data key="d6">Particula XXII.: Augustalis oratio pro vindicta</data>
+      <data key="d7">Particula XXII.: Augustalis oratio pro vindicta</data>
+    </edge>
+    <edge source="frederick_i" target="tancred" id="0">
+      <data key="d4">co-mentioned</data>
+      <data key="d5">1.5</data>
+      <data key="d6">Particula XXII.: Augustalis oratio pro vindicta | Incipit liber tercius ad honorem et gloriam magni imperatoris</data>
+      <data key="d7">Incipit liber tercius ad honorem et gloriam magni imperatoris | Particula XXII.: Augustalis oratio pro vindicta</data>
+    </edge>
+    <edge source="henry_vi" target="peter_apostle" id="0">
+      <data key="d4">co-mentioned</data>
+      <data key="d5">2.0</data>
+      <data key="d6">Front Matter | Particula IX.: Abortivi fallax iniquitas proscribit ascriptos | Particula XXII.: Augustalis oratio pro vindicta | Incipit liber tercius ad honorem et gloriam magni imperatoris</data>
+      <data key="d7">Front Matter | Incipit liber tercius ad honorem et gloriam magni imperatoris | Particula IX.: Abortivi fallax iniquitas proscribit ascriptos | Particula XXII.: Augustalis oratio pro vindicta</data>
+    </edge>
+    <edge source="henry_vi" target="peter_apostle" id="1">
+      <data key="d4">rule</data>
+      <data key="d5">3.2</data>
+      <data key="d6">Ego magister Petrus de Ebulo, servus imperatoris fidelis, hunc librum ad honorem Augusti composui.</data>
+      <data key="d7">Incipit liber tercius ad honorem et gloriam magni imperatoris</data>
+    </edge>
+    <edge source="henry_vi" target="constance" id="0">
+      <data key="d4">marriage</data>
+      <data key="d5">5.0</data>
+      <data key="d6">Traditur Augusto coniux Constantia magno;</data>
+      <data key="d7">Incipit prima primi regis Siciliae particula</data>
+    </edge>
+    <edge source="henry_vi" target="constance" id="1">
+      <data key="d4">co-mentioned</data>
+      <data key="d5">2.25</data>
+      <data key="d6">Incipit prima primi regis Siciliae particula | Particula V.: Suasio vicecancellarii dissuadentis ad presulem Panormi | Particula XVI.: Augustalis ingressus in urbem | Particula XVIII.:Exeundi prohibitio</data>
+      <data key="d7">Incipit prima primi regis Siciliae particula | Particula V.: Suasio vicecancellarii dissuadentis ad presulem Panormi | Particula XVI.: Augustalis ingressus in urbem | Particula XVIII.:Exeundi prohibitio | Particula XXII.: Augustalis oratio pro vindicta</data>
+    </edge>
+    <edge source="henry_vi" target="albidia" id="0">
+      <data key="d4">co-mentioned</data>
+      <data key="d5">1.25</data>
+      <data key="d6">Incipit prima primi regis Siciliae particula</data>
+      <data key="d7">Incipit prima primi regis Siciliae particula</data>
+    </edge>
+    <edge source="henry_vi" target="beatrix" id="0">
+      <data key="d4">co-mentioned</data>
+      <data key="d5">1.25</data>
+      <data key="d6">Incipit prima primi regis Siciliae particula</data>
+      <data key="d7">Incipit prima primi regis Siciliae particula</data>
+    </edge>
+    <edge source="henry_vi" target="callistus_ii" id="0">
+      <data key="d4">co-mentioned</data>
+      <data key="d5">1.25</data>
+      <data key="d6">Incipit prima primi regis Siciliae particula</data>
+      <data key="d7">Incipit prima primi regis Siciliae particula</data>
+    </edge>
+    <edge source="henry_vi" target="celestine_iii" id="0">
+      <data key="d4">co-mentioned</data>
+      <data key="d5">1.5</data>
+      <data key="d6">Incipit prima primi regis Siciliae particula | Particula XXII.: Augustalis oratio pro vindicta</data>
+      <data key="d7">Incipit prima primi regis Siciliae particula | Particula XXII.: Augustalis oratio pro vindicta</data>
+    </edge>
+    <edge source="henry_vi" target="lucius_iii" id="0">
+      <data key="d4">co-mentioned</data>
+      <data key="d5">1.25</data>
+      <data key="d6">Incipit prima primi regis Siciliae particula</data>
+      <data key="d7">Incipit prima primi regis Siciliae particula</data>
+    </edge>
+    <edge source="henry_vi" target="robert_guiscard" id="0">
+      <data key="d4">co-mentioned</data>
+      <data key="d5">1.25</data>
+      <data key="d6">Incipit prima primi regis Siciliae particula</data>
+      <data key="d7">Incipit prima primi regis Siciliae particula</data>
+    </edge>
+    <edge source="henry_vi" target="tancred" id="0">
+      <data key="d4">co-mentioned</data>
+      <data key="d5">3.25</data>
+      <data key="d6">Particula V.: Suasio vicecancellarii dissuadentis ad presulem Panormi | Particula XV.: Comitis percussio et Salerni exaudita petitio | Particula XVIII.:Exeundi prohibitio | Ut videt Augustam Tancredus, gaudia vultu</data>
+      <data key="d7">Incipit liber tercius ad honorem et gloriam magni imperatoris | Particula V.: Suasio vicecancellarii dissuadentis ad presulem Panormi | Particula XV.: Comitis percussio et Salerni exaudita petitio | Particula XVIII.:Exeundi prohibitio | Particula XXII.: Augustalis oratio pro vindicta</data>
+    </edge>
+    <edge source="henry_vi" target="octavian" id="0">
+      <data key="d4">co-mentioned</data>
+      <data key="d5">1.5</data>
+      <data key="d6">Particula IX.: Abortivi fallax iniquitas proscribit ascriptos | Particula XXII.: Augustalis oratio pro vindicta</data>
+      <data key="d7">Particula IX.: Abortivi fallax iniquitas proscribit ascriptos | Particula XXII.: Augustalis oratio pro vindicta</data>
+    </edge>
+    <edge source="henry_vi" target="monte_cassino" id="0">
+      <data key="d4">rule</data>
+      <data key="d5">3.2</data>
+      <data key="d6">Castra movens Cesar Montis volat arva Casini,</data>
+      <data key="d7">Particula XIII.: Castrorum inclinatur proceritas</data>
+    </edge>
+    <edge source="henry_vi" target="monte_cassino" id="1">
+      <data key="d4">co-mentioned</data>
+      <data key="d5">1.5</data>
+      <data key="d6">Particula XIII.: Castrorum inclinatur proceritas | Particula XXII.: Augustalis oratio pro vindicta</data>
+      <data key="d7">Particula XIII.: Castrorum inclinatur proceritas | Particula XXII.: Augustalis oratio pro vindicta</data>
+    </edge>
+    <edge source="henry_vi" target="rofridus" id="0">
+      <data key="d4">co-mentioned</data>
+      <data key="d5">1.25</data>
+      <data key="d6">Particula XIII.: Castrorum inclinatur proceritas</data>
+      <data key="d7">Particula XIII.: Castrorum inclinatur proceritas</data>
+    </edge>
+    <edge source="henry_vi" target="naples" id="0">
+      <data key="d4">rule</data>
+      <data key="d5">5.4</data>
+      <data key="d6">Sic tua, Parthenope, confinia Cesar obumbrat, | Nec tu, Parthenope, quod Cesar abinde recessit,</data>
+      <data key="d7">Particula XIV.: Urbs Neapolis obsessa resistit | Particula XXII.: Augustalis oratio pro vindicta</data>
+    </edge>
+    <edge source="henry_vi" target="naples" id="1">
+      <data key="d4">co-mentioned</data>
+      <data key="d5">1.75</data>
+      <data key="d6">Particula XIV.: Urbs Neapolis obsessa resistit | Particula XVIII.:Exeundi prohibitio | Particula XXII.: Augustalis oratio pro vindicta</data>
+      <data key="d7">Particula XIV.: Urbs Neapolis obsessa resistit | Particula XVIII.:Exeundi prohibitio | Particula XXII.: Augustalis oratio pro vindicta</data>
+    </edge>
+    <edge source="henry_vi" target="salerno" id="0">
+      <data key="d4">co-mentioned</data>
+      <data key="d5">2.0</data>
+      <data key="d6">Particula XV.: Comitis percussio et Salerni exaudita petitio | Particula XVI.: Augustalis ingressus in urbem | Particula XVIII.:Exeundi prohibitio | Particula XXII.: Augustalis oratio pro vindicta</data>
+      <data key="d7">Particula XV.: Comitis percussio et Salerni exaudita petitio | Particula XVI.: Augustalis ingressus in urbem | Particula XVIII.:Exeundi prohibitio | Particula XXII.: Augustalis oratio pro vindicta</data>
+    </edge>
+    <edge source="henry_vi" target="rocca_de_archis" id="0">
+      <data key="d4">co-mentioned</data>
+      <data key="d5">1.5</data>
+      <data key="d6">Particula XVIII.:Exeundi prohibitio | Particula XXII.: Augustalis oratio pro vindicta</data>
+      <data key="d7">Particula XVIII.:Exeundi prohibitio | Particula XXII.: Augustalis oratio pro vindicta</data>
+    </edge>
+    <edge source="burellus" target="rocca_de_archis" id="0">
+      <data key="d4">co-mentioned</data>
+      <data key="d5">1.25</data>
+      <data key="d6">Quando capta est per vim Rocca de Archis</data>
+      <data key="d7">Quando capta est per vim Rocca de Archis</data>
+    </edge>
+    <edge source="peter_apostle" target="octavian" id="0">
+      <data key="d4">co-mentioned</data>
+      <data key="d5">1.5</data>
+      <data key="d6">Particula IX.: Abortivi fallax iniquitas proscribit ascriptos | Particula XXII.: Augustalis oratio pro vindicta</data>
+      <data key="d7">Particula IX.: Abortivi fallax iniquitas proscribit ascriptos | Particula XXII.: Augustalis oratio pro vindicta</data>
+    </edge>
+    <edge source="peter_apostle" target="celestine_iii" id="0">
+      <data key="d4">co-mentioned</data>
+      <data key="d5">1.25</data>
+      <data key="d6">Particula XXII.: Augustalis oratio pro vindicta</data>
+      <data key="d7">Particula XXII.: Augustalis oratio pro vindicta</data>
+    </edge>
+    <edge source="peter_apostle" target="constance" id="0">
+      <data key="d4">co-mentioned</data>
+      <data key="d5">1.25</data>
+      <data key="d6">Particula XXII.: Augustalis oratio pro vindicta</data>
+      <data key="d7">Particula XXII.: Augustalis oratio pro vindicta</data>
+    </edge>
+    <edge source="peter_apostle" target="monte_cassino" id="0">
+      <data key="d4">co-mentioned</data>
+      <data key="d5">1.25</data>
+      <data key="d6">Particula XXII.: Augustalis oratio pro vindicta</data>
+      <data key="d7">Particula XXII.: Augustalis oratio pro vindicta</data>
+    </edge>
+    <edge source="peter_apostle" target="naples" id="0">
+      <data key="d4">co-mentioned</data>
+      <data key="d5">1.25</data>
+      <data key="d6">Particula XXII.: Augustalis oratio pro vindicta</data>
+      <data key="d7">Particula XXII.: Augustalis oratio pro vindicta</data>
+    </edge>
+    <edge source="peter_apostle" target="rocca_de_archis" id="0">
+      <data key="d4">co-mentioned</data>
+      <data key="d5">1.25</data>
+      <data key="d6">Particula XXII.: Augustalis oratio pro vindicta</data>
+      <data key="d7">Particula XXII.: Augustalis oratio pro vindicta</data>
+    </edge>
+    <edge source="peter_apostle" target="salerno" id="0">
+      <data key="d4">co-mentioned</data>
+      <data key="d5">1.25</data>
+      <data key="d6">Particula XXII.: Augustalis oratio pro vindicta</data>
+      <data key="d7">Particula XXII.: Augustalis oratio pro vindicta</data>
+    </edge>
+    <edge source="peter_apostle" target="tancred" id="0">
+      <data key="d4">co-mentioned</data>
+      <data key="d5">1.5</data>
+      <data key="d6">Particula XXII.: Augustalis oratio pro vindicta | Incipit liber tercius ad honorem et gloriam magni imperatoris</data>
+      <data key="d7">Incipit liber tercius ad honorem et gloriam magni imperatoris | Particula XXII.: Augustalis oratio pro vindicta</data>
+    </edge>
+    <edge source="rocca_de_archis" target="constance" id="0">
+      <data key="d4">co-mentioned</data>
+      <data key="d5">1.5</data>
+      <data key="d6">Particula XVIII.:Exeundi prohibitio | Particula XXII.: Augustalis oratio pro vindicta</data>
+      <data key="d7">Particula XVIII.:Exeundi prohibitio | Particula XXII.: Augustalis oratio pro vindicta</data>
+    </edge>
+    <edge source="rocca_de_archis" target="naples" id="0">
+      <data key="d4">co-mentioned</data>
+      <data key="d5">1.5</data>
+      <data key="d6">Particula XVIII.:Exeundi prohibitio | Particula XXII.: Augustalis oratio pro vindicta</data>
+      <data key="d7">Particula XVIII.:Exeundi prohibitio | Particula XXII.: Augustalis oratio pro vindicta</data>
+    </edge>
+    <edge source="rocca_de_archis" target="salerno" id="0">
+      <data key="d4">co-mentioned</data>
+      <data key="d5">1.5</data>
+      <data key="d6">Particula XVIII.:Exeundi prohibitio | Particula XXII.: Augustalis oratio pro vindicta</data>
+      <data key="d7">Particula XVIII.:Exeundi prohibitio | Particula XXII.: Augustalis oratio pro vindicta</data>
+    </edge>
+    <edge source="rocca_de_archis" target="tancred" id="0">
+      <data key="d4">co-mentioned</data>
+      <data key="d5">1.5</data>
+      <data key="d6">Particula XVIII.:Exeundi prohibitio | Particula XXII.: Augustalis oratio pro vindicta</data>
+      <data key="d7">Particula XVIII.:Exeundi prohibitio | Particula XXII.: Augustalis oratio pro vindicta</data>
+    </edge>
+    <edge source="rocca_de_archis" target="celestine_iii" id="0">
+      <data key="d4">co-mentioned</data>
+      <data key="d5">1.25</data>
+      <data key="d6">Particula XXII.: Augustalis oratio pro vindicta</data>
+      <data key="d7">Particula XXII.: Augustalis oratio pro vindicta</data>
+    </edge>
+    <edge source="rocca_de_archis" target="monte_cassino" id="0">
+      <data key="d4">co-mentioned</data>
+      <data key="d5">1.25</data>
+      <data key="d6">Particula XXII.: Augustalis oratio pro vindicta</data>
+      <data key="d7">Particula XXII.: Augustalis oratio pro vindicta</data>
+    </edge>
+    <edge source="rocca_de_archis" target="octavian" id="0">
+      <data key="d4">co-mentioned</data>
+      <data key="d5">1.25</data>
+      <data key="d6">Particula XXII.: Augustalis oratio pro vindicta</data>
+      <data key="d7">Particula XXII.: Augustalis oratio pro vindicta</data>
+    </edge>
+    <edge source="urso" target="tancred" id="0">
+      <data key="d4">co-mentioned</data>
+      <data key="d5">1.25</data>
+      <data key="d6">Particula VIII.: Casus anathematizati et derisio nascentis</data>
+      <data key="d7">Particula VIII.: Casus anathematizati et derisio nascentis</data>
+    </edge>
+    <edge source="octavian" target="celestine_iii" id="0">
+      <data key="d4">co-mentioned</data>
+      <data key="d5">1.25</data>
+      <data key="d6">Particula XXII.: Augustalis oratio pro vindicta</data>
+      <data key="d7">Particula XXII.: Augustalis oratio pro vindicta</data>
+    </edge>
+    <edge source="octavian" target="constance" id="0">
+      <data key="d4">co-mentioned</data>
+      <data key="d5">1.25</data>
+      <data key="d6">Particula XXII.: Augustalis oratio pro vindicta</data>
+      <data key="d7">Particula XXII.: Augustalis oratio pro vindicta</data>
+    </edge>
+    <edge source="octavian" target="monte_cassino" id="0">
+      <data key="d4">co-mentioned</data>
+      <data key="d5">1.25</data>
+      <data key="d6">Particula XXII.: Augustalis oratio pro vindicta</data>
+      <data key="d7">Particula XXII.: Augustalis oratio pro vindicta</data>
+    </edge>
+    <edge source="octavian" target="naples" id="0">
+      <data key="d4">co-mentioned</data>
+      <data key="d5">1.25</data>
+      <data key="d6">Particula XXII.: Augustalis oratio pro vindicta</data>
+      <data key="d7">Particula XXII.: Augustalis oratio pro vindicta</data>
+    </edge>
+    <edge source="octavian" target="salerno" id="0">
+      <data key="d4">co-mentioned</data>
+      <data key="d5">1.25</data>
+      <data key="d6">Particula XXII.: Augustalis oratio pro vindicta</data>
+      <data key="d7">Particula XXII.: Augustalis oratio pro vindicta</data>
+    </edge>
+    <edge source="octavian" target="tancred" id="0">
+      <data key="d4">co-mentioned</data>
+      <data key="d5">1.25</data>
+      <data key="d6">Particula XXII.: Augustalis oratio pro vindicta</data>
+      <data key="d7">Particula XXII.: Augustalis oratio pro vindicta</data>
+    </edge>
+    <edge source="beatrix" target="albidia" id="0">
+      <data key="d4">co-mentioned</data>
+      <data key="d5">1.25</data>
+      <data key="d6">Incipit prima primi regis Siciliae particula</data>
+      <data key="d7">Incipit prima primi regis Siciliae particula</data>
+    </edge>
+    <edge source="beatrix" target="callistus_ii" id="0">
+      <data key="d4">co-mentioned</data>
+      <data key="d5">1.25</data>
+      <data key="d6">Incipit prima primi regis Siciliae particula</data>
+      <data key="d7">Incipit prima primi regis Siciliae particula</data>
+    </edge>
+    <edge source="beatrix" target="celestine_iii" id="0">
+      <data key="d4">co-mentioned</data>
+      <data key="d5">1.25</data>
+      <data key="d6">Incipit prima primi regis Siciliae particula</data>
+      <data key="d7">Incipit prima primi regis Siciliae particula</data>
+    </edge>
+    <edge source="beatrix" target="constance" id="0">
+      <data key="d4">co-mentioned</data>
+      <data key="d5">1.25</data>
+      <data key="d6">Incipit prima primi regis Siciliae particula</data>
+      <data key="d7">Incipit prima primi regis Siciliae particula</data>
+    </edge>
+    <edge source="beatrix" target="lucius_iii" id="0">
+      <data key="d4">co-mentioned</data>
+      <data key="d5">1.25</data>
+      <data key="d6">Incipit prima primi regis Siciliae particula</data>
+      <data key="d7">Incipit prima primi regis Siciliae particula</data>
+    </edge>
+    <edge source="beatrix" target="robert_guiscard" id="0">
+      <data key="d4">co-mentioned</data>
+      <data key="d5">1.25</data>
+      <data key="d6">Incipit prima primi regis Siciliae particula</data>
+      <data key="d7">Incipit prima primi regis Siciliae particula</data>
+    </edge>
+    <edge source="monte_cassino" target="rofridus" id="0">
+      <data key="d4">co-mentioned</data>
+      <data key="d5">1.25</data>
+      <data key="d6">Particula XIII.: Castrorum inclinatur proceritas</data>
+      <data key="d7">Particula XIII.: Castrorum inclinatur proceritas</data>
+    </edge>
+    <edge source="monte_cassino" target="celestine_iii" id="0">
+      <data key="d4">co-mentioned</data>
+      <data key="d5">1.25</data>
+      <data key="d6">Particula XXII.: Augustalis oratio pro vindicta</data>
+      <data key="d7">Particula XXII.: Augustalis oratio pro vindicta</data>
+    </edge>
+    <edge source="monte_cassino" target="constance" id="0">
+      <data key="d4">co-mentioned</data>
+      <data key="d5">1.25</data>
+      <data key="d6">Particula XXII.: Augustalis oratio pro vindicta</data>
+      <data key="d7">Particula XXII.: Augustalis oratio pro vindicta</data>
+    </edge>
+    <edge source="monte_cassino" target="naples" id="0">
+      <data key="d4">co-mentioned</data>
+      <data key="d5">1.25</data>
+      <data key="d6">Particula XXII.: Augustalis oratio pro vindicta</data>
+      <data key="d7">Particula XXII.: Augustalis oratio pro vindicta</data>
+    </edge>
+    <edge source="monte_cassino" target="salerno" id="0">
+      <data key="d4">co-mentioned</data>
+      <data key="d5">1.25</data>
+      <data key="d6">Particula XXII.: Augustalis oratio pro vindicta</data>
+      <data key="d7">Particula XXII.: Augustalis oratio pro vindicta</data>
+    </edge>
+    <edge source="monte_cassino" target="tancred" id="0">
+      <data key="d4">co-mentioned</data>
+      <data key="d5">1.25</data>
+      <data key="d6">Particula XXII.: Augustalis oratio pro vindicta</data>
+      <data key="d7">Particula XXII.: Augustalis oratio pro vindicta</data>
+    </edge>
+    <edge source="tancred" target="constance" id="0">
+      <data key="d4">co-mentioned</data>
+      <data key="d5">1.75</data>
+      <data key="d6">Particula V.: Suasio vicecancellarii dissuadentis ad presulem Panormi | Particula XVIII.:Exeundi prohibitio | Particula XXII.: Augustalis oratio pro vindicta</data>
+      <data key="d7">Particula V.: Suasio vicecancellarii dissuadentis ad presulem Panormi | Particula XVIII.:Exeundi prohibitio | Particula XXII.: Augustalis oratio pro vindicta</data>
+    </edge>
+    <edge source="tancred" target="constance" id="1">
+      <data key="d4">marriage</data>
+      <data key="d5">5.0</data>
+      <data key="d6">Tancredus mittit Constanciam uxori scribens ei&gt;</data>
+      <data key="d7">Particula XXII.: Augustalis oratio pro vindicta</data>
+    </edge>
+    <edge source="tancred" target="manuel" id="0">
+      <data key="d4">co-mentioned</data>
+      <data key="d5">1.25</data>
+      <data key="d6">Particula VI.: Epistola ad Tancredum</data>
+      <data key="d7">Particula VI.: Epistola ad Tancredum</data>
+    </edge>
+    <edge source="tancred" target="salerno" id="0">
+      <data key="d4">co-mentioned</data>
+      <data key="d5">1.75</data>
+      <data key="d6">Particula XV.: Comitis percussio et Salerni exaudita petitio | Particula XVIII.:Exeundi prohibitio | Particula XXII.: Augustalis oratio pro vindicta</data>
+      <data key="d7">Particula XV.: Comitis percussio et Salerni exaudita petitio | Particula XVIII.:Exeundi prohibitio | Particula XXII.: Augustalis oratio pro vindicta</data>
+    </edge>
+    <edge source="tancred" target="naples" id="0">
+      <data key="d4">co-mentioned</data>
+      <data key="d5">1.5</data>
+      <data key="d6">Particula XVIII.:Exeundi prohibitio | Particula XXII.: Augustalis oratio pro vindicta</data>
+      <data key="d7">Particula XVIII.:Exeundi prohibitio | Particula XXII.: Augustalis oratio pro vindicta</data>
+    </edge>
+    <edge source="tancred" target="celestine_iii" id="0">
+      <data key="d4">co-mentioned</data>
+      <data key="d5">1.25</data>
+      <data key="d6">Particula XXII.: Augustalis oratio pro vindicta</data>
+      <data key="d7">Particula XXII.: Augustalis oratio pro vindicta</data>
+    </edge>
+    <edge source="albidia" target="callistus_ii" id="0">
+      <data key="d4">co-mentioned</data>
+      <data key="d5">1.25</data>
+      <data key="d6">Incipit prima primi regis Siciliae particula</data>
+      <data key="d7">Incipit prima primi regis Siciliae particula</data>
+    </edge>
+    <edge source="albidia" target="celestine_iii" id="0">
+      <data key="d4">co-mentioned</data>
+      <data key="d5">1.25</data>
+      <data key="d6">Incipit prima primi regis Siciliae particula</data>
+      <data key="d7">Incipit prima primi regis Siciliae particula</data>
+    </edge>
+    <edge source="albidia" target="constance" id="0">
+      <data key="d4">co-mentioned</data>
+      <data key="d5">1.25</data>
+      <data key="d6">Incipit prima primi regis Siciliae particula</data>
+      <data key="d7">Incipit prima primi regis Siciliae particula</data>
+    </edge>
+    <edge source="albidia" target="lucius_iii" id="0">
+      <data key="d4">co-mentioned</data>
+      <data key="d5">1.25</data>
+      <data key="d6">Incipit prima primi regis Siciliae particula</data>
+      <data key="d7">Incipit prima primi regis Siciliae particula</data>
+    </edge>
+    <edge source="albidia" target="robert_guiscard" id="0">
+      <data key="d4">co-mentioned</data>
+      <data key="d5">1.25</data>
+      <data key="d6">Incipit prima primi regis Siciliae particula</data>
+      <data key="d7">Incipit prima primi regis Siciliae particula</data>
+    </edge>
+    <edge source="lucius_iii" target="celestine_iii" id="0">
+      <data key="d4">marriage</data>
+      <data key="d5">5.0</data>
+      <data key="d6">Lucius hos iungit, quos Celestinus inungit:</data>
+      <data key="d7">Incipit prima primi regis Siciliae particula</data>
+    </edge>
+    <edge source="lucius_iii" target="celestine_iii" id="1">
+      <data key="d4">co-mentioned</data>
+      <data key="d5">1.25</data>
+      <data key="d6">Incipit prima primi regis Siciliae particula</data>
+      <data key="d7">Incipit prima primi regis Siciliae particula</data>
+    </edge>
+    <edge source="lucius_iii" target="callistus_ii" id="0">
+      <data key="d4">co-mentioned</data>
+      <data key="d5">1.25</data>
+      <data key="d6">Incipit prima primi regis Siciliae particula</data>
+      <data key="d7">Incipit prima primi regis Siciliae particula</data>
+    </edge>
+    <edge source="lucius_iii" target="constance" id="0">
+      <data key="d4">co-mentioned</data>
+      <data key="d5">1.25</data>
+      <data key="d6">Incipit prima primi regis Siciliae particula</data>
+      <data key="d7">Incipit prima primi regis Siciliae particula</data>
+    </edge>
+    <edge source="lucius_iii" target="robert_guiscard" id="0">
+      <data key="d4">co-mentioned</data>
+      <data key="d5">1.25</data>
+      <data key="d6">Incipit prima primi regis Siciliae particula</data>
+      <data key="d7">Incipit prima primi regis Siciliae particula</data>
+    </edge>
+    <edge source="celestine_iii" target="callistus_ii" id="0">
+      <data key="d4">co-mentioned</data>
+      <data key="d5">1.25</data>
+      <data key="d6">Incipit prima primi regis Siciliae particula</data>
+      <data key="d7">Incipit prima primi regis Siciliae particula</data>
+    </edge>
+    <edge source="celestine_iii" target="constance" id="0">
+      <data key="d4">co-mentioned</data>
+      <data key="d5">2.5</data>
+      <data key="d6">Incipit prima primi regis Siciliae particula | Epistula Celestini et liberatio Constancie&gt; | Particula XXII.: Augustalis oratio pro vindicta</data>
+      <data key="d7">Incipit prima primi regis Siciliae particula | Particula XXII.: Augustalis oratio pro vindicta</data>
+    </edge>
+    <edge source="celestine_iii" target="robert_guiscard" id="0">
+      <data key="d4">co-mentioned</data>
+      <data key="d5">1.25</data>
+      <data key="d6">Incipit prima primi regis Siciliae particula</data>
+      <data key="d7">Incipit prima primi regis Siciliae particula</data>
+    </edge>
+    <edge source="celestine_iii" target="naples" id="0">
+      <data key="d4">co-mentioned</data>
+      <data key="d5">1.25</data>
+      <data key="d6">Particula XXII.: Augustalis oratio pro vindicta</data>
+      <data key="d7">Particula XXII.: Augustalis oratio pro vindicta</data>
+    </edge>
+    <edge source="celestine_iii" target="salerno" id="0">
+      <data key="d4">co-mentioned</data>
+      <data key="d5">1.25</data>
+      <data key="d6">Particula XXII.: Augustalis oratio pro vindicta</data>
+      <data key="d7">Particula XXII.: Augustalis oratio pro vindicta</data>
+    </edge>
+    <edge source="callistus_ii" target="constance" id="0">
+      <data key="d4">co-mentioned</data>
+      <data key="d5">1.25</data>
+      <data key="d6">Incipit prima primi regis Siciliae particula</data>
+      <data key="d7">Incipit prima primi regis Siciliae particula</data>
+    </edge>
+    <edge source="callistus_ii" target="robert_guiscard" id="0">
+      <data key="d4">co-mentioned</data>
+      <data key="d5">1.25</data>
+      <data key="d6">Incipit prima primi regis Siciliae particula</data>
+      <data key="d7">Incipit prima primi regis Siciliae particula</data>
+    </edge>
+    <edge source="constance" target="robert_guiscard" id="0">
+      <data key="d4">co-mentioned</data>
+      <data key="d5">1.25</data>
+      <data key="d6">Incipit prima primi regis Siciliae particula</data>
+      <data key="d7">Incipit prima primi regis Siciliae particula</data>
+    </edge>
+    <edge source="constance" target="salerno" id="0">
+      <data key="d4">co-mentioned</data>
+      <data key="d5">1.75</data>
+      <data key="d6">Particula XVI.: Augustalis ingressus in urbem | Particula XVIII.:Exeundi prohibitio | Particula XXII.: Augustalis oratio pro vindicta</data>
+      <data key="d7">Particula XVI.: Augustalis ingressus in urbem | Particula XVIII.:Exeundi prohibitio | Particula XXII.: Augustalis oratio pro vindicta</data>
+    </edge>
+    <edge source="constance" target="naples" id="0">
+      <data key="d4">co-mentioned</data>
+      <data key="d5">1.5</data>
+      <data key="d6">Particula XVIII.:Exeundi prohibitio | Particula XXII.: Augustalis oratio pro vindicta</data>
+      <data key="d7">Particula XVIII.:Exeundi prohibitio | Particula XXII.: Augustalis oratio pro vindicta</data>
+    </edge>
+    <edge source="naples" target="salerno" id="0">
+      <data key="d4">co-mentioned</data>
+      <data key="d5">1.5</data>
+      <data key="d6">Particula XVIII.:Exeundi prohibitio | Particula XXII.: Augustalis oratio pro vindicta</data>
+      <data key="d7">Particula XVIII.:Exeundi prohibitio | Particula XXII.: Augustalis oratio pro vindicta</data>
+    </edge>
+  </graph>
+</graphml>
