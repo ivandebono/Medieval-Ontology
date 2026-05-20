@@ -3,7 +3,7 @@ requires = ["hatchling>=1.24"]
 build-backend = "hatchling.build"
 
 [project]
-name = "ebulo-relations"
+name = "ontology"
 version = "0.1.0"
 description = "Extract relationship network graphs from Petrus de Ebulo's Liber ad honorem Augusti."
 readme = "README.md"
@@ -38,10 +38,10 @@ dev = ["pytest>=8.0"]
 dev = ["pytest>=8.0"]
 
 [project.scripts]
-ebulo-relations = "ebulo_relations.cli:main"
+ontology = "medieval_ontology.cli:main"
 
 [tool.hatch.build.targets.wheel]
-packages = ["src/ebulo_relations"]
+packages = ["src/medieval_ontology"]
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]

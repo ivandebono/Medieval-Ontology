@@ -27,7 +27,7 @@ def load_source(source: str = DEFAULT_SOURCE_URL, timeout: float = 30.0) -> str:
     """Load text from a URL or local path, stripping HTML when necessary."""
 
     if source.startswith(("http://", "https://")):
-        response = requests.get(source, timeout=timeout, headers={"User-Agent": "ebulo-relations/0.1"})
+        response = requests.get(source, timeout=timeout, headers={"User-Agent": "ontology/0.1"})
         response.raise_for_status()
         content = response.text
     else:

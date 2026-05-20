@@ -1,6 +1,6 @@
-# ebulo-relations
+# ontology
 
-`ebulo-relations` builds a relationship network graph from Petrus de Ebulo's
+`ontology` builds a relationship network graph from Petrus de Ebulo's
 *Liber ad honorem Augusti sive de rebus Siculis*, using the Latin Library text:
 
 <https://www.thelatinlibrary.com/ebulo.html>
@@ -18,10 +18,10 @@ python -m pip install -e ".[dev]"
 ## Quick Start
 
 ```bash
-ebulo-relations build --format json --output ebulo.graph.json
-ebulo-relations build --format graphml --output ebulo.graphml
-ebulo-relations build --format html --output ebulo.html
-ebulo-relations entities --limit 30
+ontology build --format json --output ebulo.graph.json
+ontology build --format graphml --output ebulo.graphml
+ontology build --format html --output ebulo.html
+ontology entities --limit 30
 ```
 
 ## Shareable Web Page
@@ -43,13 +43,13 @@ https://YOUR-GITHUB-USER.github.io/YOUR-REPO/
 The default source is the Latin Library URL. You can also use a saved file:
 
 ```bash
-ebulo-relations build --source ./ebulo.html --format dot --output ebulo.dot
+ontology build --source ./ebulo.html --format dot --output ebulo.dot
 ```
 
 ## Python API
 
 ```python
-from ebulo_relations import build_graph_from_source
+from medieval_ontology import build_graph_from_source
 
 graph = build_graph_from_source("https://www.thelatinlibrary.com/ebulo.html")
 print(graph.top_nodes(10))

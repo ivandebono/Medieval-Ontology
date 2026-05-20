@@ -15,17 +15,17 @@ build:
 	$(UV) build
 
 graph:
-	$(UV) run ebulo-relations build --format graphml --output ebulo.graphml
+	$(UV) run ontology build --format graphml --output ebulo.graphml
 
 html:
-	$(UV) run ebulo-relations build --format html --output ebulo.html
+	$(UV) run ontology build --format html --output ebulo.html
 
 pages:
 	mkdir -p docs
-	$(UV) run ebulo-relations build --format html --output docs/index.html
+	$(UV) run ontology build --format html --output docs/index.html
 
 entities:
-	$(UV) run ebulo-relations entities --limit 30
+	$(UV) run ontology entities --limit 30
 
 clean:
 	rm -rf .venv
