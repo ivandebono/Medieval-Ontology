@@ -1,7 +1,9 @@
-from medieval_ontology import build_graph_from_text
 from uuid import UUID
 
+from medieval_ontology import build_graph_from_text
+from medieval_ontology.builder import build_graph_from_documents
 from medieval_ontology.gazetteer import Gazetteer
+from medieval_ontology.sources import Document
 from medieval_ontology.graph import mention_label
 from medieval_ontology.sources import html_to_text
 from medieval_ontology.text import split_sections
@@ -90,3 +92,25 @@ def test_mention_label_pluralizes():
     html = build_graph_from_text(SAMPLE).to_html()
     assert 'function mentionLabel(count)' in html
     assert 'mentionLabel(node.mentions || 0)' in html
+
+
+def test_merged_documents_track_node_provenance(tmp_path):
+    first = tmp_path / "first.txt"
+    second = tmp_path / "second.txt"
+    first.write_text("Particula I\nTancredus Matheus venit.\n", encoding="utf-8")
+    second.write_text("Particula I\nTancrede Matheus loquitur.\n", encoding="utf-8")
+
+    graph = build_graph_from_documents(
+        (
+            Document("doc_a", "First Book", str(first)),
+            Document("doc_b", "Second Book", str(second)),
+        )
+    )
+    tancred = next(node for node in graph.nodes.values() if node.label == "Tancred of Sicily")
+    assert tancred.documents == {"doc_a", "doc_b"}
+    assert {snippet.document_id for snippet in tancred.snippets} == {"doc_a", "doc_b"}
+
+    html = graph.to_html()
+    assert "First Book" in html
+    assert "Second Book" in html
+    assert '"documentId": "doc_a"' in html

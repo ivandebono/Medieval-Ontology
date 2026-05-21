@@ -22,25 +22,32 @@ RELATION_PATTERNS: tuple[tuple[str, tuple[str, ...], float], ...] = (
 )
 
 
-def extract_graph(sections: list[Section], gazetteer: Gazetteer | None = None) -> Graph:
+def extract_graph(
+    sections: list[Section],
+    gazetteer: Gazetteer | None = None,
+    graph: Graph | None = None,
+    document_id: str = "document",
+    document_title: str = "Document",
+) -> Graph:
     gazetteer = gazetteer or Gazetteer()
-    graph = Graph()
+    graph = graph or Graph()
+    graph.add_document(document_id, document_title)
 
     for section in sections:
         section_mentions = _mentions(section.text, gazetteer)
         for entity_id in sorted(set(section_mentions)):
             entity = gazetteer.get(entity_id)
-            graph.add_node(entity.id, entity.label, entity.kind, section.title)
+            graph.add_node(entity.id, entity.label, entity.kind, section.title, document_id=document_id)
 
         lines = [line.strip() for line in section.text.splitlines() if line.strip()]
-        line_positions = [graph.add_source_line(line, section.title) for line in lines]
+        line_positions = [graph.add_source_line(line, section.title, document_id) for line in lines]
         for index, line in enumerate(lines):
             mentions = sorted(set(_mentions(line, gazetteer)))
             if not mentions:
                 continue
             evidence = compact_evidence(line)
             for entity_id in mentions:
-                graph.add_node_snippet(entity_id, evidence, section.title, line_positions[index])
+                graph.add_node_snippet(entity_id, evidence, section.title, line_positions[index], document_id)
 
         for sentence in split_sentences(section.text):
             mentions = sorted(set(_mentions(sentence, gazetteer)))
@@ -51,10 +58,10 @@ def extract_graph(sections: list[Section], gazetteer: Gazetteer | None = None) -
                 continue
             relation, weight = classify_relation(sentence)
             for source, target in combinations(mentions, 2):
-                graph.add_edge(source, target, relation, weight, evidence, section.title)
+                graph.add_edge(source, target, relation, weight, evidence, section.title, document_id=document_id)
 
         for source, target in combinations(sorted(set(section_mentions)), 2):
-            graph.add_edge(source, target, "co-occurrence", 0.25, section.title, section.title)
+            graph.add_edge(source, target, "co-occurrence", 0.25, section.title, section.title, document_id=document_id)
 
     return graph
 

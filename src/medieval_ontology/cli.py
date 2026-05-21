@@ -9,9 +9,9 @@ import typer
 from rich.console import Console
 from rich.table import Table
 
-from .builder import build_graph_from_source
+from .builder import build_graph_from_documents, build_graph_from_source
 from .gazetteer import Gazetteer
-from .sources import DEFAULT_SOURCE_URL, load_source
+from .sources import DEFAULT_DOCUMENTS, DEFAULT_SOURCE_URL, load_document, load_source
 from .text import split_sections
 
 app = typer.Typer(
@@ -23,14 +23,18 @@ console = Console()
 
 @app.command()
 def build(
-    source: str = typer.Option(DEFAULT_SOURCE_URL, "--source", "-s", help="URL or local file to parse."),
+    source: Optional[str] = typer.Option(None, "--source", "-s", help="URL or local file to parse. Defaults to all built-in documents."),
     output: Optional[Path] = typer.Option(None, "--output", "-o", help="Output path. Defaults to stdout."),
     format: str = typer.Option("json", "--format", "-f", help="json, graphml, dot, or html."),
     min_weight: float = typer.Option(1.0, "--min-weight", help="Drop edges below this weight."),
 ) -> None:
     """Build and export a relationship graph."""
 
-    graph = build_graph_from_source(source, min_weight=min_weight)
+    graph = (
+        build_graph_from_source(source, min_weight=min_weight)
+        if source
+        else build_graph_from_documents(min_weight=min_weight)
+    )
     renderers = {
         "json": graph.to_json,
         "graphml": graph.to_graphml,
@@ -50,19 +54,23 @@ def build(
 
 @app.command()
 def entities(
-    source: str = typer.Option(DEFAULT_SOURCE_URL, "--source", "-s", help="URL or local file to parse."),
+    source: Optional[str] = typer.Option(None, "--source", "-s", help="URL or local file to parse. Defaults to all built-in documents."),
     limit: int = typer.Option(25, "--limit", "-n", help="Maximum number of entities to show."),
 ) -> None:
     """List the most frequently recognized entities."""
 
-    text = load_source(source)
     gazetteer = Gazetteer()
     counts: dict[str, int] = {}
-    for section in split_sections(text):
-        for entity_id, _raw in gazetteer.find_mentions(section.text):
-            counts[entity_id] = counts.get(entity_id, 0) + 1
+    if source:
+        texts = [(source, load_source(source))]
+    else:
+        texts = [(document.title, text) for document, text in (load_document(document) for document in DEFAULT_DOCUMENTS)]
+    for _title, text in texts:
+        for section in split_sections(text):
+            for entity_id, _raw in gazetteer.find_mentions(section.text):
+                counts[entity_id] = counts.get(entity_id, 0) + 1
 
-    table = Table(title="Recognized Ebulo Entities")
+    table = Table(title="Recognized Entities")
     table.add_column("Mentions", justify="right")
     table.add_column("Entity")
     table.add_column("Kind")

@@ -19,12 +19,14 @@ class EvidenceSnippet:
     text: str
     section: str | None = None
     line_index: int | None = None
+    document_id: str | None = None
 
     def to_dict(self) -> dict[str, Any]:
         return {
             "text": self.text,
             "section": self.section,
             "lineIndex": self.line_index,
+            "documentId": self.document_id,
         }
 
 
@@ -35,6 +37,7 @@ class Node:
     kind: str = "unknown"
     count: int = 0
     sections: set[str] = field(default_factory=set)
+    documents: set[str] = field(default_factory=set)
     evidence: list[str] = field(default_factory=list)
     snippets: list[EvidenceSnippet] = field(default_factory=list)
 
@@ -47,16 +50,21 @@ class Edge:
     weight: float = 1.0
     evidence: list[str] = field(default_factory=list)
     sections: set[str] = field(default_factory=set)
+    documents: set[str] = field(default_factory=set)
 
 
 class Graph:
     def __init__(self) -> None:
         self.nodes: dict[str, Node] = {}
         self.edges: dict[tuple[str, str, str], Edge] = {}
+        self.documents: dict[str, str] = {}
         self.source_lines: list[dict[str, str]] = []
 
-    def add_source_line(self, text: str, section: str | None = None) -> int:
-        self.source_lines.append({"text": text, "section": section or ""})
+    def add_document(self, document_id: str, title: str) -> None:
+        self.documents[document_id] = title
+
+    def add_source_line(self, text: str, section: str | None = None, document_id: str | None = None) -> int:
+        self.source_lines.append({"text": text, "section": section or "", "documentId": document_id or ""})
         return len(self.source_lines) - 1
 
     def add_node(
@@ -66,12 +74,15 @@ class Graph:
         kind: str = "unknown",
         section: str | None = None,
         evidence: str | None = None,
+        document_id: str | None = None,
     ) -> None:
         node_id = str(node_id)
         node = self.nodes.setdefault(node_id, Node(id=node_id, label=label, kind=kind))
         node.count += 1
         if section:
             node.sections.add(section)
+        if document_id:
+            node.documents.add(document_id)
         if evidence and evidence not in node.evidence[:12]:
             node.evidence.append(evidence)
 
@@ -83,6 +94,7 @@ class Graph:
         weight: float = 1.0,
         evidence: str | None = None,
         section: str | None = None,
+        document_id: str | None = None,
     ) -> None:
         source = str(source)
         target = str(target)
@@ -96,17 +108,27 @@ class Graph:
             edge.evidence.append(evidence)
         if section:
             edge.sections.add(section)
+        if document_id:
+            edge.documents.add(document_id)
 
-    def add_node_evidence(self, node_id: Any, evidence: str, section: str | None = None) -> None:
+    def add_node_evidence(
+        self,
+        node_id: Any,
+        evidence: str,
+        section: str | None = None,
+        document_id: str | None = None,
+    ) -> None:
         node_id = str(node_id)
         node = self.nodes.get(node_id)
         if not node:
             return
         if evidence and evidence not in node.evidence[:12]:
             node.evidence.append(evidence)
-            node.snippets.append(EvidenceSnippet(text=evidence, section=section))
+            node.snippets.append(EvidenceSnippet(text=evidence, section=section, document_id=document_id))
         if section:
             node.sections.add(section)
+        if document_id:
+            node.documents.add(document_id)
 
     def add_node_snippet(
         self,
@@ -114,6 +136,7 @@ class Graph:
         text: str,
         section: str | None = None,
         line_index: int | None = None,
+        document_id: str | None = None,
     ) -> None:
         node_id = str(node_id)
         node = self.nodes.get(node_id)
@@ -126,14 +149,18 @@ class Graph:
                     text=text,
                     section=section,
                     line_index=line_index,
+                    document_id=document_id,
                 )
             )
             node.count = len(node.snippets)
         if section:
             node.sections.add(section)
+        if document_id:
+            node.documents.add(document_id)
 
     def filtered(self, min_weight: float = 1.0) -> "Graph":
         graph = Graph()
+        graph.documents = dict(self.documents)
         graph.source_lines = list(self.source_lines)
         kept_nodes: set[str] = set()
         for edge in self.edges.values():
@@ -146,6 +173,7 @@ class Graph:
                     weight=edge.weight,
                     evidence=list(edge.evidence),
                     sections=set(edge.sections),
+                    documents=set(edge.documents),
                 )
         for node_id in kept_nodes:
             node = self.nodes[node_id]
@@ -155,12 +183,14 @@ class Graph:
                 kind=node.kind,
                 count=node.count,
                 sections=set(node.sections),
+                documents=set(node.documents),
                 evidence=list(node.evidence),
                 snippets=[
                     EvidenceSnippet(
                         text=snippet.text,
                         section=snippet.section,
                         line_index=snippet.line_index,
+                        document_id=snippet.document_id,
                     )
                     for snippet in node.snippets
                 ],
@@ -184,6 +214,7 @@ class Graph:
                 kind=node.kind,
                 count=node.count,
                 sections=" | ".join(sorted(node.sections)),
+                documents=" | ".join(self.documents.get(document_id, document_id) for document_id in sorted(node.documents)),
                 evidence=" | ".join(node.evidence[:6]),
                 snippets=json.dumps([snippet.to_dict() for snippet in node.snippets[:6]], ensure_ascii=False),
             )
@@ -195,6 +226,7 @@ class Graph:
                 weight=edge.weight,
                 evidence=" | ".join(edge.evidence[:4]),
                 sections=" | ".join(sorted(edge.sections)),
+                documents=" | ".join(self.documents.get(document_id, document_id) for document_id in sorted(edge.documents)),
             )
         return graph
 
@@ -207,6 +239,7 @@ class Graph:
                     "kind": node.kind,
                     "count": node.count,
                     "sections": sorted(node.sections),
+                    "documents": [self.documents.get(document_id, document_id) for document_id in sorted(node.documents)],
                     "evidence": node.evidence,
                     "snippets": [snippet.to_dict() for snippet in node.snippets],
                 }
@@ -219,6 +252,7 @@ class Graph:
                     "relation": edge.relation,
                     "weight": round(edge.weight, 3),
                     "sections": sorted(edge.sections),
+                    "documents": [self.documents.get(document_id, document_id) for document_id in sorted(edge.documents)],
                     "evidence": edge.evidence,
                 }
                 for edge in sorted(self.edges.values(), key=lambda item: (-item.weight, item.source, item.target))
@@ -279,24 +313,26 @@ def render_pyvis_html(graph: Graph) -> str:
             title=_node_title(node),
             color=palette.get(node.kind, palette["unknown"]),
             value=max(6, node.count),
-            snippets=[snippet.to_dict() for snippet in node.snippets[:10]],
+            snippets=[snippet.to_dict() for snippet in node.snippets],
             kind=node.kind,
             mentions=node.count,
+            documents=[graph.documents.get(document_id, document_id) for document_id in sorted(node.documents)],
         )
     for edge in graph.edges.values():
         title = f"{edge.relation}: {edge.weight:g}\n" + "\n".join(edge.evidence[:3])
         network.add_edge(edge.source, edge.target, value=edge.weight, title=title, label=edge.relation)
 
     body = network.generate_html(notebook=False)
+    document_titles = ", ".join(graph.documents.values())
     body = body.replace(
         "<body>",
         "<body><header style=\"font: 14px system-ui; padding: 16px 22px; background: #f6f1e8; color: #1f2933;\">"
-        f"<h1 style=\"margin: 0; font-size: 24px;\">Liber ad Honorem Augusti Relationship Network</h1>"
-        f"<p style=\"margin: 4px 0 0; color: #52606d;\">{len(graph.nodes)} entities, "
+        f"<h1 style=\"margin: 0; font-size: 24px;\">Medieval Sicily Relationship Network</h1>"
+        f"<p style=\"margin: 4px 0 0; color: #52606d;\">{document_titles}. {len(graph.nodes)} entities, "
         f"{len(graph.edges)} weighted relationships. Click a node to inspect text snippets.</p></header>"
         f"{_inspector_markup()}",
     )
-    return body.replace("</body>", f"{_inspector_script(graph.source_lines)}</body>")
+    return body.replace("</body>", f"{_inspector_script(graph.source_lines, graph.documents)}</body>")
 
 
 def render_svg_html(graph: Graph) -> str:
@@ -422,6 +458,11 @@ def _inspector_markup() -> str:
             margin: 6px 0 14px;
             color: #697586;
           }
+          #node-inspector .documents {
+            margin: -6px 0 14px;
+            color: #52606d;
+            line-height: 1.35;
+          }
           #node-inspector .context-control {
             display: flex;
             align-items: center;
@@ -496,13 +537,15 @@ def _inspector_markup() -> str:
     )
 
 
-def _inspector_script(source_lines: list[dict[str, str]]) -> str:
+def _inspector_script(source_lines: list[dict[str, str]], documents: dict[str, str]) -> str:
     source_lines_json = json.dumps(source_lines, ensure_ascii=False)
+    documents_json = json.dumps(documents, ensure_ascii=False)
     return dedent(
         """
         <script>
           (function () {
             var sourceLines = __SOURCE_LINES__;
+            var documents = __DOCUMENTS__;
 
             function escapeHtml(value) {
               return String(value || "").replace(/[&<>"']/g, function (character) {
@@ -520,6 +563,10 @@ def _inspector_script(source_lines: list[dict[str, str]]) -> str:
               return count === 1 ? "mention" : "mentions";
             }
 
+            function documentTitle(documentId) {
+              return documents[documentId] || documentId || "Unknown document";
+            }
+
             function renderNodeInspector(nodeId) {
               var panel = document.getElementById("node-inspector");
               if (!panel || !nodeId || typeof nodes === "undefined") {
@@ -530,6 +577,7 @@ def _inspector_script(source_lines: list[dict[str, str]]) -> str:
                 return;
               }
               var snippets = node.snippets || [];
+              var nodeDocuments = node.documents || [];
               var contextSize = 5;
               var snippetHtml = snippets.length
                 ? snippets.map(function (snippet) {
@@ -541,6 +589,7 @@ def _inspector_script(source_lines: list[dict[str, str]]) -> str:
                 "<h2>" + escapeHtml(node.label) + "</h2>" +
                 '<div class="meta">' + escapeHtml(node.kind || "entity") + " · " +
                 escapeHtml(node.mentions || 0) + " " + mentionLabel(node.mentions || 0) + "</div>" +
+                '<div class="documents">Documents: ' + escapeHtml(nodeDocuments.join(", ") || "Unknown") + "</div>" +
                 '<label class="context-control">Context lines <input id="context-size" type="number" min="0" max="20" value="' +
                 contextSize + '"></label>' +
                 snippetHtml;
@@ -564,8 +613,11 @@ def _inspector_script(source_lines: list[dict[str, str]]) -> str:
               var lineIndex = Number.isInteger(data.lineIndex) ? data.lineIndex : -1;
               var start = Math.max(0, lineIndex - contextSize);
               var end = Math.min(sourceLines.length - 1, lineIndex + contextSize);
-              var section = data.section || "";
+              var sourceLine = sourceLines[lineIndex] || {};
+              var section = data.section || sourceLine.section || "";
+              var documentName = documentTitle(data.documentId || sourceLine.documentId);
               var lines = [];
+              lines.push('<div class="section">' + escapeHtml(documentName) + "</div>");
               if (section) {
                 lines.push('<div class="section">' + escapeHtml(section) + "</div>");
               }
@@ -597,4 +649,4 @@ def _inspector_script(source_lines: list[dict[str, str]]) -> str:
           }());
         </script>
         """
-    ).replace("__SOURCE_LINES__", source_lines_json)
+    ).replace("__SOURCE_LINES__", source_lines_json).replace("__DOCUMENTS__", documents_json)

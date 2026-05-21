@@ -2,12 +2,35 @@
 
 from __future__ import annotations
 
+from dataclasses import dataclass
 from pathlib import Path
 
 import requests
 from bs4 import BeautifulSoup
 
 DEFAULT_SOURCE_URL = "https://www.thelatinlibrary.com/ebulo.html"
+FALCANDUS_SOURCE_URL = "https://www.thelatinlibrary.com/falcandus.html"
+
+
+@dataclass(frozen=True)
+class Document:
+    id: str
+    title: str
+    source: str
+
+
+DEFAULT_DOCUMENTS: tuple[Document, ...] = (
+    Document(
+        id="ebulo",
+        title="Liber ad Honorem Augusti",
+        source=DEFAULT_SOURCE_URL,
+    ),
+    Document(
+        id="falcandus",
+        title="Liber de Regno Sicilie",
+        source=FALCANDUS_SOURCE_URL,
+    ),
+)
 
 
 def html_to_text(html: str) -> str:
@@ -36,3 +59,7 @@ def load_source(source: str = DEFAULT_SOURCE_URL, timeout: float = 30.0) -> str:
     if "<html" in content.lower() or "<br" in content.lower() or "<p" in content.lower():
         return html_to_text(content)
     return content
+
+
+def load_document(document: Document, timeout: float = 30.0) -> tuple[Document, str]:
+    return document, load_source(document.source, timeout=timeout)
