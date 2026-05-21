@@ -1,7 +1,9 @@
-from ebulo_relations import build_graph_from_text
-from ebulo_relations.gazetteer import Gazetteer
-from ebulo_relations.sources import html_to_text
-from ebulo_relations.text import split_sections
+from medieval_ontology import build_graph_from_text
+from uuid import UUID
+
+from medieval_ontology.gazetteer import Gazetteer
+from medieval_ontology.sources import html_to_text
+from medieval_ontology.text import split_sections
 
 
 SAMPLE = """
@@ -29,8 +31,10 @@ def test_sections_are_split():
 
 def test_gazetteer_normalizes_latin_forms():
     gazetteer = Gazetteer()
-    assert gazetteer.match_token("Tancrede") == "tancred"
-    assert gazetteer.match_token("Tancredum") == "tancred"
+    tancred_id = gazetteer.match_token("Tancrede")
+    assert isinstance(tancred_id, UUID)
+    assert gazetteer.get(tancred_id).key == "tancred"
+    assert gazetteer.match_token("Tancredum") == tancred_id
 
 
 def test_graph_extracts_weighted_relations():
@@ -43,3 +47,10 @@ def test_graph_extracts_weighted_relations():
     assert any("Tancrede" in snippet or "Tancred" in snippet for snippet in tancred.evidence)
     assert any(edge.relation == "marriage" for edge in graph.edges.values())
     assert any(edge.relation in {"communication", "succession"} for edge in graph.edges.values())
+
+
+def test_html_titles_do_not_show_break_tags():
+    graph = build_graph_from_text(SAMPLE)
+    html = graph.to_html()
+    assert "Constance of Sicily\\n" in html
+    assert "Constance of Sicily\\u003cbr" not in html

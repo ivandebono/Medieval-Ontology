@@ -4,14 +4,22 @@ from __future__ import annotations
 
 from dataclasses import dataclass
 import re
+from uuid import UUID, uuid5
 
 
 @dataclass(frozen=True)
 class Entity:
-    id: str
+    key: str
     label: str
     kind: str
     aliases: tuple[str, ...]
+
+    @property
+    def id(self) -> UUID:
+        return uuid5(ENTITY_NAMESPACE, self.key)
+
+
+ENTITY_NAMESPACE = UUID("8ed8a50d-058e-4da2-9f1d-6b496df15502")
 
 
 ENTITIES: tuple[Entity, ...] = (
@@ -78,28 +86,28 @@ LATIN_ENDINGS = (
 class Gazetteer:
     def __init__(self, entities: tuple[Entity, ...] = ENTITIES) -> None:
         self.entities = entities
-        self._alias_to_id: dict[str, str] = {}
-        self._stems_to_id: dict[str, str] = {}
+        self._alias_to_id: dict[str, UUID] = {}
+        self._stems_to_id: dict[str, UUID] = {}
         for entity in entities:
             for alias in (entity.label, *entity.aliases):
                 key = fold(alias)
                 self._alias_to_id[key] = entity.id
                 self._stems_to_id[latin_stem(key)] = entity.id
 
-    def get(self, entity_id: str) -> Entity:
+    def get(self, entity_id: str | UUID) -> Entity:
         for entity in self.entities:
-            if entity.id == entity_id:
+            if entity.id == entity_id or str(entity.id) == str(entity_id) or entity.key == entity_id:
                 return entity
         raise KeyError(entity_id)
 
-    def match_token(self, token: str) -> str | None:
+    def match_token(self, token: str) -> UUID | None:
         key = fold(token)
         if key in self._alias_to_id:
             return self._alias_to_id[key]
         return self._stems_to_id.get(latin_stem(key))
 
-    def find_mentions(self, text: str) -> list[tuple[str, str]]:
-        mentions: list[tuple[str, str]] = []
+    def find_mentions(self, text: str) -> list[tuple[UUID, str]]:
+        mentions: list[tuple[UUID, str]] = []
         seen_spans: set[tuple[int, int]] = set()
         for entity in self.entities:
             aliases = sorted(entity.aliases + (entity.label,), key=len, reverse=True)

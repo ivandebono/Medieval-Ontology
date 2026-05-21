@@ -8,6 +8,7 @@ import json
 import math
 from pathlib import Path
 from textwrap import dedent
+from typing import Any
 
 import networkx as nx
 from pyvis.network import Network
@@ -40,12 +41,13 @@ class Graph:
 
     def add_node(
         self,
-        node_id: str,
+        node_id: Any,
         label: str,
         kind: str = "unknown",
         section: str | None = None,
         evidence: str | None = None,
     ) -> None:
+        node_id = str(node_id)
         node = self.nodes.setdefault(node_id, Node(id=node_id, label=label, kind=kind))
         node.count += 1
         if section:
@@ -55,13 +57,15 @@ class Graph:
 
     def add_edge(
         self,
-        source: str,
-        target: str,
+        source: Any,
+        target: Any,
         relation: str,
         weight: float = 1.0,
         evidence: str | None = None,
         section: str | None = None,
     ) -> None:
+        source = str(source)
+        target = str(target)
         if source == target:
             return
         left, right = sorted((source, target))
@@ -73,7 +77,8 @@ class Graph:
         if section:
             edge.sections.add(section)
 
-    def add_node_evidence(self, node_id: str, evidence: str, section: str | None = None) -> None:
+    def add_node_evidence(self, node_id: Any, evidence: str, section: str | None = None) -> None:
+        node_id = str(node_id)
         node = self.nodes.get(node_id)
         if not node:
             return
@@ -223,7 +228,7 @@ def render_pyvis_html(graph: Graph) -> str:
             mentions=node.count,
         )
     for edge in graph.edges.values():
-        title = html.escape(f"{edge.relation}: {edge.weight:g}\n" + "\n".join(edge.evidence[:3]))
+        title = f"{edge.relation}: {edge.weight:g}\n" + "\n".join(edge.evidence[:3])
         network.add_edge(edge.source, edge.target, value=edge.weight, title=title, label=edge.relation)
 
     body = network.generate_html(notebook=False)
@@ -308,10 +313,10 @@ def _esc(value: str) -> str:
 
 
 def _node_title(node: Node) -> str:
-    snippets = "<br>".join(html.escape(snippet) for snippet in node.evidence[:3])
+    snippets = "\n".join(node.evidence[:3])
     if snippets:
-        return f"{html.escape(node.label)}<br>{node.kind}<br>{node.count} mentions<br><br>{snippets}"
-    return f"{html.escape(node.label)}<br>{node.kind}<br>{node.count} mentions"
+        return f"{node.label}\n{node.kind}\n{node.count} mentions\n\n{snippets}"
+    return f"{node.label}\n{node.kind}\n{node.count} mentions"
 
 
 def _inspector_markup() -> str:
