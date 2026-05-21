@@ -1,83 +1,134 @@
 # ontology
 
-`ontology` builds a relationship network graph from Petrus de Ebulo's
-*Liber ad honorem Augusti sive de rebus Siculis*, using the Latin Library text:
+`ontology` builds an interactive relationship network for medieval Sicilian
+Latin texts. It currently merges two Latin Library sources:
 
-<https://www.thelatinlibrary.com/ebulo.html>
+- Petrus de Ebulo, *Liber ad Honorem Augusti sive de rebus Siculis*  
+  <https://www.thelatinlibrary.com/ebulo.html>
+- Hugo Falcandus, *Liber de Regno Sicilie*  
+  <https://www.thelatinlibrary.com/falcandus.html>
 
-It is designed for exploratory historical work: it extracts candidate people
-and places, normalizes common Latin name variants, detects relationship cues,
-and exports a weighted graph.
+The package extracts people and places, normalizes Latin name variants, detects
+relationship cues, and records which document each node, snippet, and source
+line came from.
 
-## Install
+## Setup
+
+This project uses `uv`.
 
 ```bash
-python -m pip install -e ".[dev]"
+make sync
 ```
 
-## Quick Start
+Run tests:
 
 ```bash
-ontology build --format json --output ebulo.graph.json
-ontology build --format graphml --output ebulo.graphml
-ontology build --format html --output ebulo.html
-ontology entities --limit 30
+make test
 ```
 
-## Shareable Web Page
+## Build the Graph
 
-Generate a static page for GitHub Pages or any static host:
+By default, the CLI fetches and merges both built-in documents:
+
+```bash
+uv --cache-dir .uv-cache run ontology build --format html --output docs/index.html
+uv --cache-dir .uv-cache run ontology build --format graphml --output ebulo.graphml
+uv --cache-dir .uv-cache run ontology entities --limit 30
+```
+
+Makefile shortcuts:
 
 ```bash
 make pages
+make graph
+make entities
 ```
 
-This writes `docs/index.html`. If the repository is on GitHub, enable
-**Settings -> Pages -> Deploy from a branch -> main / docs**. The public URL
-will look like:
+You can still parse one source explicitly:
+
+```bash
+uv --cache-dir .uv-cache run ontology build \
+  --source https://www.thelatinlibrary.com/ebulo.html \
+  --format html \
+  --output ebulo.html
+```
+
+## Interactive HTML
+
+`make pages` writes `docs/index.html`, a self-contained static graph app. In
+the browser:
+
+- click a node to see entity type, mention count, and source documents;
+- click a text snippet to expand `+/- n` lines of context;
+- change `n` with the context-lines input, default `5`;
+- each snippet/context panel shows the source document and section.
+
+This page can be hosted on GitHub Pages.
+
+## Publish with GitHub Pages
+
+After running `make pages`, commit and push `docs/index.html` together with any
+code changes that generated it:
+
+```bash
+git add docs/index.html src tests README.md
+git commit -m "Update medieval ontology graph"
+git push
+```
+
+Then enable:
+
+```text
+Settings -> Pages -> Deploy from a branch -> main -> /docs
+```
+
+Your public URL will look like:
 
 ```text
 https://YOUR-GITHUB-USER.github.io/YOUR-REPO/
 ```
 
-The default source is the Latin Library URL. You can also use a saved file:
-
-```bash
-ontology build --source ./ebulo.html --format dot --output ebulo.dot
-```
-
 ## Python API
 
 ```python
-from medieval_ontology import build_graph_from_source
+from medieval_ontology.builder import build_graph_from_documents
 
-graph = build_graph_from_source("https://www.thelatinlibrary.com/ebulo.html")
+graph = build_graph_from_documents()
 print(graph.top_nodes(10))
-graph.write("ebulo.graphml", format="graphml")
+graph.write("medieval-sicily.graphml", format="graphml")
 ```
 
-## What Counts as a Relationship?
+For a single text:
 
-The package combines three layers:
+```python
+from medieval_ontology import build_graph_from_text
 
-1. A curated gazetteer for major people and places in the text.
+graph = build_graph_from_text(text, document_id="my_text", document_title="My Text")
+```
+
+## Relationships
+
+The extractor combines:
+
+1. a curated gazetteer for people, groups, and places;
 2. Latin-aware alias normalization, so forms like `Tancredum`, `Tancrede`, and
-   `Tancredus` can collapse into one node.
-3. Pattern cues for relations such as kinship, marriage, support, opposition,
-   succession, writing/sending, rulership, and section-level co-mention.
+   `Tancredus` collapse into one entity;
+3. cue-based relationship labels such as `kinship`, `marriage`, `support`,
+   `opposition`, `succession`, `communication`, and `rule`;
+4. weaker `co-occurrence` edges when entities appear in the same section.
 
-This is deliberately transparent rather than magical. The output edges include
-evidence snippets and section labels so scholars can inspect the basis of each
-connection.
+Edge weights are additive. For example, each section-level co-occurrence adds
+`0.25`, while stronger sentence-level cues add larger weights.
 
 ## Outputs
 
-- `json`: nodes, edges, weights, labels, evidence, and sections.
+- `html`: self-contained interactive browser visualization.
+- `json`: nodes, edges, snippets, source documents, evidence, and sections.
 - `graphml`: import into Gephi, Cytoscape, yEd, or NetworkX.
 - `dot`: Graphviz-compatible graph.
-- `html`: a self-contained SVG network overview.
 
 ## Source Note
 
-The text is fetched from the Latin Library at runtime unless you pass a local
-file. Please consult the Latin Library for its source text and usage terms.
+Texts are fetched from the Latin Library at build time unless you pass a local
+file with `--source`. Please consult the Latin Library for its source texts and
+usage terms.
