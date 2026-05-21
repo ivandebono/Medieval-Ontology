@@ -2,6 +2,7 @@ from medieval_ontology import build_graph_from_text
 from uuid import UUID
 
 from medieval_ontology.gazetteer import Gazetteer
+from medieval_ontology.graph import mention_label
 from medieval_ontology.sources import html_to_text
 from medieval_ontology.text import split_sections
 
@@ -79,3 +80,13 @@ def test_node_count_matches_visible_snippets():
     graph = build_graph_from_text(SAMPLE)
     for node in graph.nodes.values():
         assert node.count == len(node.snippets)
+
+
+def test_mention_label_pluralizes():
+    assert mention_label(1) == "mention"
+    assert mention_label(0) == "mentions"
+    assert mention_label(2) == "mentions"
+
+    html = build_graph_from_text(SAMPLE).to_html()
+    assert 'function mentionLabel(count)' in html
+    assert 'mentionLabel(node.mentions || 0)' in html

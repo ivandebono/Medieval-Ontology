@@ -370,9 +370,14 @@ def _esc(value: str) -> str:
 
 def _node_title(node: Node) -> str:
     snippets = "\n".join(node.evidence[:3])
+    count_text = mention_label(node.count)
     if snippets:
-        return f"{node.label}\n{node.kind}\n{node.count} mentions\n\n{snippets}"
-    return f"{node.label}\n{node.kind}\n{node.count} mentions"
+        return f"{node.label}\n{node.kind}\n{node.count} {count_text}\n\n{snippets}"
+    return f"{node.label}\n{node.kind}\n{node.count} {count_text}"
+
+
+def mention_label(count: int) -> str:
+    return "mention" if count == 1 else "mentions"
 
 
 def _inspector_markup() -> str:
@@ -511,6 +516,10 @@ def _inspector_script(source_lines: list[dict[str, str]]) -> str:
               });
             }
 
+            function mentionLabel(count) {
+              return count === 1 ? "mention" : "mentions";
+            }
+
             function renderNodeInspector(nodeId) {
               var panel = document.getElementById("node-inspector");
               if (!panel || !nodeId || typeof nodes === "undefined") {
@@ -531,7 +540,7 @@ def _inspector_script(source_lines: list[dict[str, str]]) -> str:
               panel.innerHTML =
                 "<h2>" + escapeHtml(node.label) + "</h2>" +
                 '<div class="meta">' + escapeHtml(node.kind || "entity") + " · " +
-                escapeHtml(node.mentions || 0) + " mentions</div>" +
+                escapeHtml(node.mentions || 0) + " " + mentionLabel(node.mentions || 0) + "</div>" +
                 '<label class="context-control">Context lines <input id="context-size" type="number" min="0" max="20" value="' +
                 contextSize + '"></label>' +
                 snippetHtml;
