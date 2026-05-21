@@ -119,7 +119,7 @@ class Graph:
         node = self.nodes.get(node_id)
         if not node:
             return
-        if text and text not in node.evidence[:12]:
+        if text and all(snippet.line_index != line_index for snippet in node.snippets):
             node.evidence.append(text)
             node.snippets.append(
                 EvidenceSnippet(
@@ -128,6 +128,7 @@ class Graph:
                     line_index=line_index,
                 )
             )
+            node.count = len(node.snippets)
         if section:
             node.sections.add(section)
 

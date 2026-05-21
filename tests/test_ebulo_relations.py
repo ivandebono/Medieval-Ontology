@@ -73,3 +73,9 @@ def test_node_snippets_carry_clickable_context():
     assert "var sourceLines =" in html
     assert "lineIndex" in html
     assert "renderSnippetContext" in html
+
+
+def test_node_count_matches_visible_snippets():
+    graph = build_graph_from_text(SAMPLE)
+    for node in graph.nodes.values():
+        assert node.count == len(node.snippets)

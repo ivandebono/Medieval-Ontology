@@ -2,7 +2,6 @@
 
 from __future__ import annotations
 
-from collections import Counter
 from itertools import combinations
 import re
 
@@ -29,10 +28,9 @@ def extract_graph(sections: list[Section], gazetteer: Gazetteer | None = None) -
 
     for section in sections:
         section_mentions = _mentions(section.text, gazetteer)
-        for entity_id, count in Counter(section_mentions).items():
+        for entity_id in sorted(set(section_mentions)):
             entity = gazetteer.get(entity_id)
-            for _ in range(count):
-                graph.add_node(entity.id, entity.label, entity.kind, section.title)
+            graph.add_node(entity.id, entity.label, entity.kind, section.title)
 
         lines = [line.strip() for line in section.text.splitlines() if line.strip()]
         line_positions = [graph.add_source_line(line, section.title) for line in lines]
