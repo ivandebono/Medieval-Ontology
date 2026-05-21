@@ -31,6 +31,20 @@ class EvidenceSnippet:
 
 
 @dataclass
+class SourceDocument:
+    id: str
+    title: str
+    lines: list[dict[str, str]] = field(default_factory=list)
+
+    def to_dict(self) -> dict[str, Any]:
+        return {
+            "id": self.id,
+            "title": self.title,
+            "lines": self.lines,
+        }
+
+
+@dataclass
 class Node:
     id: str
     label: str
@@ -58,14 +72,21 @@ class Graph:
         self.nodes: dict[str, Node] = {}
         self.edges: dict[tuple[str, str, str], Edge] = {}
         self.documents: dict[str, str] = {}
+        self.source_documents: dict[str, SourceDocument] = {}
         self.source_lines: list[dict[str, str]] = []
 
     def add_document(self, document_id: str, title: str) -> None:
         self.documents[document_id] = title
+        self.source_documents.setdefault(document_id, SourceDocument(id=document_id, title=title))
 
     def add_source_line(self, text: str, section: str | None = None, document_id: str | None = None) -> int:
-        self.source_lines.append({"text": text, "section": section or "", "documentId": document_id or ""})
-        return len(self.source_lines) - 1
+        document_id = document_id or ""
+        title = self.documents.get(document_id, document_id)
+        document = self.source_documents.setdefault(document_id, SourceDocument(id=document_id, title=title))
+        line = {"text": text, "section": section or ""}
+        document.lines.append(line)
+        self.source_lines.append({**line, "documentId": document_id})
+        return len(document.lines) - 1
 
     def add_node(
         self,
@@ -142,7 +163,10 @@ class Graph:
         node = self.nodes.get(node_id)
         if not node:
             return
-        if text and all(snippet.line_index != line_index for snippet in node.snippets):
+        if text and all(
+            (snippet.document_id, snippet.line_index) != (document_id, line_index)
+            for snippet in node.snippets
+        ):
             node.evidence.append(text)
             node.snippets.append(
                 EvidenceSnippet(
@@ -161,6 +185,14 @@ class Graph:
     def filtered(self, min_weight: float = 1.0) -> "Graph":
         graph = Graph()
         graph.documents = dict(self.documents)
+        graph.source_documents = {
+            document_id: SourceDocument(
+                id=document.id,
+                title=document.title,
+                lines=[dict(line) for line in document.lines],
+            )
+            for document_id, document in self.source_documents.items()
+        }
         graph.source_lines = list(self.source_lines)
         kept_nodes: set[str] = set()
         for edge in self.edges.values():
@@ -232,6 +264,10 @@ class Graph:
 
     def to_json(self) -> str:
         payload = {
+            "documents": [
+                document.to_dict()
+                for document in sorted(self.source_documents.values(), key=lambda item: item.title)
+            ],
             "nodes": [
                 {
                     "id": node.id,
@@ -332,7 +368,7 @@ def render_pyvis_html(graph: Graph) -> str:
         f"{len(graph.edges)} weighted relationships. Click a node to inspect text snippets.</p></header>"
         f"{_inspector_markup()}",
     )
-    return body.replace("</body>", f"{_inspector_script(graph.source_lines, graph.documents)}</body>")
+    return body.replace("</body>", f"{_inspector_script(graph.source_documents)}</body>")
 
 
 def render_svg_html(graph: Graph) -> str:
@@ -537,15 +573,16 @@ def _inspector_markup() -> str:
     )
 
 
-def _inspector_script(source_lines: list[dict[str, str]], documents: dict[str, str]) -> str:
-    source_lines_json = json.dumps(source_lines, ensure_ascii=False)
-    documents_json = json.dumps(documents, ensure_ascii=False)
+def _inspector_script(source_documents: dict[str, SourceDocument]) -> str:
+    source_documents_json = json.dumps(
+        {document_id: document.to_dict() for document_id, document in source_documents.items()},
+        ensure_ascii=False,
+    )
     return dedent(
         """
         <script>
           (function () {
-            var sourceLines = __SOURCE_LINES__;
-            var documents = __DOCUMENTS__;
+            var sourceDocuments = __SOURCE_DOCUMENTS__;
 
             function escapeHtml(value) {
               return String(value || "").replace(/[&<>"']/g, function (character) {
@@ -564,7 +601,8 @@ def _inspector_script(source_lines: list[dict[str, str]], documents: dict[str, s
             }
 
             function documentTitle(documentId) {
-              return documents[documentId] || documentId || "Unknown document";
+              var sourceDocument = sourceDocuments[documentId] || {};
+              return sourceDocument.title || documentId || "Unknown document";
             }
 
             function renderNodeInspector(nodeId) {
@@ -611,11 +649,14 @@ def _inspector_script(source_lines: list[dict[str, str]], documents: dict[str, s
               }
               var data = typeof snippet === "string" ? { text: snippet, lineIndex: null } : snippet;
               var lineIndex = Number.isInteger(data.lineIndex) ? data.lineIndex : -1;
+              var documentId = data.documentId || "";
+              var sourceDocument = sourceDocuments[documentId] || { lines: [] };
+              var sourceLines = sourceDocument.lines || [];
               var start = Math.max(0, lineIndex - contextSize);
               var end = Math.min(sourceLines.length - 1, lineIndex + contextSize);
               var sourceLine = sourceLines[lineIndex] || {};
               var section = data.section || sourceLine.section || "";
-              var documentName = documentTitle(data.documentId || sourceLine.documentId);
+              var documentName = documentTitle(documentId);
               var lines = [];
               lines.push('<div class="section">' + escapeHtml(documentName) + "</div>");
               if (section) {
@@ -649,4 +690,4 @@ def _inspector_script(source_lines: list[dict[str, str]], documents: dict[str, s
           }());
         </script>
         """
-    ).replace("__SOURCE_LINES__", source_lines_json).replace("__DOCUMENTS__", documents_json)
+    ).replace("__SOURCE_DOCUMENTS__", source_documents_json)

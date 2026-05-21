@@ -11,3 +11,6 @@ wheels/
 .venv
 .uv-cache/
 .pytest_cache/
+
+# Data files
+texts/

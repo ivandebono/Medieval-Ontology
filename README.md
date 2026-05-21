@@ -28,12 +28,19 @@ make test
 
 ## Build the Graph
 
-By default, the CLI fetches and merges both built-in documents:
+Save the built-in source texts once:
 
 ```bash
-uv --cache-dir .uv-cache run ontology build --format html --output docs/index.html
-uv --cache-dir .uv-cache run ontology build --format graphml --output ebulo.graphml
-uv --cache-dir .uv-cache run ontology entities --limit 30
+make texts
+```
+
+After that, the Makefile builds from the saved files in `texts/` instead of
+fetching the URLs each time:
+
+```bash
+uv --cache-dir .uv-cache run ontology build --documents-dir texts --format html --output docs/index.html
+uv --cache-dir .uv-cache run ontology build --documents-dir texts --format graphml --output ebulo.graphml
+uv --cache-dir .uv-cache run ontology entities --documents-dir texts --limit 30
 ```
 
 Makefile shortcuts:
@@ -42,6 +49,12 @@ Makefile shortcuts:
 make pages
 make graph
 make entities
+```
+
+To refetch and overwrite the saved source texts:
+
+```bash
+make refresh-texts
 ```
 
 You can still parse one source explicitly:
@@ -129,6 +142,6 @@ Edge weights are additive. For example, each section-level co-occurrence adds
 
 ## Source Note
 
-Texts are fetched from the Latin Library at build time unless you pass a local
-file with `--source`. Please consult the Latin Library for its source texts and
-usage terms.
+Texts are fetched from the Latin Library when you run `make texts` or
+`make refresh-texts`. Normal Makefile graph builds read the saved files from
+`texts/`. Please consult the Latin Library for its source texts and usage terms.

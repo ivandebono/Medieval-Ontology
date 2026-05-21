@@ -1,9 +1,10 @@
+import json
 from uuid import UUID
 
 from medieval_ontology import build_graph_from_text
 from medieval_ontology.builder import build_graph_from_documents
 from medieval_ontology.gazetteer import Gazetteer
-from medieval_ontology.sources import Document
+from medieval_ontology.sources import Document, cached_documents, save_documents
 from medieval_ontology.graph import mention_label
 from medieval_ontology.sources import html_to_text
 from medieval_ontology.text import split_sections
@@ -73,7 +74,7 @@ def test_node_snippets_carry_clickable_context():
     html = graph.to_html()
     assert 'id="context-size" type="number" min="0" max="20"' in html
     assert "var contextSize = 5;" in html
-    assert "var sourceLines =" in html
+    assert "var sourceDocuments =" in html
     assert "lineIndex" in html
     assert "renderSnippetContext" in html
 
@@ -109,8 +110,48 @@ def test_merged_documents_track_node_provenance(tmp_path):
     tancred = next(node for node in graph.nodes.values() if node.label == "Tancred of Sicily")
     assert tancred.documents == {"doc_a", "doc_b"}
     assert {snippet.document_id for snippet in tancred.snippets} == {"doc_a", "doc_b"}
+    assert graph.source_documents["doc_a"].lines == [{"text": "Tancredus Matheus venit.", "section": "Particula I"}]
+    assert graph.source_documents["doc_b"].lines == [{"text": "Tancrede Matheus loquitur.", "section": "Particula I"}]
+    assert {snippet.line_index for snippet in tancred.snippets} == {0}
+
+    payload = json.loads(graph.to_json())
+    assert payload["documents"] == [
+        {
+            "id": "doc_a",
+            "title": "First Book",
+            "lines": [{"text": "Tancredus Matheus venit.", "section": "Particula I"}],
+        },
+        {
+            "id": "doc_b",
+            "title": "Second Book",
+            "lines": [{"text": "Tancrede Matheus loquitur.", "section": "Particula I"}],
+        },
+    ]
 
     html = graph.to_html()
     assert "First Book" in html
     assert "Second Book" in html
     assert '"documentId": "doc_a"' in html
+    assert "var sourceDocuments =" in html
+
+
+def test_sources_can_be_saved_and_reused_from_disk(tmp_path):
+    source = tmp_path / "source.html"
+    source.write_text("<html><body><p>Tancredus</p><p>Matheus</p></body></html>", encoding="utf-8")
+
+    output_dir = tmp_path / "texts"
+    document = Document("sample", "Sample", str(source))
+    paths = save_documents(output_dir, documents=(document,))
+
+    assert paths == [output_dir / "sample.txt"]
+    assert paths[0].read_text(encoding="utf-8") == "Tancredus\nMatheus"
+    assert cached_documents(output_dir, documents=(document,)) == (
+        Document("sample", "Sample", str(output_dir / "sample.txt")),
+    )
+
+    source.write_text("<html><body><p>Changed</p></body></html>", encoding="utf-8")
+    save_documents(output_dir, documents=(document,))
+    assert paths[0].read_text(encoding="utf-8") == "Tancredus\nMatheus"
+
+    save_documents(output_dir, documents=(document,), refresh=True)
+    assert paths[0].read_text(encoding="utf-8") == "Changed"

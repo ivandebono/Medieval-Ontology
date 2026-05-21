@@ -11,7 +11,15 @@ from rich.table import Table
 
 from .builder import build_graph_from_documents, build_graph_from_source
 from .gazetteer import Gazetteer
-from .sources import DEFAULT_DOCUMENTS, DEFAULT_SOURCE_URL, load_document, load_source
+from .sources import (
+    DEFAULT_DOCUMENTS,
+    DEFAULT_DOCUMENTS_DIR,
+    cached_document_path,
+    cached_documents,
+    load_document,
+    load_source,
+    save_documents,
+)
 from .text import split_sections
 
 app = typer.Typer(
@@ -24,16 +32,18 @@ console = Console()
 @app.command()
 def build(
     source: Optional[str] = typer.Option(None, "--source", "-s", help="URL or local file to parse. Defaults to all built-in documents."),
+    documents_dir: Optional[Path] = typer.Option(None, "--documents-dir", help="Directory containing saved built-in document text files."),
     output: Optional[Path] = typer.Option(None, "--output", "-o", help="Output path. Defaults to stdout."),
     format: str = typer.Option("json", "--format", "-f", help="json, graphml, dot, or html."),
     min_weight: float = typer.Option(1.0, "--min-weight", help="Drop edges below this weight."),
 ) -> None:
     """Build and export a relationship graph."""
 
+    documents = cached_documents(documents_dir) if documents_dir else DEFAULT_DOCUMENTS
     graph = (
         build_graph_from_source(source, min_weight=min_weight)
         if source
-        else build_graph_from_documents(min_weight=min_weight)
+        else build_graph_from_documents(documents=documents, min_weight=min_weight)
     )
     renderers = {
         "json": graph.to_json,
@@ -55,6 +65,7 @@ def build(
 @app.command()
 def entities(
     source: Optional[str] = typer.Option(None, "--source", "-s", help="URL or local file to parse. Defaults to all built-in documents."),
+    documents_dir: Optional[Path] = typer.Option(None, "--documents-dir", help="Directory containing saved built-in document text files."),
     limit: int = typer.Option(25, "--limit", "-n", help="Maximum number of entities to show."),
 ) -> None:
     """List the most frequently recognized entities."""
@@ -64,7 +75,8 @@ def entities(
     if source:
         texts = [(source, load_source(source))]
     else:
-        texts = [(document.title, text) for document, text in (load_document(document) for document in DEFAULT_DOCUMENTS)]
+        documents = cached_documents(documents_dir) if documents_dir else DEFAULT_DOCUMENTS
+        texts = [(document.title, text) for document, text in (load_document(document) for document in documents)]
     for _title, text in texts:
         for section in split_sections(text):
             for entity_id, _raw in gazetteer.find_mentions(section.text):
@@ -78,6 +90,24 @@ def entities(
         entity = gazetteer.get(entity_id)
         table.add_row(str(count), entity.label, entity.kind)
     console.print(table)
+
+
+@app.command("cache-sources")
+def cache_sources(
+    output: Path = typer.Option(DEFAULT_DOCUMENTS_DIR, "--output", "-o", help="Directory for saved text files."),
+    refresh: bool = typer.Option(False, "--refresh", help="Fetch and overwrite existing saved text files."),
+) -> None:
+    """Fetch the built-in documents and save normalized text files."""
+
+    existing_paths = {
+        cached_document_path(output, document)
+        for document in DEFAULT_DOCUMENTS
+        if cached_document_path(output, document).exists()
+    }
+    paths = save_documents(output, refresh=refresh)
+    for path in paths:
+        action = "Saved" if refresh or path not in existing_paths else "Using"
+        console.print(f"[green]{action}[/green] {path}")
 
 
 def main() -> None:
