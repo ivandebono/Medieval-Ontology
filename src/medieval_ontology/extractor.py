@@ -34,13 +34,21 @@ def extract_graph(sections: list[Section], gazetteer: Gazetteer | None = None) -
             for _ in range(count):
                 graph.add_node(entity.id, entity.label, entity.kind, section.title)
 
+        lines = [line.strip() for line in section.text.splitlines() if line.strip()]
+        line_positions = [graph.add_source_line(line, section.title) for line in lines]
+        for index, line in enumerate(lines):
+            mentions = sorted(set(_mentions(line, gazetteer)))
+            if not mentions:
+                continue
+            evidence = compact_evidence(line)
+            for entity_id in mentions:
+                graph.add_node_snippet(entity_id, evidence, section.title, line_positions[index])
+
         for sentence in split_sentences(section.text):
             mentions = sorted(set(_mentions(sentence, gazetteer)))
             if not mentions:
                 continue
             evidence = compact_evidence(sentence)
-            for entity_id in mentions:
-                graph.add_node_evidence(entity_id, evidence, section.title)
             if len(mentions) < 2:
                 continue
             relation, weight = classify_relation(sentence)

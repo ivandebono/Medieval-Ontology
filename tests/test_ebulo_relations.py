@@ -12,8 +12,10 @@ LIBER AD HONOREM AUGUSTI SIVE DE REBUS SICULIS
 Traditur Augusto coniux Constantia magno;
 Lucius in nuptu pronuba causa fuit.
 Particula VI.: Epistola ad Tancredum
+Matheus legit priora verba.
 Hanc tibi Matheus mitto Tancrede salutem.
 Per me regnabis, per me tibi regna dabuntur.
+Ultima verba sequuntur.
 Particula XI.: Regni legatio
 Scripsit Consanus, scripsit Molisius, scripsit et antistes Panormi.
 """
@@ -54,3 +56,20 @@ def test_html_titles_do_not_show_break_tags():
     html = graph.to_html()
     assert "Constance of Sicily\\n" in html
     assert "Constance of Sicily\\u003cbr" not in html
+
+
+def test_node_snippets_carry_clickable_context():
+    graph = build_graph_from_text(SAMPLE)
+    tancred = next(node for node in graph.nodes.values() if node.label == "Tancred of Sicily")
+    snippet = next(item for item in tancred.snippets if "Tancrede" in item.text)
+    assert snippet.line_index is not None
+    assert graph.source_lines[snippet.line_index]["text"] == snippet.text
+    assert graph.source_lines[snippet.line_index - 1]["text"] == "Matheus legit priora verba."
+    assert "Per me regnabis" in graph.source_lines[snippet.line_index + 1]["text"]
+
+    html = graph.to_html()
+    assert 'id="context-size" type="number" min="0" max="20"' in html
+    assert "var contextSize = 5;" in html
+    assert "var sourceLines =" in html
+    assert "lineIndex" in html
+    assert "renderSnippetContext" in html

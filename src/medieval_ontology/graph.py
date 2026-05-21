@@ -15,6 +15,20 @@ from pyvis.network import Network
 
 
 @dataclass
+class EvidenceSnippet:
+    text: str
+    section: str | None = None
+    line_index: int | None = None
+
+    def to_dict(self) -> dict[str, Any]:
+        return {
+            "text": self.text,
+            "section": self.section,
+            "lineIndex": self.line_index,
+        }
+
+
+@dataclass
 class Node:
     id: str
     label: str
@@ -22,6 +36,7 @@ class Node:
     count: int = 0
     sections: set[str] = field(default_factory=set)
     evidence: list[str] = field(default_factory=list)
+    snippets: list[EvidenceSnippet] = field(default_factory=list)
 
 
 @dataclass
@@ -38,6 +53,11 @@ class Graph:
     def __init__(self) -> None:
         self.nodes: dict[str, Node] = {}
         self.edges: dict[tuple[str, str, str], Edge] = {}
+        self.source_lines: list[dict[str, str]] = []
+
+    def add_source_line(self, text: str, section: str | None = None) -> int:
+        self.source_lines.append({"text": text, "section": section or ""})
+        return len(self.source_lines) - 1
 
     def add_node(
         self,
@@ -84,11 +104,36 @@ class Graph:
             return
         if evidence and evidence not in node.evidence[:12]:
             node.evidence.append(evidence)
+            node.snippets.append(EvidenceSnippet(text=evidence, section=section))
+        if section:
+            node.sections.add(section)
+
+    def add_node_snippet(
+        self,
+        node_id: Any,
+        text: str,
+        section: str | None = None,
+        line_index: int | None = None,
+    ) -> None:
+        node_id = str(node_id)
+        node = self.nodes.get(node_id)
+        if not node:
+            return
+        if text and text not in node.evidence[:12]:
+            node.evidence.append(text)
+            node.snippets.append(
+                EvidenceSnippet(
+                    text=text,
+                    section=section,
+                    line_index=line_index,
+                )
+            )
         if section:
             node.sections.add(section)
 
     def filtered(self, min_weight: float = 1.0) -> "Graph":
         graph = Graph()
+        graph.source_lines = list(self.source_lines)
         kept_nodes: set[str] = set()
         for edge in self.edges.values():
             if edge.weight >= min_weight:
@@ -110,6 +155,14 @@ class Graph:
                 count=node.count,
                 sections=set(node.sections),
                 evidence=list(node.evidence),
+                snippets=[
+                    EvidenceSnippet(
+                        text=snippet.text,
+                        section=snippet.section,
+                        line_index=snippet.line_index,
+                    )
+                    for snippet in node.snippets
+                ],
             )
         return graph
 
@@ -131,6 +184,7 @@ class Graph:
                 count=node.count,
                 sections=" | ".join(sorted(node.sections)),
                 evidence=" | ".join(node.evidence[:6]),
+                snippets=json.dumps([snippet.to_dict() for snippet in node.snippets[:6]], ensure_ascii=False),
             )
         for edge in self.edges.values():
             graph.add_edge(
@@ -153,6 +207,7 @@ class Graph:
                     "count": node.count,
                     "sections": sorted(node.sections),
                     "evidence": node.evidence,
+                    "snippets": [snippet.to_dict() for snippet in node.snippets],
                 }
                 for node in sorted(self.nodes.values(), key=lambda item: item.label)
             ],
@@ -223,7 +278,7 @@ def render_pyvis_html(graph: Graph) -> str:
             title=_node_title(node),
             color=palette.get(node.kind, palette["unknown"]),
             value=max(6, node.count),
-            snippets=node.evidence[:10],
+            snippets=[snippet.to_dict() for snippet in node.snippets[:10]],
             kind=node.kind,
             mentions=node.count,
         )
@@ -240,7 +295,7 @@ def render_pyvis_html(graph: Graph) -> str:
         f"{len(graph.edges)} weighted relationships. Click a node to inspect text snippets.</p></header>"
         f"{_inspector_markup()}",
     )
-    return body.replace("</body>", f"{_inspector_script()}</body>")
+    return body.replace("</body>", f"{_inspector_script(graph.source_lines)}</body>")
 
 
 def render_svg_html(graph: Graph) -> str:
@@ -361,12 +416,58 @@ def _inspector_markup() -> str:
             margin: 6px 0 14px;
             color: #697586;
           }
+          #node-inspector .context-control {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin: 0 0 14px;
+            color: #52606d;
+          }
+          #node-inspector .context-control input {
+            width: 58px;
+            padding: 4px 6px;
+            border: 1px solid #c9c0b2;
+            border-radius: 4px;
+            background: #fffdf8;
+            color: #1f2933;
+          }
           #node-inspector .snippet {
+            display: block;
+            width: 100%;
+            text-align: left;
             margin: 0 0 12px;
             padding: 12px;
             border-left: 3px solid #2f6f73;
+            border-top: 0;
+            border-right: 0;
+            border-bottom: 0;
             background: #f6f1e8;
+            color: #1f2933;
+            cursor: pointer;
+            font: inherit;
             line-height: 1.45;
+          }
+          #node-inspector .snippet:hover,
+          #node-inspector .snippet:focus {
+            background: #efe6d7;
+            outline: 2px solid rgba(47, 111, 115, 0.24);
+          }
+          #node-inspector .context {
+            margin: -6px 0 14px;
+            padding: 10px 12px;
+            background: #fff8ec;
+            border: 1px solid #e4dac9;
+            white-space: pre-wrap;
+            line-height: 1.45;
+          }
+          #node-inspector .context .focus-line {
+            font-weight: 700;
+            color: #1f2933;
+          }
+          #node-inspector .section {
+            margin-bottom: 6px;
+            color: #697586;
+            font-size: 12px;
           }
           #node-inspector .inspector-empty {
             color: #697586;
@@ -389,11 +490,14 @@ def _inspector_markup() -> str:
     )
 
 
-def _inspector_script() -> str:
+def _inspector_script(source_lines: list[dict[str, str]]) -> str:
+    source_lines_json = json.dumps(source_lines, ensure_ascii=False)
     return dedent(
         """
         <script>
           (function () {
+            var sourceLines = __SOURCE_LINES__;
+
             function escapeHtml(value) {
               return String(value || "").replace(/[&<>"']/g, function (character) {
                 return {
@@ -416,16 +520,58 @@ def _inspector_script() -> str:
                 return;
               }
               var snippets = node.snippets || [];
+              var contextSize = 5;
               var snippetHtml = snippets.length
                 ? snippets.map(function (snippet) {
-                    return '<blockquote class="snippet">' + escapeHtml(snippet) + "</blockquote>";
+                    var text = typeof snippet === "string" ? snippet : snippet.text;
+                    return '<button class="snippet" type="button">' + escapeHtml(text) + "</button>";
                   }).join("")
                 : '<div class="inspector-empty">No sentence-level snippet was captured for this node.</div>';
               panel.innerHTML =
                 "<h2>" + escapeHtml(node.label) + "</h2>" +
                 '<div class="meta">' + escapeHtml(node.kind || "entity") + " · " +
                 escapeHtml(node.mentions || 0) + " mentions</div>" +
+                '<label class="context-control">Context lines <input id="context-size" type="number" min="0" max="20" value="' +
+                contextSize + '"></label>' +
                 snippetHtml;
+
+              panel.querySelectorAll(".snippet").forEach(function (button, index) {
+                button.addEventListener("click", function () {
+                  var input = document.getElementById("context-size");
+                  var size = Math.max(0, Math.min(20, parseInt(input && input.value, 10) || 0));
+                  renderSnippetContext(button, snippets[index], size);
+                });
+              });
+            }
+
+            function renderSnippetContext(button, snippet, contextSize) {
+              var existing = button.nextElementSibling;
+              if (existing && existing.className === "context") {
+                existing.remove();
+                return;
+              }
+              var data = typeof snippet === "string" ? { text: snippet, lineIndex: null } : snippet;
+              var lineIndex = Number.isInteger(data.lineIndex) ? data.lineIndex : -1;
+              var start = Math.max(0, lineIndex - contextSize);
+              var end = Math.min(sourceLines.length - 1, lineIndex + contextSize);
+              var section = data.section || "";
+              var lines = [];
+              if (section) {
+                lines.push('<div class="section">' + escapeHtml(section) + "</div>");
+              }
+              if (lineIndex < 0 || !sourceLines[lineIndex]) {
+                lines.push('<span class="focus-line">' + escapeHtml(data.text || "") + "</span>");
+              } else {
+                for (var index = start; index <= end; index += 1) {
+                  var line = sourceLines[index] || { text: "" };
+                  var className = index === lineIndex ? ' class="focus-line"' : "";
+                  lines.push("<span" + className + ">" + escapeHtml(line.text) + "</span>");
+                }
+              }
+              var context = document.createElement("div");
+              context.className = "context";
+              context.innerHTML = lines.filter(Boolean).join("<br>");
+              button.insertAdjacentElement("afterend", context);
             }
 
             var attachInspector = setInterval(function () {
@@ -441,4 +587,4 @@ def _inspector_script() -> str:
           }());
         </script>
         """
-    )
+    ).replace("__SOURCE_LINES__", source_lines_json)
