@@ -54,14 +54,14 @@ def extract_graph(sections: list[Section], gazetteer: Gazetteer | None = None) -
                 graph.add_edge(source, target, relation, weight, evidence, section.title)
 
         for source, target in combinations(sorted(set(section_mentions)), 2):
-            graph.add_edge(source, target, "co-mentioned", 0.25, section.title, section.title)
+            graph.add_edge(source, target, "co-occurrence", 0.25, section.title, section.title)
 
     return graph
 
 
 def classify_relation(sentence: str) -> tuple[str, float]:
     folded = sentence.lower()
-    best_relation = "co-mentioned"
+    best_relation = "co-occurrence"
     best_weight = 1.0
     for relation, cues, weight in RELATION_PATTERNS:
         if any(cue.lower() in folded for cue in cues):
