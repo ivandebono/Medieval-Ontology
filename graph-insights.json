@@ -1,0 +1,362 @@
+{
+  "summary": {
+    "nodeCount": 39,
+    "edgeCount": 468,
+    "simpleEdgeCount": 396,
+    "density": 0.534413,
+    "connectedComponentCount": 1,
+    "largestComponentSize": 39,
+    "averageClustering": 0.818444,
+    "transitivity": 0.81114,
+    "averageShortestPathLengthLargestComponent": 1.51417,
+    "diameterLargestComponent": 3
+  },
+  "relations": [
+    {
+      "relation": "co-occurrence",
+      "edgeCount": 396,
+      "totalWeight": 624.75
+    },
+    {
+      "relation": "rule",
+      "edgeCount": 36,
+      "totalWeight": 165.8
+    },
+    {
+      "relation": "kinship",
+      "edgeCount": 18,
+      "totalWeight": 98.0
+    },
+    {
+      "relation": "marriage",
+      "edgeCount": 6,
+      "totalWeight": 30.0
+    },
+    {
+      "relation": "support",
+      "edgeCount": 4,
+      "totalWeight": 13.6
+    },
+    {
+      "relation": "succession",
+      "edgeCount": 3,
+      "totalWeight": 12.6
+    },
+    {
+      "relation": "opposition",
+      "edgeCount": 3,
+      "totalWeight": 11.4
+    },
+    {
+      "relation": "communication",
+      "edgeCount": 2,
+      "totalWeight": 6.0
+    }
+  ],
+  "topDegreeCentrality": [
+    {
+      "id": "d1afba32-69be-5bc6-a0c5-d84ff2867174",
+      "label": "Henry VI",
+      "value": 0.868421
+    },
+    {
+      "id": "512505ef-56e2-567f-a37b-8f3d6a3f6b24",
+      "label": "Rome",
+      "value": 0.842105
+    },
+    {
+      "id": "ff648d37-240a-5651-ae0b-0bf06171f665",
+      "label": "Constance of Sicily",
+      "value": 0.815789
+    },
+    {
+      "id": "786ce4d2-ded3-5d83-b313-02da124db58c",
+      "label": "Tancred of Sicily",
+      "value": 0.815789
+    },
+    {
+      "id": "f2406b5f-d55c-5ff9-a125-55863ceed1f0",
+      "label": "Matthew of Ajello",
+      "value": 0.789474
+    },
+    {
+      "id": "f883a35a-fc7a-51da-8a35-7fdafb977f4e",
+      "label": "Palermo",
+      "value": 0.763158
+    },
+    {
+      "id": "50f6c35e-74e4-59cb-bd2b-6a05d90bc82a",
+      "label": "Philippus",
+      "value": 0.763158
+    },
+    {
+      "id": "6dce7d67-ce32-595a-858c-6b3af1d051a2",
+      "label": "Salerno",
+      "value": 0.763158
+    },
+    {
+      "id": "0871545f-81eb-5e21-b0fc-e5ea1f44dfa1",
+      "label": "Walter of Palermo",
+      "value": 0.763158
+    },
+    {
+      "id": "be9ba416-1a83-5f75-961f-afdd47d7a5a7",
+      "label": "Saint Peter",
+      "value": 0.736842
+    }
+  ],
+  "topWeightedDegree": [
+    {
+      "id": "f883a35a-fc7a-51da-8a35-7fdafb977f4e",
+      "label": "Palermo",
+      "value": 181.35
+    },
+    {
+      "id": "f2406b5f-d55c-5ff9-a125-55863ceed1f0",
+      "label": "Matthew of Ajello",
+      "value": 142.25
+    },
+    {
+      "id": "0871545f-81eb-5e21-b0fc-e5ea1f44dfa1",
+      "label": "Walter of Palermo",
+      "value": 142.15
+    },
+    {
+      "id": "6e27241c-a3a1-59df-9d09-387f3279977e",
+      "label": "Sicily",
+      "value": 131.15
+    },
+    {
+      "id": "8c2b1c8f-da61-5b21-8a78-5e0a732f4049",
+      "label": "Roger of Andria",
+      "value": 118.75
+    },
+    {
+      "id": "3874b3a4-2587-551a-9e08-abbdd739c567",
+      "label": "Apulia",
+      "value": 98.2
+    },
+    {
+      "id": "d1afba32-69be-5bc6-a0c5-d84ff2867174",
+      "label": "Henry VI",
+      "value": 93.25
+    },
+    {
+      "id": "786ce4d2-ded3-5d83-b313-02da124db58c",
+      "label": "Tancred of Sicily",
+      "value": 91.45
+    },
+    {
+      "id": "512505ef-56e2-567f-a37b-8f3d6a3f6b24",
+      "label": "Rome",
+      "value": 69.95
+    },
+    {
+      "id": "52d9448d-1d42-599c-a4e8-cd5417ad7b26",
+      "label": "Capua",
+      "value": 62.45
+    }
+  ],
+  "topBetweennessCentrality": [
+    {
+      "id": "786ce4d2-ded3-5d83-b313-02da124db58c",
+      "label": "Tancred of Sicily",
+      "value": 0.096774
+    },
+    {
+      "id": "f2406b5f-d55c-5ff9-a125-55863ceed1f0",
+      "label": "Matthew of Ajello",
+      "value": 0.066773
+    },
+    {
+      "id": "2f4c8594-8730-5669-b505-1e2ed1bcb350",
+      "label": "Rocca de Archis",
+      "value": 0.057492
+    },
+    {
+      "id": "a5a25e36-26e8-58a7-ada9-459ae712cb4e",
+      "label": "Monte Cassino",
+      "value": 0.042828
+    },
+    {
+      "id": "96edf82e-24cf-558a-bf1e-8e36a4fa0641",
+      "label": "Celestine III",
+      "value": 0.037976
+    },
+    {
+      "id": "65ba4311-f40c-5762-a87f-29057e319842",
+      "label": "Sibilia",
+      "value": 0.033847
+    },
+    {
+      "id": "512505ef-56e2-567f-a37b-8f3d6a3f6b24",
+      "label": "Rome",
+      "value": 0.025977
+    },
+    {
+      "id": "b0a80bb3-7fbe-5aef-9ca4-596d6e3b023b",
+      "label": "Robert Guiscard",
+      "value": 0.024793
+    },
+    {
+      "id": "d1afba32-69be-5bc6-a0c5-d84ff2867174",
+      "label": "Henry VI",
+      "value": 0.024324
+    },
+    {
+      "id": "db45fd2d-46f8-5707-8610-a1e6b984efb8",
+      "label": "Lucius III",
+      "value": 0.022885
+    }
+  ],
+  "topClosenessCentrality": [
+    {
+      "id": "d1afba32-69be-5bc6-a0c5-d84ff2867174",
+      "label": "Henry VI",
+      "value": 0.883721
+    },
+    {
+      "id": "512505ef-56e2-567f-a37b-8f3d6a3f6b24",
+      "label": "Rome",
+      "value": 0.863636
+    },
+    {
+      "id": "ff648d37-240a-5651-ae0b-0bf06171f665",
+      "label": "Constance of Sicily",
+      "value": 0.844444
+    },
+    {
+      "id": "786ce4d2-ded3-5d83-b313-02da124db58c",
+      "label": "Tancred of Sicily",
+      "value": 0.844444
+    },
+    {
+      "id": "f2406b5f-d55c-5ff9-a125-55863ceed1f0",
+      "label": "Matthew of Ajello",
+      "value": 0.826087
+    },
+    {
+      "id": "f883a35a-fc7a-51da-8a35-7fdafb977f4e",
+      "label": "Palermo",
+      "value": 0.808511
+    },
+    {
+      "id": "50f6c35e-74e4-59cb-bd2b-6a05d90bc82a",
+      "label": "Philippus",
+      "value": 0.808511
+    },
+    {
+      "id": "6dce7d67-ce32-595a-858c-6b3af1d051a2",
+      "label": "Salerno",
+      "value": 0.808511
+    },
+    {
+      "id": "0871545f-81eb-5e21-b0fc-e5ea1f44dfa1",
+      "label": "Walter of Palermo",
+      "value": 0.808511
+    },
+    {
+      "id": "be9ba416-1a83-5f75-961f-afdd47d7a5a7",
+      "label": "Saint Peter",
+      "value": 0.791667
+    }
+  ],
+  "topClustering": [
+    {
+      "id": "ffe1d1b4-2825-5fcc-83db-9470659844b2",
+      "label": "Albidia",
+      "value": 1.0
+    },
+    {
+      "id": "192b7057-892e-5b44-a87f-3361f5ee389b",
+      "label": "Alexius",
+      "value": 1.0
+    },
+    {
+      "id": "ca6c044a-aba3-5f0c-9035-b4e2e3270190",
+      "label": "Beatrix",
+      "value": 1.0
+    },
+    {
+      "id": "020cb0aa-34d8-5dd9-bb06-0951fdf3bf01",
+      "label": "Callistus II",
+      "value": 1.0
+    },
+    {
+      "id": "f4191f2f-3305-5276-97a9-3fbc7bfc75c3",
+      "label": "Charlemagne",
+      "value": 1.0
+    },
+    {
+      "id": "878fcb06-2bff-5562-903b-8a74d683179a",
+      "label": "Count Molisius",
+      "value": 1.0
+    },
+    {
+      "id": "c1397b57-aa90-5dc5-a60c-a9a6c5d04319",
+      "label": "Manuel I Komnenos",
+      "value": 1.0
+    },
+    {
+      "id": "4a5371b4-cf6c-58dd-8e38-02657efa80fb",
+      "label": "Octavian",
+      "value": 1.0
+    },
+    {
+      "id": "72e46d1d-504a-5a22-a6cc-580e4fad7c60",
+      "label": "Rofridus",
+      "value": 1.0
+    },
+    {
+      "id": "75becb82-7042-5dec-8dd9-29fed85e42bf",
+      "label": "William II of Sicily",
+      "value": 1.0
+    }
+  ],
+  "connectedComponents": [
+    {
+      "size": 39,
+      "nodes": [
+        "Callistus II",
+        "Walter of Palermo",
+        "Alexius",
+        "Rocca de Archis",
+        "Apulia",
+        "Andronicus",
+        "Burellus",
+        "Octavian",
+        "Frederick I Barbarossa",
+        "Philippus",
+        "Rome",
+        "Capua",
+        "Sibilia",
+        "Salerno",
+        "Sicily",
+        "Lupini brothers",
+        "Rofridus",
+        "William II of Sicily",
+        "Tancred of Sicily",
+        "Count Molisius",
+        "Roger of Andria",
+        "Roger II of Sicily",
+        "Naples",
+        "Celestine III",
+        "Urso",
+        "Monte Cassino",
+        "Robert Guiscard",
+        "Saint Peter",
+        "Manuel I Komnenos",
+        "Count Consanus",
+        "Beatrix",
+        "Henry VI",
+        "Lucius III",
+        "Bartholomew",
+        "Matthew of Ajello",
+        "Charlemagne",
+        "Palermo",
+        "Constance of Sicily",
+        "Albidia"
+      ]
+    }
+  ]
+}

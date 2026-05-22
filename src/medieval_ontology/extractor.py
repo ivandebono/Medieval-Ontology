@@ -37,7 +37,14 @@ def extract_graph(
         section_mentions = _mentions(section.text, gazetteer)
         for entity_id in sorted(set(section_mentions)):
             entity = gazetteer.get(entity_id)
-            graph.add_node(entity.id, entity.label, entity.kind, section.title, document_id=document_id)
+            graph.add_node(
+                entity.id,
+                entity.label,
+                entity.kind,
+                section.title,
+                document_id=document_id,
+                wikipedia_url=entity.wikipedia_url,
+            )
 
         lines = [line.strip() for line in section.text.splitlines() if line.strip()]
         line_positions = [graph.add_source_line(line, section.title, document_id) for line in lines]

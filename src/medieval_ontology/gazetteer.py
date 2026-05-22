@@ -4,6 +4,7 @@ from __future__ import annotations
 
 from dataclasses import dataclass
 import re
+from urllib.parse import quote_plus
 from uuid import UUID, uuid5
 
 
@@ -18,8 +19,40 @@ class Entity:
     def id(self) -> UUID:
         return uuid5(ENTITY_NAMESPACE, self.key)
 
+    @property
+    def wikipedia_url(self) -> str:
+        return WIKIPEDIA_URLS.get(self.key, wikipedia_search_url(self.label))
+
 
 ENTITY_NAMESPACE = UUID("8ed8a50d-058e-4da2-9f1d-6b496df15502")
+
+
+WIKIPEDIA_URLS: dict[str, str] = {
+    "roger_ii": "https://en.wikipedia.org/wiki/Roger_II_of_Sicily",
+    "robert_guiscard": "https://en.wikipedia.org/wiki/Robert_Guiscard",
+    "callistus_ii": "https://en.wikipedia.org/wiki/Pope_Callistus_II",
+    "beatrix": "https://en.wikipedia.org/wiki/Beatrice_of_Rethel",
+    "constance": "https://en.wikipedia.org/wiki/Constance_of_Sicily,_Holy_Roman_Empress",
+    "henry_vi": "https://en.wikipedia.org/wiki/Henry_VI,_Holy_Roman_Emperor",
+    "lucius_iii": "https://en.wikipedia.org/wiki/Pope_Lucius_III",
+    "celestine_iii": "https://en.wikipedia.org/wiki/Pope_Celestine_III",
+    "william_ii": "https://en.wikipedia.org/wiki/William_II_of_Sicily",
+    "tancred": "https://en.wikipedia.org/wiki/Tancred,_King_of_Sicily",
+    "matthew_ajello": "https://en.wikipedia.org/wiki/Matthew_of_Ajello",
+    "manuel": "https://en.wikipedia.org/wiki/Manuel_I_Komnenos",
+    "frederick_i": "https://en.wikipedia.org/wiki/Frederick_Barbarossa",
+    "charlemagne": "https://en.wikipedia.org/wiki/Charlemagne",
+    "peter_apostle": "https://en.wikipedia.org/wiki/Saint_Peter",
+    "octavian": "https://en.wikipedia.org/wiki/Octavian",
+    "sicily": "https://en.wikipedia.org/wiki/Sicily",
+    "palermo": "https://en.wikipedia.org/wiki/Palermo",
+    "rome": "https://en.wikipedia.org/wiki/Rome",
+    "apulia": "https://en.wikipedia.org/wiki/Apulia",
+    "capua": "https://en.wikipedia.org/wiki/Capua",
+    "salerno": "https://en.wikipedia.org/wiki/Salerno",
+    "naples": "https://en.wikipedia.org/wiki/Naples",
+    "monte_cassino": "https://en.wikipedia.org/wiki/Monte_Cassino",
+}
 
 
 ENTITIES: tuple[Entity, ...] = (
@@ -131,3 +164,7 @@ def latin_stem(value: str) -> str:
         if len(value) > len(ending) + 3 and value.endswith(ending):
             return value[: -len(ending)]
     return value
+
+
+def wikipedia_search_url(label: str) -> str:
+    return f"https://en.wikipedia.org/w/index.php?search={quote_plus(label)}"

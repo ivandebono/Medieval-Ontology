@@ -9,6 +9,7 @@ import typer
 from rich.console import Console
 from rich.table import Table
 
+from .analysis import write_graphml_structure_insights
 from .builder import build_graph_from_documents, build_graph_from_source
 from .gazetteer import Gazetteer
 from .sources import (
@@ -108,6 +109,20 @@ def cache_sources(
     for path in paths:
         action = "Saved" if refresh or path not in existing_paths else "Using"
         console.print(f"[green]{action}[/green] {path}")
+
+
+@app.command("analyse")
+def analyse(
+    graphml: Path = typer.Option(Path("analysis.graphml"), "--graphml", "-g", help="GraphML file produced by make graph."),
+    output: Path = typer.Option(Path("graph-insights.json"), "--output", "-o", help="Analysis output path."),
+    top_n: int = typer.Option(10, "--top-n", help="Number of ranked nodes to include for each metric."),
+) -> None:
+    """Write structural graph insights from an existing GraphML artifact."""
+
+    if not graphml.exists():
+        raise typer.BadParameter(f"{graphml} does not exist. Run `make graph` first.")
+    write_graphml_structure_insights(graphml, output, top_n=top_n)
+    console.print(f"[green]Wrote[/green] graph-structure insights to {output}")
 
 
 def main() -> None:

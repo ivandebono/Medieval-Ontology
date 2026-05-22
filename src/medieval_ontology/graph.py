@@ -49,6 +49,7 @@ class Node:
     id: str
     label: str
     kind: str = "unknown"
+    wikipedia_url: str = ""
     count: int = 0
     sections: set[str] = field(default_factory=set)
     documents: set[str] = field(default_factory=set)
@@ -96,9 +97,12 @@ class Graph:
         section: str | None = None,
         evidence: str | None = None,
         document_id: str | None = None,
+        wikipedia_url: str | None = None,
     ) -> None:
         node_id = str(node_id)
         node = self.nodes.setdefault(node_id, Node(id=node_id, label=label, kind=kind))
+        if wikipedia_url:
+            node.wikipedia_url = wikipedia_url
         node.count += 1
         if section:
             node.sections.add(section)
@@ -213,6 +217,7 @@ class Graph:
                 id=node.id,
                 label=node.label,
                 kind=node.kind,
+                wikipedia_url=node.wikipedia_url,
                 count=node.count,
                 sections=set(node.sections),
                 documents=set(node.documents),
@@ -244,6 +249,7 @@ class Graph:
                 node.id,
                 label=node.label,
                 kind=node.kind,
+                wikipediaUrl=node.wikipedia_url,
                 count=node.count,
                 sections=" | ".join(sorted(node.sections)),
                 documents=" | ".join(self.documents.get(document_id, document_id) for document_id in sorted(node.documents)),
@@ -273,6 +279,7 @@ class Graph:
                     "id": node.id,
                     "label": node.label,
                     "kind": node.kind,
+                    "wikipediaUrl": node.wikipedia_url,
                     "count": node.count,
                     "sections": sorted(node.sections),
                     "documents": [self.documents.get(document_id, document_id) for document_id in sorted(node.documents)],
@@ -352,6 +359,7 @@ def render_pyvis_html(graph: Graph) -> str:
             snippets=[snippet.to_dict() for snippet in node.snippets],
             kind=node.kind,
             mentions=node.count,
+            wikipediaUrl=node.wikipedia_url,
             documents=[graph.documents.get(document_id, document_id) for document_id in sorted(node.documents)],
         )
     for edge in graph.edges.values():
@@ -499,6 +507,18 @@ def _inspector_markup() -> str:
             color: #52606d;
             line-height: 1.35;
           }
+          #node-inspector .external-link {
+            display: inline-flex;
+            align-items: center;
+            margin: -4px 0 14px;
+            color: #2f6f73;
+            font-weight: 600;
+            text-decoration: none;
+          }
+          #node-inspector .external-link:hover,
+          #node-inspector .external-link:focus {
+            text-decoration: underline;
+          }
           #node-inspector .context-control {
             display: flex;
             align-items: center;
@@ -616,7 +636,10 @@ def _inspector_script(source_documents: dict[str, SourceDocument]) -> str:
               }
               var snippets = node.snippets || [];
               var nodeDocuments = node.documents || [];
-              var contextSize = 5;
+              var wikipediaLink = node.wikipediaUrl
+                ? '<a class="external-link" href="' + escapeHtml(node.wikipediaUrl) + '" target="_blank" rel="noopener noreferrer">Wikipedia</a>'
+                : "";
+              var contextSize = 40;
               var snippetHtml = snippets.length
                 ? snippets.map(function (snippet) {
                     var text = typeof snippet === "string" ? snippet : snippet.text;
@@ -628,17 +651,48 @@ def _inspector_script(source_documents: dict[str, SourceDocument]) -> str:
                 '<div class="meta">' + escapeHtml(node.kind || "entity") + " · " +
                 escapeHtml(node.mentions || 0) + " " + mentionLabel(node.mentions || 0) + "</div>" +
                 '<div class="documents">Documents: ' + escapeHtml(nodeDocuments.join(", ") || "Unknown") + "</div>" +
-                '<label class="context-control">Context lines <input id="context-size" type="number" min="0" max="20" value="' +
+                wikipediaLink +
+                '<label class="context-control">Context words <input id="context-size" type="number" min="0" max="250" step="5" value="' +
                 contextSize + '"></label>' +
                 snippetHtml;
 
               panel.querySelectorAll(".snippet").forEach(function (button, index) {
                 button.addEventListener("click", function () {
                   var input = document.getElementById("context-size");
-                  var size = Math.max(0, Math.min(20, parseInt(input && input.value, 10) || 0));
+                  var size = Math.max(0, Math.min(250, parseInt(input && input.value, 10) || 0));
                   renderSnippetContext(button, snippets[index], size);
                 });
               });
+            }
+
+            function words(value) {
+              return String(value || "").trim().split(/\\s+/).filter(Boolean);
+            }
+
+            function leadingWords(value, count) {
+              return words(value).slice(0, count).join(" ");
+            }
+
+            function trailingWords(value, count) {
+              var items = words(value);
+              return items.slice(Math.max(0, items.length - count)).join(" ");
+            }
+
+            function textBeforeLine(sourceLines, lineIndex) {
+              return sourceLines.slice(0, Math.max(0, lineIndex)).map(function (line) {
+                return line.text || "";
+              }).join(" ");
+            }
+
+            function textAfterLine(sourceLines, lineIndex) {
+              return sourceLines.slice(lineIndex + 1).map(function (line) {
+                return line.text || "";
+              }).join(" ");
+            }
+
+            function snippetNeedle(snippetText) {
+              var text = String(snippetText || "");
+              return text.endsWith("...") ? text.slice(0, -3).trim() : text;
             }
 
             function renderSnippetContext(button, snippet, contextSize) {
@@ -652,8 +706,6 @@ def _inspector_script(source_documents: dict[str, SourceDocument]) -> str:
               var documentId = data.documentId || "";
               var sourceDocument = sourceDocuments[documentId] || { lines: [] };
               var sourceLines = sourceDocument.lines || [];
-              var start = Math.max(0, lineIndex - contextSize);
-              var end = Math.min(sourceLines.length - 1, lineIndex + contextSize);
               var sourceLine = sourceLines[lineIndex] || {};
               var section = data.section || sourceLine.section || "";
               var documentName = documentTitle(documentId);
@@ -665,10 +717,24 @@ def _inspector_script(source_documents: dict[str, SourceDocument]) -> str:
               if (lineIndex < 0 || !sourceLines[lineIndex]) {
                 lines.push('<span class="focus-line">' + escapeHtml(data.text || "") + "</span>");
               } else {
-                for (var index = start; index <= end; index += 1) {
-                  var line = sourceLines[index] || { text: "" };
-                  var className = index === lineIndex ? ' class="focus-line"' : "";
-                  lines.push("<span" + className + ">" + escapeHtml(line.text) + "</span>");
+                var lineText = sourceLine.text || "";
+                var focusText = data.text || lineText;
+                var needle = snippetNeedle(focusText);
+                var focusStart = needle ? lineText.indexOf(needle) : -1;
+                var beforeText = textBeforeLine(sourceLines, lineIndex);
+                var afterText = textAfterLine(sourceLines, lineIndex);
+                if (focusStart >= 0) {
+                  beforeText += " " + lineText.slice(0, focusStart);
+                  afterText = lineText.slice(focusStart + needle.length) + " " + afterText;
+                }
+                var before = trailingWords(beforeText, contextSize);
+                var after = leadingWords(afterText, contextSize);
+                if (before) {
+                  lines.push('<span class="context-words">' + escapeHtml(before) + "</span>");
+                }
+                lines.push('<span class="focus-line">' + escapeHtml(focusText) + "</span>");
+                if (after) {
+                  lines.push('<span class="context-words">' + escapeHtml(after) + "</span>");
                 }
               }
               var context = document.createElement("div");

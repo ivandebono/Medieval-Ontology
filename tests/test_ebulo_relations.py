@@ -2,6 +2,7 @@ import json
 from uuid import UUID
 
 from medieval_ontology import build_graph_from_text
+from medieval_ontology.analysis import write_graphml_structure_insights
 from medieval_ontology.builder import build_graph_from_documents
 from medieval_ontology.gazetteer import Gazetteer
 from medieval_ontology.sources import Document, cached_documents, save_documents
@@ -40,6 +41,7 @@ def test_gazetteer_normalizes_latin_forms():
     tancred_id = gazetteer.match_token("Tancrede")
     assert isinstance(tancred_id, UUID)
     assert gazetteer.get(tancred_id).key == "tancred"
+    assert gazetteer.get(tancred_id).wikipedia_url == "https://en.wikipedia.org/wiki/Tancred,_King_of_Sicily"
     assert gazetteer.match_token("Tancredum") == tancred_id
 
 
@@ -72,9 +74,14 @@ def test_node_snippets_carry_clickable_context():
     assert "Per me regnabis" in graph.source_lines[snippet.line_index + 1]["text"]
 
     html = graph.to_html()
-    assert 'id="context-size" type="number" min="0" max="20"' in html
-    assert "var contextSize = 5;" in html
+    assert 'id="context-size" type="number" min="0" max="250" step="5"' in html
+    assert "var contextSize = 40;" in html
+    assert "wikipediaUrl" in html
+    assert "external-link" in html
+    assert 'target="_blank" rel="noopener noreferrer"' in html
     assert "var sourceDocuments =" in html
+    assert "Context words" in html
+    assert "function trailingWords" in html
     assert "lineIndex" in html
     assert "renderSnippetContext" in html
 
@@ -155,3 +162,19 @@ def test_sources_can_be_saved_and_reused_from_disk(tmp_path):
 
     save_documents(output_dir, documents=(document,), refresh=True)
     assert paths[0].read_text(encoding="utf-8") == "Changed"
+
+
+def test_graphml_analysis_writes_structural_insights(tmp_path):
+    graph = build_graph_from_text(SAMPLE)
+    graphml = tmp_path / "sample.graphml"
+    output = tmp_path / "insights.json"
+    graph.write(graphml, format="graphml")
+
+    write_graphml_structure_insights(graphml, output, top_n=3)
+
+    payload = json.loads(output.read_text(encoding="utf-8"))
+    assert payload["summary"]["nodeCount"] == len(graph.nodes)
+    assert payload["summary"]["edgeCount"] > 0
+    assert payload["topDegreeCentrality"]
+    assert len(payload["topDegreeCentrality"]) <= 3
+    assert "co-occurrence" in {item["relation"] for item in payload["relations"]}

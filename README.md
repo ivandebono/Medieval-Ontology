@@ -48,8 +48,15 @@ Makefile shortcuts:
 ```bash
 make pages
 make graph
+make analyse
 make entities
 ```
+
+`make analyse` assumes `make graph` has already produced `ebulo.graphml`. It
+writes graph-structure metrics such as degree centrality, weighted degree,
+betweenness centrality, closeness centrality, clustering, components, density,
+and relation counts to `graph-insights.json`. This report is not included in
+the interactive front end.
 
 To refetch and overwrite the saved source texts:
 
@@ -72,8 +79,8 @@ uv --cache-dir .uv-cache run ontology build \
 the browser:
 
 - click a node to see entity type, mention count, and source documents;
-- click a text snippet to expand `+/- n` lines of context;
-- change `n` with the context-lines input, default `5`;
+- click a text snippet to expand `+/- n` words of context;
+- change `n` with the context-words input, default `40`;
 - each snippet/context panel shows the source document and section.
 
 This page can be hosted on GitHub Pages.
